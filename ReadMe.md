@@ -6,6 +6,8 @@
 - [Functional Requirements](#Requirements)
 - [Compilation and how to run](#compilation)
 - [Implemented Patterns](#Patterns)
+- [Documentation](#Documentation)
+- [Final UML](#UML)
 - [License](#License)
 
 # Members
@@ -50,7 +52,13 @@ make clean - once complete
 - Strategy
 - Decorator
 
+# Documentation
+-[Final Report](https://github.com/The1Don1/Restaurant-Sim/blob/main/Documentation)
+-[Code root](https://github.com/The1Don1/Restaurant-Sim/tree/main/Code/Project/Project)
+-[Diagrams](https://github.com/The1Don1/Restaurant-Sim/tree/main/Diagrams)
 
+# UML
+![UMLDiagram](https://github.com/The1Don1/Restaurant-Sim/blob/main/Diagrams/Restaurant%20Simulator.png)
 
 
 # License
