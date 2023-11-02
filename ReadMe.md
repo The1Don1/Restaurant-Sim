@@ -16,10 +16,10 @@
 | ----------- | ----------- |
 | Mathenda Maphasha | u20477181@tuks.co.za |
 | Boloka Kgopodithate | u20456213@tuks.co.za |
-| Ofentse Ramothibe | u20456213@tuks.co.za |
-| Realeboga Moatshe | u20456213@tuks.co.za |
+| Ofentse Ramothibe | u21467422@tuks.co.za |
+| Realeboga Moatshe | u19029269@tuks.co.za |
 | Ntando Mazibuko | u20626160@tuks.co.za |
-| Thashlene Moodley | u20626160@tuks.co.za |
+| Thashlene Moodley | u22628721@tuks.co.za |
 
 # Requirements
 
