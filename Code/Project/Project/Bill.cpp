@@ -183,6 +183,28 @@ double CustomTipDecorator::getTotalCost()
     return BillDecorator::getTotalCost() + tipAmount;
 }
 
+/* SubBill */ 
+
+#include "SubBill.h"
+
+double SubBill::getTotalCost()
+{
+    double total = 0;
+    for (int i = 0; i < items.size(); i++)
+    {
+        total += items[i]->getTotalCost();
+    }
+    return total;
+}
+
+void SubBill::addItem(Bill* bill)
+{
+    items.push_back(bill);
+}
+
+
+
+
 
 
 
