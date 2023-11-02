@@ -132,7 +132,7 @@ Bill* Bill::getBill()
 double Bill::calculateTotal()
 {
     return totalAmount;
-}   
+}
 
 double Bill::getTotalCost()
 {
@@ -142,7 +142,6 @@ double Bill::getTotalCost()
 
 /* BillItem */
 
-#include "BillDecorator.h"
 
 BillDecorator::BillDecorator(Bill* bill)
 {
@@ -183,7 +182,7 @@ double CustomTipDecorator::getTotalCost()
     return BillDecorator::getTotalCost() + tipAmount;
 }
 
-/* SubBill */ 
+/* SubBill */
 
 #include "SubBill.h"
 

@@ -11,7 +11,7 @@ void Waiter::reduceTimer()
 {
     if (waitTime > 0)
         waitTime--;
-} 
+}
 
 void Waiter::deliverOrder()
 {
