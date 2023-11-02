@@ -3,9 +3,9 @@
 # Glossary
 
 - [Members](#Members)
-- [Functional Requirements](#FunctionalRequirements)
+- [Functional Requirements](#Functional_Requirements)
 - [Compilation and how to run](#compilation)
-- [Implemented Patterns](#ImplementedPatterns)
+- [Implemented Patterns](#Implemented_Patterns)
 - [License](#License)
 
 # Members
@@ -19,7 +19,7 @@
 | Ntando Mazibuko | u20626160@tuks.co.za |
 | Thashlene Moodley | u20626160@tuks.co.za |
 
-# Functional Requirements
+# Functional_Requirements
 
 developed using cmake 3.27.7
 designed using Clion 2023.2.22
@@ -34,7 +34,7 @@ make
 ./Project
 make clean - once complete
 ```
-# implemented Patterns
+# implemented_Patterns
 - Singleton
 - Facade
 - Mediator
