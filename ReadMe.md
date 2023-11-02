@@ -53,9 +53,9 @@ make clean - once complete
 - Decorator
 
 # Documentation
--[Final Report](https://github.com/The1Don1/Restaurant-Sim/blob/main/Documentation)
--[Code root](https://github.com/The1Don1/Restaurant-Sim/tree/main/Code/Project/Project)
--[Diagrams](https://github.com/The1Don1/Restaurant-Sim/tree/main/Diagrams)
+- [Final Report](https://github.com/The1Don1/Restaurant-Sim/blob/main/Documentation)
+- [Code root](https://github.com/The1Don1/Restaurant-Sim/tree/main/Code/Project/Project)
+- [Diagrams](https://github.com/The1Don1/Restaurant-Sim/tree/main/Diagrams)
 
 # UML
 ![UMLDiagram](https://github.com/The1Don1/Restaurant-Sim/blob/main/Diagrams/Restaurant%20Simulator.png)
