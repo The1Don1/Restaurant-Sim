@@ -1,5 +1,6 @@
 # The Spice Girls
 <h1 align="center"> COS 214 Restaurant Simulator </h1>
+
 # Glossary
 
 - [Members](#Members)
