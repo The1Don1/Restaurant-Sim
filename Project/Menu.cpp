@@ -17,89 +17,81 @@ MenuDecorator::MenuDecorator(Menu* baseItem) {
 int MenuDecorator::getTimeToPrepare() {
     throw "Not yet implemented";
 }
-
-std::string CustomAddition::getDescription() {
-    throw "Not yet implemented";
-}
-
-double CustomAddition::getPrice() {
-    throw "Not yet implemented";
-}
 /**
- * @brief Construct a new Custom Addition:: Custom Addition object
+ * @brief Custom additions can be added to an original menu item
  * 
  * @param baseItem 
  * @param description 
  * @param price 
  * @param timeToprepare 
  */
-CustomAddition::CustomAddition(Menu *baseItem, std::string description, double price, int timeToprepare)
+Coleslaw::Coleslaw(Menu *baseItem, std::string description, double price, int timeToprepare)
 {
+    this->menu = baseItem;
     this->additionDescription = description;
     this->additionPrice = price;
     this->additionTimeToPrepare = timeToprepare;
-    
 }
 
-int CustomAddition::getTimeToPrepare() {
-    throw "Not yet implemented";
+int Coleslaw::getTimeToPrepare() {
+    return 3 + menu->getTimeToPrepare();
+}
+
+std::string Coleslaw::getDescription() {
+    return menu->getDescription() +  "and coleslaw";
+}
+
+double Coleslaw::getPrice() {
+    return 19.99 + menu->getPrice();
 }
 
 
-std::string Beverage::getDescription() {
-    throw "Not yet implemented";
+MushroomSauce::MushroomSauce(Menu *baseItem, std::string description, double price, int timeToprepare)
+{
+    this->menu = baseItem;
+    this->additionDescription = description;
+    this->additionPrice = price;
+    this->additionTimeToPrepare = timeToprepare;
 }
 
-double Beverage::getPrice() {
-    throw "Not yet implemented";
+int MushroomSauce::getTimeToPrepare() {
+    return 3 + menu->getTimeToPrepare();
 }
 
-int Beverage::getTimeToPrepare() {
-    throw "Not yet implemented";
+std::string MushroomSauce::getDescription() {
+    return menu->getDescription() +  "and mushroom sauce";
 }
 
-std::string Starter::getDescription() {
-    throw "Not yet implemented";
+double MushroomSauce::getPrice() {
+    return 24.99 + menu->getPrice();
 }
 
-double Starter::getPrice() {
-    throw "Not yet implemented";
+
+Salad::Salad(Menu *baseItem, std::string description, double price, int timeToprepare)
+{
+    this->menu = baseItem;
+    this->additionDescription = description;
+    this->additionPrice = price;
+    this->additionTimeToPrepare = timeToprepare;
 }
 
-int Starter::getTimeToPrepare() {
-    throw "Not yet implemented";
+int Salad::getTimeToPrepare() {
+    return 3 + menu->getTimeToPrepare();
 }
 
-std::string MainDish::getDescription() {
-    throw "Not yet implemented";
+std::string Salad::getDescription() {
+    return menu->getDescription() +  " and a salad";
 }
 
-double MainDish::getPrice() {
-    throw "Not yet implemented";
+double Salad::getPrice() {
+    return 34.99 + menu->getPrice();
 }
-
-int MainDish::getTimeToPrepare() {
-    throw "Not yet implemented";
-}
-
-std::string Dessert::getDescription() {
-    throw "Not yet implemented";
-}
-
-double Dessert::getPrice() {
-    throw "Not yet implemented";
-}
-
-int Dessert::getTimeToPrepare() {
-    throw "Not yet implemented";
-}
-
 /*
     Beverages:
 */
 std::string CokeZero::getDescription()
 {
-    return "Coke Zero\n";
+    return "Coke Zero";
 }
 
 double CokeZero::getPrice()
@@ -114,7 +106,7 @@ int CokeZero::getTimeToPrepare()
 
 std::string Coke::getDescription()
 {
-    return "Coke\n";
+    return "Coke";
 }
 
 double Coke::getPrice()
@@ -129,7 +121,7 @@ int Coke::getTimeToPrepare()
 
 std::string Sprite::getDescription()
 {
-    return "Sprite\n";
+    return "Sprite";
 }
 
 double Sprite::getPrice()
@@ -144,7 +136,7 @@ int Sprite::getTimeToPrepare()
 
 std::string BubblegumMilkshake::getDescription()
 {
-    return "Bubblegum Milkshake\n";
+    return "Bubblegum Milkshake";
 }
 
 double BubblegumMilkshake::getPrice()
@@ -159,7 +151,7 @@ int BubblegumMilkshake::getTimeToPrepare()
 
 std::string StrawberryMilkshake::getDescription()
 {
-    return "Strawberry Milkshake\n";
+    return "Strawberry Milkshake";
 }
 
 double StrawberryMilkshake::getPrice()
@@ -178,7 +170,7 @@ int StrawberryMilkshake::getTimeToPrepare()
 */
 std::string ChickenWings::getDescription()
 {
-    return "Chicken Wings\n";
+    return "Chicken Wings";
 }
 
 double ChickenWings::getPrice()
@@ -193,7 +185,7 @@ int ChickenWings::getTimeToPrepare()
 
 std::string OnionRings::getDescription()
 {
-    return "Onion Rings\n";
+    return "Onion Rings";
 }
 
 double OnionRings::getPrice()
@@ -208,7 +200,7 @@ int OnionRings::getTimeToPrepare()
 
 std::string Chips::getDescription()
 {
-    return "Chips\n";
+    return "Chips";
 }
 
 double Chips::getPrice()
@@ -223,7 +215,7 @@ int Chips::getTimeToPrepare()
 
 std::string ChickenNuggets::getDescription()
 {
-    return "Chicken Nuggets\n";
+    return "Chicken Nuggets";
 }
 
 double ChickenNuggets::getPrice()
@@ -241,7 +233,7 @@ int ChickenNuggets::getTimeToPrepare()
 */
 std::string CheeseBurger::getDescription()
 {
-    return "Cheese Burger\n";
+    return "Cheese Burger";
 }
 
 double CheeseBurger::getPrice()
@@ -257,7 +249,7 @@ int CheeseBurger::getTimeToPrepare()
 
 std::string HotDog::getDescription()
 {
-    return "Hot dog\n";
+    return "Hot dog";
 }
 
 double HotDog::getPrice()
@@ -273,7 +265,7 @@ int HotDog::getTimeToPrepare()
 
 std::string Cheesesteak::getDescription()
 {
-    return "Cheesesteak\n";
+    return "Cheesesteak";
 }
 
 double Cheesesteak::getPrice()
@@ -289,7 +281,7 @@ int Cheesesteak::getTimeToPrepare()
 
 std::string BBQRibs::getDescription()
 {
-    return "BBQRibs\n";
+    return "BBQRibs";
 }
 
 double BBQRibs::getPrice()
@@ -305,7 +297,7 @@ int BBQRibs::getTimeToPrepare()
 
 std::string ChickenTenders::getDescription()
 {  
-    return "Chicken tenders\n";
+    return "Chicken tenders";
 }
 
 double ChickenTenders::getPrice()
@@ -320,7 +312,7 @@ int ChickenTenders::getTimeToPrepare()
 
 std::string MacAndCheese::getDescription()
 {
-    return "Mac and cheese\n";
+    return "Mac and cheese";
 }
 
 double MacAndCheese::getPrice()
@@ -336,7 +328,7 @@ int MacAndCheese::getTimeToPrepare()
 
 std::string BBQSteak::getDescription()
 {
-    return "BBQ Steak\n";
+    return "BBQ Steak";
 }
 
 double BBQSteak::getPrice()
@@ -352,7 +344,7 @@ int BBQSteak::getTimeToPrepare()
 
 std::string BuffaloWings::getDescription()
 {
-    return "Buffalo wings\n";
+    return "Buffalo wings";
 }
 
 double BuffaloWings::getPrice()
@@ -371,7 +363,7 @@ int BuffaloWings::getTimeToPrepare()
 */
 std::string Pancakes::getDescription()
 {
-    return "Pancakes\n";
+    return "Pancakes";
 }
 
 double Pancakes::getPrice()
@@ -387,7 +379,7 @@ int Pancakes::getTimeToPrepare()
 
 std::string Donuts::getDescription()
 {
-    return "Donuts\n";
+    return "Donuts";
 }
 
 double Donuts::getPrice()
@@ -403,7 +395,7 @@ int Donuts::getTimeToPrepare()
 
 std::string Waffles::getDescription()
 {
-    return "Waffles\n";
+    return "Waffles";
 }
 
 double Waffles::getPrice()
@@ -419,7 +411,7 @@ int Waffles::getTimeToPrepare()
 
 std::string ChocolateBrownies::getDescription()
 {
-    return "Chocolate Brownies\n";
+    return "Chocolate Brownies";
 }
 
 double ChocolateBrownies::getPrice()

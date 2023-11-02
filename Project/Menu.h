@@ -7,6 +7,7 @@
 #include "iostream"
 #include "Dish.h"
 class Menu{
+public:
     virtual std::string getDescription() = 0;
     virtual double getPrice() = 0;
     virtual void menu() = 0;
@@ -24,7 +25,7 @@ public:
     int getTimeToPrepare();
 };
 
-class CustomAddition: public MenuDecorator
+class Coleslaw: public MenuDecorator
 {
 private:
     std::string additionDescription;
@@ -33,7 +34,33 @@ private:
 public:
     std::string getDescription();
     double getPrice();
-    CustomAddition(Menu* baseItem, std::string description, double price, int timeToprepare);
+    Coleslaw(Menu* baseItem, std::string description, double price, int timeToprepare);
+    int getTimeToPrepare();
+};
+
+class MushroomSauce: public MenuDecorator
+{
+private:
+    std::string additionDescription;
+    double additionPrice;
+    int additionTimeToPrepare;
+public:
+    std::string getDescription();
+    double getPrice();
+    MushroomSauce(Menu* baseItem, std::string description, double price, int timeToprepare);
+    int getTimeToPrepare();
+};
+
+class Salad: public MenuDecorator
+{
+private:
+    std::string additionDescription;
+    double additionPrice;
+    int additionTimeToPrepare;
+public:
+    std::string getDescription();
+    double getPrice();
+    Salad(Menu* baseItem, std::string description, double price, int timeToprepare);
     int getTimeToPrepare();
 };
 ///////////
