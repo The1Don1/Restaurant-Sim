@@ -3,9 +3,9 @@
 # Glossary
 
 - [Members](#Members)
-- [Functional Requirements](#Functional_Requirements)
+- [Functional Requirements](#Requirements)
 - [Compilation and how to run](#compilation)
-- [Implemented Patterns](#Implemented_Patterns)
+- [Implemented Patterns](#Patterns)
 - [License](#License)
 
 # Members
@@ -19,14 +19,14 @@
 | Ntando Mazibuko | u20626160@tuks.co.za |
 | Thashlene Moodley | u20626160@tuks.co.za |
 
-# Functional_Requirements
+# Requirements
 
-developed using cmake 3.27.7
-designed using Clion 2023.2.22
-Linter used : .clang-format
-make version: GNU Make 4.3
-WSL2 version: 5.10.16
-Ubuntu version: 22.04.2 LTS codename jammy
+- developed using cmake 3.27.7
+- designed using Clion 2023.2.22
+- Linter used : .clang-format
+- make version: GNU Make 4.3
+- WSL2 version: 5.10.16
+- Ubuntu version: 22.04.2 LTS codename jammy
 # compilation
 ```
 Open a linux terminal into build folder
@@ -34,7 +34,7 @@ make
 ./Project
 make clean - once complete
 ```
-# implemented_Patterns
+# Patterns
 - Singleton
 - Facade
 - Mediator
