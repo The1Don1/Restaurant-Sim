@@ -43,6 +43,10 @@ public:
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
+    std::string getName()
+    {
+        return name;
+    }
 };
 
 class CustomerMood{

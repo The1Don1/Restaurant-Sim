@@ -40,7 +40,7 @@ public:
 
     void handleTip();
 
-    void getBill();
+    Bill* getBill();
 
     Bill(double price) : totalAmount(price){}
 
@@ -52,7 +52,12 @@ public:
 
 //    virtual void addItem(Bill aItem) = 0;
 
-    virtual void getSubBill(std::string customerName) = 0;
+    virtual Bill* getSubBill(std::string customerName) = 0;
+
+    std::vector<Customer*> getCustomers()
+    {
+        return customers;
+    }
 };
 
 class BillItem: public Bill{
@@ -62,7 +67,7 @@ private:
 public:
         BillItem(double price, std::string item, double cost);
         void paymentMethod();
-    void getSubBill(std::string customerName);
+    Bill* getSubBill(std::string customerName);
         double getTotalCost();
         void addItem(SubBill item);
 };
@@ -75,7 +80,7 @@ public:
     Bill* bill;
     double getTotalCost();
     void addItem(SubBill item);
-    void getSubBill(std::string customerName);
+    Bill* getSubBill(std::string customerName);
 
 };
 class BillDecorator: public AbstractBill{
@@ -85,6 +90,10 @@ public:
         AbstractBill* abstractBill;
         BillDecorator(Bill* bill);
         double getTotalCost();
+        Bill* getBill()
+        {
+            return bill;
+        }
 
 };
 
@@ -92,7 +101,7 @@ class CustomTipDecorator: public BillDecorator
 {
 private: double _tipAmount;
 
-public: CustomTipDecorator(Bill *bill, Bill *bill2, double tip);
+public: CustomTipDecorator(Bill *bill, double tip);
 
 public: double getTotalCost();
 };

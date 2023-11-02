@@ -4,10 +4,13 @@
 
 #include "Bill.h"
 BillItem::BillItem(double price, std::string item, double cost) : Bill(price) {
+    name = item;
+    this->price = cost;
+
 }
 
 double BillItem::getTotalCost() {
-    throw "Not yet implemented";
+    return price;
 }
 
 void BillItem::addItem(SubBill item) {
@@ -15,77 +18,126 @@ void BillItem::addItem(SubBill item) {
 }
 
 void BillItem::paymentMethod() {
-
+    Bill::paymentMethod();
 }
 
-void BillItem::getSubBill(std::string customerName) {
-
+Bill* BillItem::getSubBill(std::string customerName) {
+    if (name == customerName)
+        return this;
 }
 
 
 BillDecorator::BillDecorator(Bill* bill) {
+    this->bill = bill;
 }
 
 double BillDecorator::getTotalCost() {
-    throw "Not yet implemented";
+    return bill->getTotalCost();
 }
 
 double SubBill::getTotalCost() {
-    throw "Not yet implemented";
+
+    double total = 0.0;
+    for (auto &item : items) {
+        total += item.getTotalCost();
+    }
+    return total;
 }
 
 void SubBill::addItem(SubBill item) {
-    throw "Not yet implemented";
+    items.push_back(item);
 }
 
-void SubBill::getSubBill(std::string customerName) {
-    throw "Not yet implemented";
+Bill* SubBill::getSubBill(std::string customerName) {
+
+    // Iterate over all items in the bill
+    for (auto &item : items)
+    {
+        // Check if the item has any customers
+        if (!item.getCustomers().empty())
+        {
+            // Iterate over all customers of the item
+            for (auto &customer : item.getCustomers())
+            {
+                // If the customer's name matches the input, print the item details
+                if (customer->getName() == customerName)
+                {
+                    return &item;
+                }
+            }
+        }
+    }
+
+    return NULL;
+}
+
+void SubBill::paymentMethod()
+{
+    bill->paymentMethod();
 }
 
 void PaymentStrategy::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Processing payment..." << std::endl;
 }
 
 void Cash::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Payment made by cash." << std::endl;
 }
 
 void Cash::getPaymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Cash." << std::endl;
 }
 void Card::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Payment made by card." << std::endl;
 }
 
 void Card::getPaymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Card" << std::endl;
 }
 
 
-CustomTipDecorator::CustomTipDecorator(Bill *bill, Bill *bill2, double tip) : BillDecorator(bill) {
+CustomTipDecorator::CustomTipDecorator(Bill *bill, double tip) : BillDecorator(bill) {
+    _tipAmount = tip;
 }
 
 double CustomTipDecorator::getTotalCost() {
-    throw "Not yet implemented";
+    return getBill()->getTotalCost() + _tipAmount;
 }
 
 
 void Bill::handleTip() {
+    totalAmount = totalAmount + this->billDecorator->getTotalCost();
 
 }
 
-void Bill::getBill() {
-
+Bill* Bill::getBill() {
+    return this;
+ 
 }
 
 double Bill::calculateBill() {
-    return 0;
+    totalAmount = totalAmount + subBill->getTotalCost();
+    return totalAmount;
 }
 
 void Bill::setPaymentMethod(PaymentStrategy *method) {
+    paymentStrategy = method;
 
 }
 
 double Bill::getTotalCost() {
-    return 0;
+    return totalAmount;
+        
 }
+
+
+/* ------------Changes--------------*/
+/*
+1. Changed the return type of getSubBill from void to Bill*
+2. Added a getter for customers and items
+*/
+
+/*---------Notes------------*/
+/*
+1. The bill
+*/
