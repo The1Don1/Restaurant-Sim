@@ -318,7 +318,6 @@ int ChickenTenders::getTimeToPrepare()
     return 10;
 }
 
-
 std::string MacAndCheese::getDescription()
 {
     return "Mac and cheese\n";
