@@ -1,3 +1,7 @@
+//
+// Created by mathenda on 2023/10/31.
+//
+
 #include "Waiter.h"
 
 Waiter::Waiter(string name, Table* headTable)
