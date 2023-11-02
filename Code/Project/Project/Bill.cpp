@@ -89,3 +89,51 @@ void Bill::setPaymentMethod(PaymentStrategy *method) {
 double Bill::getTotalCost() {
     return 0;
 }
+
+/* Tash Implementation */
+
+#include "Bill.h"
+
+Bill::Bill(double price)
+{
+    totalAmount = price;
+}
+
+void Bill::paymentMethod()
+{
+    paymentStrategy->pay(totalAmount);
+}
+
+void Bill::handleTip(Engine* engine)
+{
+    //Tip amount is set for now until engine class is implemented
+    if (splitBill == true)
+    {
+        totalAmount = totalAmount + (totalAmount * 0.15);
+    }
+    else
+    {
+        totalAmount = totalAmount + (totalAmount * 0.20);
+    }
+}
+
+void Bill::setPaymentStrategy(PaymentStrategy* paymentStrategy)
+{
+    this->paymentStrategy = paymentStrategy;
+}
+
+Bill* Bill::getBill()
+{
+    return this;
+}
+
+double Bill::calculateTotal()
+{
+    return totalAmount;
+}   
+
+double Bill::getTotalCost()
+{
+    return totalAmount;
+}
+
