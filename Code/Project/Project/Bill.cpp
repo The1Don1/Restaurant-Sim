@@ -90,7 +90,9 @@ double Bill::getTotalCost() {
     return 0;
 }
 
-/* Tash Implementation */
+/*------------------------Tash Implementation-------------------------------------*/
+
+/* Bill */
 
 #include "Bill.h"
 
@@ -136,6 +138,52 @@ double Bill::getTotalCost()
 {
     return totalAmount;
 }
+
+
+/* BillItem */
+
+#include "BillDecorator.h"
+
+BillDecorator::BillDecorator(Bill* bill)
+{
+    this->bill = bill;
+}
+
+double BillDecorator::getTotalCost()
+{
+    return bill->getTotalCost();
+}
+
+/* BillDecorator */
+
+#include "BillDecorator.h"
+
+BillDecorator::BillDecorator(Bill* bill)
+{
+    this->bill = bill;
+}
+
+double BillDecorator::getTotalCost()
+{
+    return bill->getTotalCost();
+}
+
+/* CustomTipDecorator */
+
+#include "CustomTipDecorator.h"
+
+CustomTipDecorator::CustomTipDecorator(Bill* bill, double tip)
+    : BillDecorator(bill)
+{
+    tipAmount = tip;
+}
+
+double CustomTipDecorator::getTotalCost()
+{
+    return BillDecorator::getTotalCost() + tipAmount;
+}
+
+
 
 
 
