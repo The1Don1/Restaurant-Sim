@@ -1,0 +1,3 @@
+/mnt/c/Users/mathe/Documents/School/cos214/CMakeFiles/Project.dir
+/mnt/c/Users/mathe/Documents/School/cos214/CMakeFiles/edit_cache.dir
+/mnt/c/Users/mathe/Documents/School/cos214/CMakeFiles/rebuild_cache.dir
