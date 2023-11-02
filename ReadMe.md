@@ -1,8 +1,9 @@
 # The Spice Girls
 <h1 align="center"> COS 214 Restaurant Simulator </h1>
 # Glossary
+
 - [Members](#Members)
-- [Functional Requirements](#Functional Requirements)
+- [Functional Requirements](#FunctionalRequirements)
 - [Compilation and how to run](#compilation)
 - [Implemented Patterns](#ImplementedPatterns)
 - [License](#License)
@@ -27,11 +28,12 @@ make version: GNU Make 4.3
 WSL2 version: 5.10.16
 Ubuntu version: 22.04.2 LTS codename jammy
 # compilation
+```
 Open a linux terminal into build folder
 make
 ./Project
 make clean - once complete
-
+```
 # implemented Patterns
 - Singleton
 - Facade
