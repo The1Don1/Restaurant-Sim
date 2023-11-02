@@ -20,4 +20,4 @@ jobs:
         
     - name: Build
       working-directory: ${{github.workspace}}/Code/Project/build
-      run: make
+      run: make Project
