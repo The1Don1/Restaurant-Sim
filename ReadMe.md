@@ -1,13 +1,13 @@
-# The spice Girls
+# The Spice Girls
 <h1 align="center"> COS 214 Restaurant Simulator </h1>
-#Glossary
-- [Members](##Members)
-- [Functional Requirements](##Functional Requirements)
-- [Compilation and how to run](##compilation)
-- [Implemented Patterns](##ImplementedPatterns)
+# Glossary
+- [Members](#Members)
+- [Functional Requirements](#Functional Requirements)
+- [Compilation and how to run](#compilation)
+- [Implemented Patterns](#ImplementedPatterns)
+- [License](#License)
 
-
-## Members
+# Members
 
 | Name | Student Email |
 | ----------- | ----------- |
@@ -18,7 +18,7 @@
 | Ntando Mazibuko | u20626160@tuks.co.za |
 | Thashlene Moodley | u20626160@tuks.co.za |
 
-## Functional Requirements
+# Functional Requirements
 
 developed using cmake 3.27.7
 designed using Clion 2023.2.22
@@ -26,13 +26,13 @@ Linter used : .clang-format
 make version: GNU Make 4.3
 WSL2 version: 5.10.16
 Ubuntu version: 22.04.2 LTS codename jammy
-## compilation
+# compilation
 Open a linux terminal into build folder
 make
 ./Project
 make clean - once complete
 
-## implemented Patterns
+# implemented Patterns
 - Singleton
 - Facade
 - Mediator
@@ -51,5 +51,5 @@ make clean - once complete
 
 
 
-## License
+# License
   Project licensed under github provided MIT license
