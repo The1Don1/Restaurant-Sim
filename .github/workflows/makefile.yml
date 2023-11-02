@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Configure
-      run: |
+      run:
         rm -rf ${{github.workspace}}/build/*
         cmake -S ${{github.workspace}} -B ${{github.workspace}}/Code/Project/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
