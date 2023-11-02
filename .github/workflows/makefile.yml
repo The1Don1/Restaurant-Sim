@@ -8,12 +8,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-      
-    - name: Build
-      working-directory: ${{github.workspace}}/Code/Project/build
-      run: make
+    - name: checkout repository content
+      uses: actions/checkout@v3
+    - working-directory: ${{github.workspace}}/Code/Project/build
+      run: make Project
