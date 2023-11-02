@@ -38,7 +38,7 @@ int Coleslaw::getTimeToPrepare() {
 }
 
 std::string Coleslaw::getDescription() {
-    return menu->getDescription() +  "and coleslaw";
+    return menu->getDescription() +  " and coleslaw";
 }
 
 double Coleslaw::getPrice() {
@@ -59,7 +59,7 @@ int MushroomSauce::getTimeToPrepare() {
 }
 
 std::string MushroomSauce::getDescription() {
-    return menu->getDescription() +  "and mushroom sauce";
+    return menu->getDescription() +  " and mushroom sauce";
 }
 
 double MushroomSauce::getPrice() {
