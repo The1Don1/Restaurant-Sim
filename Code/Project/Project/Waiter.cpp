@@ -1,59 +1,60 @@
 #include "Waiter.h"
-
-Waiter::Waiter(string name, Table* headTable)
-{
-    waiterName = name;
-    this->headTable = headTable;
-    waitTime = 0;
+void Waiter::visitTable(Table *table) {
+    throw "Not yet implemented";
 }
 
-void Waiter::reduceTimer()
-{
-    if (waitTime > 0)
-        waitTime--;
+void Waiter::prepareDish() {
+    throw "Not yet implemented";
 }
 
-void Waiter::deliverOrder()
-{
-    if (waitTime == 0)
-    {
-        cout << "Waiter " << waiterName << " delivers order to table " << headTable->getTableNumber() << endl;
-        //headTable->setOrderDelivered();
-    }
+void Waiter::getOrders() {
+    throw "Not yet implemented";
 }
 
-void Waiter::visitTable(Table* table)
-{
-    headTable = table;
+void Waiter::sendOrders() {
+    throw "Not yet implemented";
 }
 
-void Waiter::getOrders()
-{
-    if (headTable->getOrderStatus() == false)
-    {
-        cout << "Waiter " << waiterName << " gets order from table " << headTable->getTableNumber() << endl;
-        headTable->setOrderStatus();
-        waitTime = 5;
-    }
+void Waiter::deliverOrder() {
+    throw "Not yet implemented";
 }
 
-void Waiter::setOrders()
-{
-    if (headTable->getOrderStatus() == true)
-    {
-        cout << "Waiter " << waiterName << " sets order for table " << headTable->getTableNumber() << endl;
-        headTable->setOrderDelivered();
-        waitTime = 5;
-    }
+void generalWaiter::visitTable(Table occupiedTable) {
+    throw "Not yet implemented";
 }
 
-void Waiter::prepareDish()
-{
-    if (waitTime == 0)
-    {
-        cout << "Waiter " << waiterName << " prepares dish for table " << headTable->getTableNumber() << endl;
-        headTable->setOrderDelivered();
-    }
+void generalWaiter::addToTab(std::string customerName, double amount) {
+    throw "Not yet implemented";
 }
 
+void generalWaiter::payTab(std::string customerName, double amount) {
+    throw "Not yet implemented";
+}
 
+Tab* generalWaiter::getTab(std::string customerName) {
+    throw "Not yet implemented";
+}
+
+void generalWaiter::performTask() {
+    throw "Not yet implemented";
+}
+
+void MaitreD::checkReservation() {
+    throw "Not yet implemented";
+}
+
+void MaitreD::allocateTable() {
+    throw "Not yet implemented";
+}
+
+void MaitreD::mergeTables(int table1, int table2) {
+    throw "Not yet implemented";
+}
+
+void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
+    throw "Not yet implemented";
+}
+
+void MaitreD::performTask() {
+    throw "Not yet implemented";
+}
