@@ -39,7 +39,7 @@ class Dish
         void setCustomerTable(int customerTableID);
 };
 
-class DishStatus
+class DishStatus : public Dish
 {
     public:
         Dish* dish;
