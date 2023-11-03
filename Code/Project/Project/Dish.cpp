@@ -1,73 +1,94 @@
 //
 // Created by mathe on 2023/10/31.
 //
-
 #include "Dish.h"
-Dish* Dish::createDish() {
+#include <random>
+
+Dish* Dish::createDish()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(0, 1);
+    int randBool = distribution(gen);
+
+    /*if(randBool)
+    {
+
+    }*/
     throw "Not yet implemented";
 }
 
-void Dish::dishState() {
-    throw "Not yet implemented";
-}
-DishStatus* Dish::getDishStatus() {
-    throw "Not yet implemented";
-}
-
-void Dish::change() {
+void Dish::dishState()
+{
     throw "Not yet implemented";
 }
 
-void Dish::setState(DishStatus* state) {
+DishStatus* Dish::getDishStatus()
+{
+    return this->dishStatus;
+}
+
+void Dish::change()
+{
     throw "Not yet implemented";
 }
 
-std::string Dish::getCustomerName() {
+void Dish::setDishStatus(DishStatus* state)
+{
+    this->dishStatus = state;
+}
+
+std::string Dish::getCustomerName()
+{
     return this->customerName;
 }
 
-void Dish::setCustomerName(std::string customerName) {
+void Dish::setCustomerName(std::string customerName)
+{
     this->customerName = customerName;
 }
 
-int Dish::getCustomerTable() {
+int Dish::getCustomerTable()
+{
     return this->customerTable;
 }
 
-void Dish::setCustomerTable(int customerTableID) {
+void Dish::setCustomerTable(int customerTableID)
+{
     this->customerTable = customerTableID;
 }
 
-void DishStatus::DishState() {
+void DishStatus::DishState()
+{
     throw "Not yet implemented";
 }
 
-std::string DishStatus::getStatus() {
-    throw "Not yet implemented";
+void Preparing::updateDishStatus()
+{
+    this->setDishStatus(new Preparing());
 }
 
-void Preparing::updateDishStatus() {
-    throw "Not yet implemented";
+std::string Preparing::getStatus()
+{
+    return "Preparing";
 }
 
-void Preparing::getStatus() {
-    throw "Not yet implemented";
+void readyForPickUp::updateDishStatus()
+{
+    this->setDishStatus(new readyForPickUp());
 }
 
-void readyForPickUp::updateDishStatus() {
-    throw "Not yet implemented";
+std::string readyForPickUp::getStatus()
+{
+    return "Ready for Pick Up!";
 }
 
-void readyForPickUp::getStatus() {
-    throw "Not yet implemented";
+void stillQueued::updateDishStatus()
+{
+    this->setDishStatus(new stillQueued());
 }
 
-
-void stiiQueued::updateDishStatus() {
-    throw "Not yet implemented";
+std::string stillQueued::getStatus()
+{
+    return "Still Queued";
 }
-
-void stiiQueued::getStatus() {
-    throw "Not yet implemented";
-}
-
