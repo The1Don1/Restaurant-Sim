@@ -2,8 +2,19 @@
 // Created by mathe on 2023/10/31.
 //
 #include "Dish.h"
+#include <random>
+
 Dish* Dish::createDish()
 {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(0, 1);
+    int randBool = distribution(gen);
+
+    /*if(randBool)
+    {
+        
+    }*/
     throw "Not yet implemented";
 }
 
@@ -14,7 +25,7 @@ void Dish::dishState()
 
 DishStatus* Dish::getDishStatus()
 {
-    throw "Not yet implemented";
+    return this->dishStatus;
 }
 
 void Dish::change()
@@ -22,9 +33,9 @@ void Dish::change()
     throw "Not yet implemented";
 }
 
-void Dish::setState(DishStatus* state)
+void Dish::setDishStatus(DishStatus* state)
 {
-    throw "Not yet implemented";
+    this->dishStatus = state;
 }
 
 std::string Dish::getCustomerName()
@@ -52,37 +63,32 @@ void DishStatus::DishState()
     throw "Not yet implemented";
 }
 
-std::string DishStatus::getStatus()
-{
-    throw "Not yet implemented";
-}
-
 void Preparing::updateDishStatus()
 {
-    throw "Not yet implemented";
+    this->setDishStatus(new Preparing());
 }
 
-void Preparing::getStatus()
+std::string Preparing::getStatus()
 {
-    throw "Not yet implemented";
+    return "Preparing";
 }
 
 void readyForPickUp::updateDishStatus()
 {
-    throw "Not yet implemented";
+    this->setDishStatus(new readyForPickUp());
 }
 
-void readyForPickUp::getStatus()
+std::string readyForPickUp::getStatus()
 {
-    throw "Not yet implemented";
+    return "Ready for Pick Up!";
 }
 
-void stiiQueued::updateDishStatus()
+void stillQueued::updateDishStatus()
 {
-    throw "Not yet implemented";
+    this->setDishStatus(new stillQueued());
 }
 
-void stiiQueued::getStatus()
+std::string stillQueued::getStatus()
 {
-    throw "Not yet implemented";
+    return "Still Queued";
 }

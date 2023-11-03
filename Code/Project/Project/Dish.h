@@ -20,52 +20,54 @@ class Dish
 {
     private:
         Menu* order;
-        DishStatus* prepareState;
+        DishStatus* dishStatus;
         std::string customerName;
         int customerTable;
+        Beverage* beverage;
+        Starter* starter;
+        MainDish* mainDish;
+        Dessert* dessert;
         
     public:
         Customer* customer;
-        DishStatus* dishStatus;
         HeadChef* headChef;
         Dish* createDish();
         void dishState();
         DishStatus* getDishStatus();
         void change();
-        void setState(DishStatus* state);
+        void setDishStatus(DishStatus* state);
         std::string getCustomerName();
         void setCustomerName(std::string customerName);
         int getCustomerTable();
         void setCustomerTable(int customerTableID);
 };
 
-class DishStatus
+class DishStatus: public Dish
 {
     public:
-        Dish* dish;
         virtual void updateDishStatus() = 0;
         void DishState();
-        std::string getStatus();
+        virtual std::string getStatus() = 0;
     };
 
 class Preparing: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 
 class readyForPickUp: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 
-class stiiQueued: public DishStatus
+class stillQueued: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 #endif //PROJECT_DISH_H
