@@ -32,7 +32,7 @@ class Dish
         void dishState();
         DishStatus* getDishStatus();
         void change();
-        void setState(DishStatus* state);
+        void setDishStatus(DishStatus* state);
         std::string getCustomerName();
         void setCustomerName(std::string customerName);
         int getCustomerTable();
@@ -52,20 +52,20 @@ class Preparing: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 
 class readyForPickUp: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 
-class stiiQueued: public DishStatus
+class stillQueued: public DishStatus
 {
     public:
         void updateDishStatus();
-        void getStatus();
+        std::string getStatus();
 };
 #endif //PROJECT_DISH_H
