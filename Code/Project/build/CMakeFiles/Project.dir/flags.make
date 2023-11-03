@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/mathe/Documents/School/cos214/Project/.
+CXX_INCLUDES = -I/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/.
 
-CXX_FLAGS = -std=gnu++14
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++14
 
