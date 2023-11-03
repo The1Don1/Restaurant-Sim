@@ -28,7 +28,7 @@ void generalWaiter::addToTab(std::string customerName, double amount) {
 }
 
 void generalWaiter::payTab(std::string customerName, double amount) {
-    throw "Not yet implemented";
+    throw "Not implemented yet";
 }
 
 Tab* generalWaiter::getTab(std::string customerName) {

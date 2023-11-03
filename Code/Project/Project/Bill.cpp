@@ -43,7 +43,7 @@ void SubBill::getSubBill(std::string customerName) {
 }
 
 void PaymentStrategy::paymentMethod() {
-    throw "Not yet implemented";
+    throw "Not implemented yet";
 }
 
 void Cash::paymentMethod() {
