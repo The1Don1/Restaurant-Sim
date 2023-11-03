@@ -1,88 +1,73 @@
 //
 // Created by mathe on 2023/10/31.
 //
+
 #include "Dish.h"
-Dish* Dish::createDish()
-{
+Dish* Dish::createDish() {
     throw "Not yet implemented";
 }
 
-void Dish::dishState()
-{
+void Dish::dishState() {
+    throw "Not yet implemented";
+}
+DishStatus* Dish::getDishStatus() {
     throw "Not yet implemented";
 }
 
-DishStatus* Dish::getDishStatus()
-{
+void Dish::change() {
     throw "Not yet implemented";
 }
 
-void Dish::change()
-{
+void Dish::setState(DishStatus* state) {
     throw "Not yet implemented";
 }
 
-void Dish::setState(DishStatus* state)
-{
-    throw "Not yet implemented";
-}
-
-std::string Dish::getCustomerName()
-{
+std::string Dish::getCustomerName() {
     return this->customerName;
 }
 
-void Dish::setCustomerName(std::string customerName)
-{
+void Dish::setCustomerName(std::string customerName) {
     this->customerName = customerName;
 }
 
-int Dish::getCustomerTable()
-{
+int Dish::getCustomerTable() {
     return this->customerTable;
 }
 
-void Dish::setCustomerTable(int customerTableID)
-{
+void Dish::setCustomerTable(int customerTableID) {
     this->customerTable = customerTableID;
 }
 
-void DishStatus::DishState()
-{
+void DishStatus::DishState() {
     throw "Not yet implemented";
 }
 
-std::string DishStatus::getStatus()
-{
+std::string DishStatus::getStatus() {
     throw "Not yet implemented";
 }
 
-void Preparing::updateDishStatus()
-{
+void Preparing::updateDishStatus() {
     throw "Not yet implemented";
 }
 
-void Preparing::getStatus()
-{
+void Preparing::getStatus() {
     throw "Not yet implemented";
 }
 
-void readyForPickUp::updateDishStatus()
-{
+void readyForPickUp::updateDishStatus() {
     throw "Not yet implemented";
 }
 
-void readyForPickUp::getStatus()
-{
+void readyForPickUp::getStatus() {
     throw "Not yet implemented";
 }
 
-void stiiQueued::updateDishStatus()
-{
+
+void stiiQueued::updateDishStatus() {
     throw "Not yet implemented";
 }
 
-void stiiQueued::getStatus()
-{
+void stiiQueued::getStatus() {
     throw "Not yet implemented";
 }
+

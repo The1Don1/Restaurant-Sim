@@ -109,3 +109,35 @@ public:
 //    virtual void addTable(AbstractTable* aTable);
 };
 #endif //PROJECT_WAITER_H
+
+
+/* -----------------------------------Tash Implementation-------------------------------------------------------------- */ 
+/*
+#ifndef WAITER_H
+#define WAITER_H
+
+#include <iostream>
+using namespace std;
+
+class Table;
+
+class Waiter
+{
+    private:
+        int waitTime;
+        string waiterName;
+        Table *headTable;
+
+    public:
+        Waiter(string name, Table* headTable);
+        void reduceTimer();
+        void deliverOrder();
+        void visitTable(Table* table);
+        void getOrders();
+        void setOrders();
+        void prepareDish();
+
+};
+
+#endif 
+*/
