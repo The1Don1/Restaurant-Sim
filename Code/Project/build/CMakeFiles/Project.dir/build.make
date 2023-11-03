@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project
+CMAKE_SOURCE_DIR = /mnt/c/Users/mathe/Documents/School/cos214/Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build
+CMAKE_BINARY_DIR = /mnt/c/Users/mathe/Documents/School/cos214/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project.dir/depend.make
@@ -70,228 +70,228 @@ include CMakeFiles/Project.dir/progress.make
 include CMakeFiles/Project.dir/flags.make
 
 CMakeFiles/Project.dir/Table.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Table.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Table.cpp
+CMakeFiles/Project.dir/Table.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Table.cpp
 CMakeFiles/Project.dir/Table.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/Table.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Table.cpp.o -MF CMakeFiles/Project.dir/Table.cpp.o.d -o CMakeFiles/Project.dir/Table.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Table.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/Table.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Table.cpp.o -MF CMakeFiles/Project.dir/Table.cpp.o.d -o CMakeFiles/Project.dir/Table.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Table.cpp
 
 CMakeFiles/Project.dir/Table.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Table.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Table.cpp > CMakeFiles/Project.dir/Table.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Table.cpp > CMakeFiles/Project.dir/Table.cpp.i
 
 CMakeFiles/Project.dir/Table.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Table.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Table.cpp -o CMakeFiles/Project.dir/Table.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Table.cpp -o CMakeFiles/Project.dir/Table.cpp.s
 
 CMakeFiles/Project.dir/Customer.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Customer.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Customer.cpp
+CMakeFiles/Project.dir/Customer.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Customer.cpp
 CMakeFiles/Project.dir/Customer.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/Customer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Customer.cpp.o -MF CMakeFiles/Project.dir/Customer.cpp.o.d -o CMakeFiles/Project.dir/Customer.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Customer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/Customer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Customer.cpp.o -MF CMakeFiles/Project.dir/Customer.cpp.o.d -o CMakeFiles/Project.dir/Customer.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Customer.cpp
 
 CMakeFiles/Project.dir/Customer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Customer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Customer.cpp > CMakeFiles/Project.dir/Customer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Customer.cpp > CMakeFiles/Project.dir/Customer.cpp.i
 
 CMakeFiles/Project.dir/Customer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Customer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Customer.cpp -o CMakeFiles/Project.dir/Customer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Customer.cpp -o CMakeFiles/Project.dir/Customer.cpp.s
 
 CMakeFiles/Project.dir/Waiter.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Waiter.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Waiter.cpp
+CMakeFiles/Project.dir/Waiter.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Waiter.cpp
 CMakeFiles/Project.dir/Waiter.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/Waiter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Waiter.cpp.o -MF CMakeFiles/Project.dir/Waiter.cpp.o.d -o CMakeFiles/Project.dir/Waiter.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Waiter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/Waiter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Waiter.cpp.o -MF CMakeFiles/Project.dir/Waiter.cpp.o.d -o CMakeFiles/Project.dir/Waiter.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Waiter.cpp
 
 CMakeFiles/Project.dir/Waiter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Waiter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Waiter.cpp > CMakeFiles/Project.dir/Waiter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Waiter.cpp > CMakeFiles/Project.dir/Waiter.cpp.i
 
 CMakeFiles/Project.dir/Waiter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Waiter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Waiter.cpp -o CMakeFiles/Project.dir/Waiter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Waiter.cpp -o CMakeFiles/Project.dir/Waiter.cpp.s
 
 CMakeFiles/Project.dir/Floor.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Floor.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Floor.cpp
+CMakeFiles/Project.dir/Floor.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Floor.cpp
 CMakeFiles/Project.dir/Floor.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/Floor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Floor.cpp.o -MF CMakeFiles/Project.dir/Floor.cpp.o.d -o CMakeFiles/Project.dir/Floor.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Floor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/Floor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Floor.cpp.o -MF CMakeFiles/Project.dir/Floor.cpp.o.d -o CMakeFiles/Project.dir/Floor.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Floor.cpp
 
 CMakeFiles/Project.dir/Floor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Floor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Floor.cpp > CMakeFiles/Project.dir/Floor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Floor.cpp > CMakeFiles/Project.dir/Floor.cpp.i
 
 CMakeFiles/Project.dir/Floor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Floor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Floor.cpp -o CMakeFiles/Project.dir/Floor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Floor.cpp -o CMakeFiles/Project.dir/Floor.cpp.s
 
 CMakeFiles/Project.dir/App.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/App.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/App.cpp
+CMakeFiles/Project.dir/App.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/App.cpp
 CMakeFiles/Project.dir/App.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/App.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/App.cpp.o -MF CMakeFiles/Project.dir/App.cpp.o.d -o CMakeFiles/Project.dir/App.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/App.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/App.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/App.cpp.o -MF CMakeFiles/Project.dir/App.cpp.o.d -o CMakeFiles/Project.dir/App.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/App.cpp
 
 CMakeFiles/Project.dir/App.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/App.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/App.cpp > CMakeFiles/Project.dir/App.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/App.cpp > CMakeFiles/Project.dir/App.cpp.i
 
 CMakeFiles/Project.dir/App.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/App.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/App.cpp -o CMakeFiles/Project.dir/App.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/App.cpp -o CMakeFiles/Project.dir/App.cpp.s
 
 CMakeFiles/Project.dir/Facade.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Facade.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Facade.cpp
+CMakeFiles/Project.dir/Facade.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Facade.cpp
 CMakeFiles/Project.dir/Facade.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/Facade.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Facade.cpp.o -MF CMakeFiles/Project.dir/Facade.cpp.o.d -o CMakeFiles/Project.dir/Facade.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Facade.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/Facade.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Facade.cpp.o -MF CMakeFiles/Project.dir/Facade.cpp.o.d -o CMakeFiles/Project.dir/Facade.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Facade.cpp
 
 CMakeFiles/Project.dir/Facade.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Facade.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Facade.cpp > CMakeFiles/Project.dir/Facade.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Facade.cpp > CMakeFiles/Project.dir/Facade.cpp.i
 
 CMakeFiles/Project.dir/Facade.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Facade.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Facade.cpp -o CMakeFiles/Project.dir/Facade.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Facade.cpp -o CMakeFiles/Project.dir/Facade.cpp.s
 
 CMakeFiles/Project.dir/Engine.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Engine.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Engine.cpp
+CMakeFiles/Project.dir/Engine.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Engine.cpp
 CMakeFiles/Project.dir/Engine.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/Engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Engine.cpp.o -MF CMakeFiles/Project.dir/Engine.cpp.o.d -o CMakeFiles/Project.dir/Engine.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/Engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Engine.cpp.o -MF CMakeFiles/Project.dir/Engine.cpp.o.d -o CMakeFiles/Project.dir/Engine.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Engine.cpp
 
 CMakeFiles/Project.dir/Engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Engine.cpp > CMakeFiles/Project.dir/Engine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Engine.cpp > CMakeFiles/Project.dir/Engine.cpp.i
 
 CMakeFiles/Project.dir/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Engine.cpp -o CMakeFiles/Project.dir/Engine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Engine.cpp -o CMakeFiles/Project.dir/Engine.cpp.s
 
 CMakeFiles/Project.dir/Bill.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Bill.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Bill.cpp
+CMakeFiles/Project.dir/Bill.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Bill.cpp
 CMakeFiles/Project.dir/Bill.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project.dir/Bill.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Bill.cpp.o -MF CMakeFiles/Project.dir/Bill.cpp.o.d -o CMakeFiles/Project.dir/Bill.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Bill.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project.dir/Bill.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Bill.cpp.o -MF CMakeFiles/Project.dir/Bill.cpp.o.d -o CMakeFiles/Project.dir/Bill.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Bill.cpp
 
 CMakeFiles/Project.dir/Bill.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Bill.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Bill.cpp > CMakeFiles/Project.dir/Bill.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Bill.cpp > CMakeFiles/Project.dir/Bill.cpp.i
 
 CMakeFiles/Project.dir/Bill.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Bill.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Bill.cpp -o CMakeFiles/Project.dir/Bill.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Bill.cpp -o CMakeFiles/Project.dir/Bill.cpp.s
 
 CMakeFiles/Project.dir/Visitor.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Visitor.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Visitor.cpp
+CMakeFiles/Project.dir/Visitor.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Visitor.cpp
 CMakeFiles/Project.dir/Visitor.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project.dir/Visitor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Visitor.cpp.o -MF CMakeFiles/Project.dir/Visitor.cpp.o.d -o CMakeFiles/Project.dir/Visitor.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Visitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project.dir/Visitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Visitor.cpp.o -MF CMakeFiles/Project.dir/Visitor.cpp.o.d -o CMakeFiles/Project.dir/Visitor.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Visitor.cpp
 
 CMakeFiles/Project.dir/Visitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Visitor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Visitor.cpp > CMakeFiles/Project.dir/Visitor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Visitor.cpp > CMakeFiles/Project.dir/Visitor.cpp.i
 
 CMakeFiles/Project.dir/Visitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Visitor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Visitor.cpp -o CMakeFiles/Project.dir/Visitor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Visitor.cpp -o CMakeFiles/Project.dir/Visitor.cpp.s
 
 CMakeFiles/Project.dir/TableIterator.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/TableIterator.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/TableIterator.cpp
+CMakeFiles/Project.dir/TableIterator.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/TableIterator.cpp
 CMakeFiles/Project.dir/TableIterator.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project.dir/TableIterator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/TableIterator.cpp.o -MF CMakeFiles/Project.dir/TableIterator.cpp.o.d -o CMakeFiles/Project.dir/TableIterator.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/TableIterator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project.dir/TableIterator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/TableIterator.cpp.o -MF CMakeFiles/Project.dir/TableIterator.cpp.o.d -o CMakeFiles/Project.dir/TableIterator.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/TableIterator.cpp
 
 CMakeFiles/Project.dir/TableIterator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/TableIterator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/TableIterator.cpp > CMakeFiles/Project.dir/TableIterator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/TableIterator.cpp > CMakeFiles/Project.dir/TableIterator.cpp.i
 
 CMakeFiles/Project.dir/TableIterator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/TableIterator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/TableIterator.cpp -o CMakeFiles/Project.dir/TableIterator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/TableIterator.cpp -o CMakeFiles/Project.dir/TableIterator.cpp.s
 
 CMakeFiles/Project.dir/Kitchen.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Kitchen.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Kitchen.cpp
+CMakeFiles/Project.dir/Kitchen.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Kitchen.cpp
 CMakeFiles/Project.dir/Kitchen.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project.dir/Kitchen.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Kitchen.cpp.o -MF CMakeFiles/Project.dir/Kitchen.cpp.o.d -o CMakeFiles/Project.dir/Kitchen.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Kitchen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project.dir/Kitchen.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Kitchen.cpp.o -MF CMakeFiles/Project.dir/Kitchen.cpp.o.d -o CMakeFiles/Project.dir/Kitchen.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Kitchen.cpp
 
 CMakeFiles/Project.dir/Kitchen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Kitchen.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Kitchen.cpp > CMakeFiles/Project.dir/Kitchen.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Kitchen.cpp > CMakeFiles/Project.dir/Kitchen.cpp.i
 
 CMakeFiles/Project.dir/Kitchen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Kitchen.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Kitchen.cpp -o CMakeFiles/Project.dir/Kitchen.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Kitchen.cpp -o CMakeFiles/Project.dir/Kitchen.cpp.s
 
 CMakeFiles/Project.dir/Chef.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Chef.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Chef.cpp
+CMakeFiles/Project.dir/Chef.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Chef.cpp
 CMakeFiles/Project.dir/Chef.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project.dir/Chef.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Chef.cpp.o -MF CMakeFiles/Project.dir/Chef.cpp.o.d -o CMakeFiles/Project.dir/Chef.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Chef.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project.dir/Chef.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Chef.cpp.o -MF CMakeFiles/Project.dir/Chef.cpp.o.d -o CMakeFiles/Project.dir/Chef.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Chef.cpp
 
 CMakeFiles/Project.dir/Chef.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Chef.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Chef.cpp > CMakeFiles/Project.dir/Chef.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Chef.cpp > CMakeFiles/Project.dir/Chef.cpp.i
 
 CMakeFiles/Project.dir/Chef.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Chef.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Chef.cpp -o CMakeFiles/Project.dir/Chef.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Chef.cpp -o CMakeFiles/Project.dir/Chef.cpp.s
 
 CMakeFiles/Project.dir/Menu.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Menu.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Menu.cpp
+CMakeFiles/Project.dir/Menu.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Menu.cpp
 CMakeFiles/Project.dir/Menu.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Project.dir/Menu.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Menu.cpp.o -MF CMakeFiles/Project.dir/Menu.cpp.o.d -o CMakeFiles/Project.dir/Menu.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Project.dir/Menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Menu.cpp.o -MF CMakeFiles/Project.dir/Menu.cpp.o.d -o CMakeFiles/Project.dir/Menu.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Menu.cpp
 
 CMakeFiles/Project.dir/Menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Menu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Menu.cpp > CMakeFiles/Project.dir/Menu.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Menu.cpp > CMakeFiles/Project.dir/Menu.cpp.i
 
 CMakeFiles/Project.dir/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Menu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Menu.cpp -o CMakeFiles/Project.dir/Menu.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Menu.cpp -o CMakeFiles/Project.dir/Menu.cpp.s
 
 CMakeFiles/Project.dir/Dish.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Dish.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Dish.cpp
+CMakeFiles/Project.dir/Dish.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Dish.cpp
 CMakeFiles/Project.dir/Dish.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Project.dir/Dish.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Dish.cpp.o -MF CMakeFiles/Project.dir/Dish.cpp.o.d -o CMakeFiles/Project.dir/Dish.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Dish.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Project.dir/Dish.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Dish.cpp.o -MF CMakeFiles/Project.dir/Dish.cpp.o.d -o CMakeFiles/Project.dir/Dish.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Dish.cpp
 
 CMakeFiles/Project.dir/Dish.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Dish.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Dish.cpp > CMakeFiles/Project.dir/Dish.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Dish.cpp > CMakeFiles/Project.dir/Dish.cpp.i
 
 CMakeFiles/Project.dir/Dish.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Dish.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Dish.cpp -o CMakeFiles/Project.dir/Dish.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Dish.cpp -o CMakeFiles/Project.dir/Dish.cpp.s
 
 CMakeFiles/Project.dir/Tab.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Tab.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Tab.cpp
+CMakeFiles/Project.dir/Tab.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Tab.cpp
 CMakeFiles/Project.dir/Tab.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Project.dir/Tab.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Tab.cpp.o -MF CMakeFiles/Project.dir/Tab.cpp.o.d -o CMakeFiles/Project.dir/Tab.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Tab.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Project.dir/Tab.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Tab.cpp.o -MF CMakeFiles/Project.dir/Tab.cpp.o.d -o CMakeFiles/Project.dir/Tab.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Tab.cpp
 
 CMakeFiles/Project.dir/Tab.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Tab.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Tab.cpp > CMakeFiles/Project.dir/Tab.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Tab.cpp > CMakeFiles/Project.dir/Tab.cpp.i
 
 CMakeFiles/Project.dir/Tab.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Tab.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Tab.cpp -o CMakeFiles/Project.dir/Tab.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Tab.cpp -o CMakeFiles/Project.dir/Tab.cpp.s
 
 CMakeFiles/Project.dir/Manager.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/Manager.cpp.o: /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Manager.cpp
+CMakeFiles/Project.dir/Manager.cpp.o: /mnt/c/Users/mathe/Documents/School/cos214/Project/Manager.cpp
 CMakeFiles/Project.dir/Manager.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Project.dir/Manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Manager.cpp.o -MF CMakeFiles/Project.dir/Manager.cpp.o.d -o CMakeFiles/Project.dir/Manager.cpp.o -c /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Project.dir/Manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/Manager.cpp.o -MF CMakeFiles/Project.dir/Manager.cpp.o.d -o CMakeFiles/Project.dir/Manager.cpp.o -c /mnt/c/Users/mathe/Documents/School/cos214/Project/Manager.cpp
 
 CMakeFiles/Project.dir/Manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/Manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Manager.cpp > CMakeFiles/Project.dir/Manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/mathe/Documents/School/cos214/Project/Manager.cpp > CMakeFiles/Project.dir/Manager.cpp.i
 
 CMakeFiles/Project.dir/Manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/Manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project/Manager.cpp -o CMakeFiles/Project.dir/Manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/mathe/Documents/School/cos214/Project/Manager.cpp -o CMakeFiles/Project.dir/Manager.cpp.s
 
 # Object files for target Project
 Project_OBJECTS = \
@@ -333,7 +333,7 @@ Project: CMakeFiles/Project.dir/Tab.cpp.o
 Project: CMakeFiles/Project.dir/Manager.cpp.o
 Project: CMakeFiles/Project.dir/build.make
 Project: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -345,6 +345,6 @@ CMakeFiles/Project.dir/clean:
 .PHONY : CMakeFiles/Project.dir/clean
 
 CMakeFiles/Project.dir/depend:
-	cd /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/Project /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build /mnt/c/Users/mathe/OneDrive/Documents/GitHub/Restaurant-Sim/Code/Project/build/CMakeFiles/Project.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/mathe/Documents/School/cos214/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/mathe/Documents/School/cos214/Project /mnt/c/Users/mathe/Documents/School/cos214/Project /mnt/c/Users/mathe/Documents/School/cos214/build /mnt/c/Users/mathe/Documents/School/cos214/build /mnt/c/Users/mathe/Documents/School/cos214/build/CMakeFiles/Project.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Project.dir/depend
 
