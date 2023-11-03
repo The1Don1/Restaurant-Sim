@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "Mathenda", "Sage", "ntando", "SelenatorXo", "Rea", "Fentse" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "Mathenda", "Sage", "ntando", "SelenatorXo", "Rea", "Fentse" ]
     
 env:
   BUILD_TYPE: Release
