@@ -190,11 +190,11 @@ public:
     ChickenTenders();
 };
 
-class Cheesesteak: public MainDish
+class CheeseSteak: public MainDish
 {
 
 public:
-    Cheesesteak();
+    CheeseSteak();
 };
 
 class BBQSteak: public MainDish

@@ -21,37 +21,126 @@ void Dish::createDish()
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribution(0, 1);
+
+    std::random_device rd2;
+    std::mt19937 gen2(rd2());
+    std::uniform_int_distribution<int> distribution2(1, 5);
+    int randItem;
+
     int randBool = distribution(gen);
 
     if(randBool)
     {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<int> distribution(1, 5);
+        randItem = distribution2(gen2);
 
-        int randBev = distribution(gen);
-
-        /*switch(randBev)
+        switch(randItem)
         {
             case 1:
-                this.be
+                this->beverage = new CokeZero();
                 break;
             case 2:
-
+                this->beverage = new Coke();
                 break;
             case 3:
-
-
+                this->beverage = new Sprite();
                 break;
             case 4:
-
+                this->beverage = new StrawberryMilkshake();
                 break;
             case 5:
-
+                this->beverage = new BubblegumMilkshake();
                 break;
-        }*/
+        }
     }
-    throw "Not yet implemented";
+
+    std::random_device rd3;
+    std::mt19937 gen3(rd3());
+    std::uniform_int_distribution<int> distribution3(1, 4);
+
+    randBool = distribution(gen);
+
+    if(randBool)
+    {
+        randItem = distribution3(gen3);
+
+        switch(randItem)
+        {
+            case 1:
+                this->starter = new OnionRings();
+                break;
+            case 2:
+                this->starter = new ChickenWings();
+                break;
+            case 3:
+                this->starter = new Chips();
+                break;
+            case 4:
+                this->starter = new ChickenNuggets();
+                break;
+        }
+    }
+
+    std::random_device rd4;
+    std::mt19937 gen4(rd4());
+    std::uniform_int_distribution<int> distribution4(1, 8);
+
+    randBool = distribution(gen);
+
+    if(randBool)
+    {
+        randItem = distribution4(gen4);
+
+        switch(randItem)
+        {
+            case 1:
+                this->mainDish = new CheeseBurger();
+                break;
+            case 2:
+                this->mainDish = new HotDog();
+                break;
+            case 3:
+                this->mainDish = new MacAndCheese();
+                break;
+            case 4:
+                this->mainDish = new BBQRibs();
+                break;
+            case 5:
+                this->mainDish = new ChickenTenders();
+                break;
+            case 6:
+                this->mainDish = new CheeseSteak();
+                break;
+            case 7:
+                this->mainDish = new BBQSteak();
+                break;
+            case 8:
+                this->mainDish = new BuffaloWings();
+                break;
+        }
+    }
+    
+    randBool = distribution(gen);
+
+    if(randBool)
+    {
+        randItem = distribution3(gen3);
+
+        switch(randItem)
+        {
+            case 1:
+                this->dessert = new Pancakes();
+                break;
+            case 2:
+                this->dessert = new Donuts();
+                break;
+            case 3:
+                this->dessert = new Waffles();
+                break;
+            case 4:
+                this->dessert = new ChocolateBrownies();
+                break;
+        }
+    }
 }
 
 void Dish::dishState()
