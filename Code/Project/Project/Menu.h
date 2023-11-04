@@ -12,20 +12,20 @@ protected:
     int timeToPrepare;
     double price;
 public:
-    virtual std::string getDescription() = 0;
-    virtual double getPrice() = 0;
-    virtual int getTimeToPrepare() = 0;
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 class MenuDecorator: public Menu
 {
 protected: Menu* item;
 public:
     Menu* menu;
-    std::string getDescription() = 0;
-    double getPrice() = 0;
+    std::string getDescription();
+    double getPrice();
     MenuDecorator();
     MenuDecorator(Menu* baseItem);
-    int getTimeToPrepare() = 0;
+    int getTimeToPrepare() ;
 };
 
 class Coleslaw: public MenuDecorator
@@ -74,12 +74,6 @@ class Beverage: public Menu
      * Beverages are coke zero, coke, sprite, strawberry milkshakes and bubblegum milkshakes
      * Beverages will all take 1 second to prepare
      */
-public:
-    std::string getDescription() = 0;
-
-    double getPrice() = 0;
-
-    int getTimeToPrepare() = 0;
 };
 
 class CokeZero: public Beverage
@@ -146,13 +140,6 @@ class Starter: public Menu
      * Starters are onion rings, chicken wings and chicken nuggets
      * Starters will all take 5 seconds to prepare
      */
-
-public:
-    std::string getDescription() = 0;
-
-    double getPrice() = 0;
-
-    int getTimeToPrepare() = 0;
 };
 
 class OnionRings: public Starter
@@ -215,12 +202,6 @@ class MainDish: public Menu
      * Main dishes are cheeseburgers, hot dogs, mac and cheese, bbq ribs, chicken tenders, cheesesteak, bbq steak and buffalo wings
      * Main dishes will all take 10 seconds to prepare
      */
-public:
-    std::string getDescription() = 0;
-
-    double getPrice() = 0;
-
-    int getTimeToPrepare() = 0;
 };
 
 class CheeseBurger: public MainDish
@@ -335,12 +316,6 @@ class Dessert: public Menu
      * Desserts are waffle, chocolate brownies, donuts and pancakes
      * Desserts will all take 3 seconds to prepare
      */
-
-public: std::string getDescription() = 0;
-
-public: double getPrice() = 0;
-
-public: int getTimeToPrepare() = 0;
 };
 
 class Pancakes: public Dessert
