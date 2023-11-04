@@ -46,7 +46,6 @@ class Dish
 class DishStatus : public Dish
 {
     public:
-        DishStatus();
         virtual void updateDishStatus() = 0;
         void DishState();
         virtual std::string getStatus() = 0;
@@ -55,7 +54,6 @@ class DishStatus : public Dish
 class Preparing: public DishStatus
 {
     public:
-        Preparing();
         void updateDishStatus();
         std::string getStatus();
 };
@@ -63,7 +61,6 @@ class Preparing: public DishStatus
 class ReadyForPickUp: public DishStatus
 {
     public:
-        ReadyForPickUp();
         void updateDishStatus();
         std::string getStatus();
 };
@@ -71,7 +68,6 @@ class ReadyForPickUp: public DishStatus
 class StillQueued: public DishStatus
 {
     public:
-        StillQueued();
         void updateDishStatus();
         std::string getStatus();
 };

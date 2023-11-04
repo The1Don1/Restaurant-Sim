@@ -99,9 +99,6 @@ void DishStatus::DishState()
     throw "Not yet implemented";
 }
 
-Preparing::Preparing()
-{}
-
 void Preparing::updateDishStatus()
 {
     this->setDishStatus(this);
@@ -112,9 +109,6 @@ std::string Preparing::getStatus()
     return "Preparing";
 }
 
-ReadyForPickUp::ReadyForPickUp()
-{}
-
 void ReadyForPickUp::updateDishStatus()
 {
     this->setDishStatus(this);
@@ -124,9 +118,6 @@ std::string ReadyForPickUp::getStatus()
 {
     return "Ready for Pick Up!";
 }
-
-StillQueued::StillQueued()
-{}
 
 void StillQueued::updateDishStatus()
 {
