@@ -60,6 +60,26 @@ double MushroomSauce::getPrice() {
     return 24.99 + menu->getPrice();
 }
 
+
+Salad::Salad(Menu *baseItem, std::string description, double price, int timeToprepare)
+{
+    this->menu = baseItem;
+    this->additionDescription = description;
+    this->additionPrice = price;
+    this->additionTimeToPrepare = timeToprepare;
+}
+
+int Salad::getTimeToPrepare() {
+    return 3 + menu->getTimeToPrepare();
+}
+
+std::string Salad::getDescription() {
+    return menu->getDescription() +  " and a salad";
+}
+
+double Salad::getPrice() {
+    return 34.99 + menu->getPrice();
+}
 ////
 
 
