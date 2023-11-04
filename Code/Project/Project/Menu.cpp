@@ -18,20 +18,6 @@ int MenuDecorator::getTimeToPrepare() {
     throw "Not yet implemented";
 }
 
-std::string CustomAddition::getDescription() {
-    throw "Not yet implemented";
-}
-
-double CustomAddition::getPrice() {
-    throw "Not yet implemented";
-}
-
-
-int CustomAddition::getTimeToPrepare() {
-    throw "Not yet implemented";
-}
-
-
 std::string Beverage::getDescription() {
     throw "Not yet implemented";
 }
