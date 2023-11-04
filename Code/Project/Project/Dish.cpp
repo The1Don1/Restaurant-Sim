@@ -125,6 +125,7 @@ void StillQueued::updateDishStatus()
 }
 
 std::string StillQueued::getStatus()
+
 {
     return "Still Queued";
 }
