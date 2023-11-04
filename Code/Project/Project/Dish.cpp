@@ -4,7 +4,19 @@
 #include "Dish.h"
 #include <random>
 
-Dish* Dish::createDish()
+Dish::Dish(std::string customerName, int customerTable)
+{
+    this->customerName = customerName;
+    this->customerTable = customerTable;
+    this->beverage = NULL;
+    this->starter = NULL;
+    this->mainDish = NULL;
+    this->dessert = NULL;
+
+    this->createDish();
+}
+
+void Dish::createDish()
 {
     std::random_device rd;
     std::mt19937 gen(rd());

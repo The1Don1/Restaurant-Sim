@@ -19,7 +19,6 @@ class Menu;
 class Dish
 {
     private:
-        Menu* order;
         DishStatus* prepareState;
         std::string customerName;
         int customerTable;
@@ -32,7 +31,9 @@ class Dish
         Customer* customer;
         DishStatus* dishStatus;
         HeadChef* headChef;
-        Dish* createDish();
+
+        Dish(std::string customerName, int customerTable);
+        void createDish();
         void dishState();
         DishStatus* getDishStatus();
         void change();
@@ -46,15 +47,15 @@ class Dish
 class DishStatus : public Dish
 {
     public:
-        Dish* dish;
         virtual void updateDishStatus() = 0;
         void DishState();
         std::string getStatus();
-    };
+};
 
 class Preparing: public DishStatus
 {
     public:
+        Preparing();
         void updateDishStatus();
         std::string getStatus();
 };
@@ -62,6 +63,7 @@ class Preparing: public DishStatus
 class readyForPickUp: public DishStatus
 {
     public:
+        readyForPickUp();
         void updateDishStatus();
         std::string getStatus();
 };
@@ -69,6 +71,7 @@ class readyForPickUp: public DishStatus
 class stillQueued: public DishStatus
 {
     public:
+        stillQueued();
         void updateDishStatus();
         std::string getStatus();
 };
