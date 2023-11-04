@@ -95,14 +95,14 @@ class Sprite: public Beverage
 };
 
 class StrawberryMilkshake: public Beverage
-{
+
     public:
         StrawberryMilkshake();
 };
 
 
 class BubblegumMilkshake: public Beverage
-{
+
     public:
         BubblegumMilkshake();
 }; 
@@ -195,6 +195,7 @@ class CheeseSteak: public MainDish
 
 public:
     CheeseSteak();
+=======
 };
 
 class BBQSteak: public MainDish
