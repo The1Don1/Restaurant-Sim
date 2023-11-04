@@ -82,10 +82,6 @@ double Salad::getPrice() {
 }
 ////
 
-Beverage::Beverage()
-{   
-}
-
 /*
     Beverages:
 */
