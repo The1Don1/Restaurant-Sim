@@ -6,6 +6,11 @@ MenuDecorator::MenuDecorator(Menu *baseItem)
 {
     this->menu = baseItem;
 }
+
+MenuDecorator::MenuDecorator()
+{
+    
+}
 ////
 /**
  * @brief Custom additions can be added to an original menu item by a customer

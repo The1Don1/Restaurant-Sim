@@ -20,6 +20,7 @@ public:
     Menu* menu;
     std::string getDescription() = 0;
     double getPrice() = 0;
+    MenuDecorator();
     MenuDecorator(Menu* baseItem);
     int getTimeToPrepare() = 0;
 };
