@@ -99,6 +99,9 @@ void DishStatus::DishState()
     throw "Not yet implemented";
 }
 
+Preparing::Preparing()
+{}
+
 void Preparing::updateDishStatus()
 {
     this->setDishStatus(new Preparing());
@@ -109,22 +112,28 @@ std::string Preparing::getStatus()
     return "Preparing";
 }
 
-void readyForPickUp::updateDishStatus()
+ReadyForPickUp::ReadyForPickUp()
+{}
+
+void ReadyForPickUp::updateDishStatus()
 {
-    this->setDishStatus(new readyForPickUp());
+    this->setDishStatus(new ReadyForPickUp());
 }
 
-std::string readyForPickUp::getStatus()
+std::string ReadyForPickUp::getStatus()
 {
     return "Ready for Pick Up!";
 }
 
-void stillQueued::updateDishStatus()
+StillQueued::StillQueued()
+{}
+
+void StillQueued::updateDishStatus()
 {
-    this->setDishStatus(new stillQueued());
+    this->setDishStatus(new StillQueued());
 }
 
-std::string stillQueued::getStatus()
+std::string StillQueued::getStatus()
 {
     return "Still Queued";
 }
