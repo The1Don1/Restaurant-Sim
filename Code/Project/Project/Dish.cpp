@@ -4,17 +4,53 @@
 #include "Dish.h"
 #include <random>
 
-Dish* Dish::createDish()
+Dish::Dish(std::string customerName, int customerTable)
+{
+    this->customerName = customerName;
+    this->customerTable = customerTable;
+    this->beverage = NULL;
+    this->starter = NULL;
+    this->mainDish = NULL;
+    this->dessert = NULL;
+
+    this->createDish();
+}
+
+void Dish::createDish()
 {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribution(0, 1);
     int randBool = distribution(gen);
 
-    /*if(randBool)
+    if(randBool)
     {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<int> distribution(1, 5);
 
-    }*/
+        int randBev = distribution(gen);
+
+        /*switch(randBev)
+        {
+            case 1:
+                this.be
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+        }*/
+    }
     throw "Not yet implemented";
 }
 
@@ -65,7 +101,7 @@ void DishStatus::DishState()
 
 void Preparing::updateDishStatus()
 {
-    this->setDishStatus(new Preparing());
+    this->setDishStatus(this);
 }
 
 std::string Preparing::getStatus()
@@ -73,22 +109,23 @@ std::string Preparing::getStatus()
     return "Preparing";
 }
 
-void readyForPickUp::updateDishStatus()
+void ReadyForPickUp::updateDishStatus()
 {
-    this->setDishStatus(new readyForPickUp());
+    this->setDishStatus(this);
 }
 
-std::string readyForPickUp::getStatus()
+std::string ReadyForPickUp::getStatus()
 {
     return "Ready for Pick Up!";
 }
 
-void stillQueued::updateDishStatus()
+void StillQueued::updateDishStatus()
 {
-    this->setDishStatus(new stillQueued());
+    this->setDishStatus(this);
 }
 
-std::string stillQueued::getStatus()
+std::string StillQueued::getStatus()
+
 {
     return "Still Queued";
 }

@@ -1,7 +1,6 @@
 //
 // Created by mathe on 2023/10/31.
 //
-
 #ifndef PROJECT_DISH_H
 #define PROJECT_DISH_H
 
@@ -19,16 +18,21 @@ class Menu;
 class Dish
 {
     private:
-        Menu* order;
         DishStatus* prepareState;
         std::string customerName;
         int customerTable;
+        Menu* beverage;
+        Menu* starter;
+        Menu* mainDish;
+        Menu* dessert;
         
     public:
         Customer* customer;
         DishStatus* dishStatus;
         HeadChef* headChef;
-        Dish* createDish();
+
+        Dish(std::string customerName, int customerTable);
+        void createDish();
         void dishState();
         DishStatus* getDishStatus();
         void change();
@@ -42,11 +46,10 @@ class Dish
 class DishStatus : public Dish
 {
     public:
-        Dish* dish;
         virtual void updateDishStatus() = 0;
         void DishState();
-        std::string getStatus();
-    };
+        virtual std::string getStatus() = 0;
+};
 
 class Preparing: public DishStatus
 {
@@ -55,14 +58,14 @@ class Preparing: public DishStatus
         std::string getStatus();
 };
 
-class readyForPickUp: public DishStatus
+class ReadyForPickUp: public DishStatus
 {
     public:
         void updateDishStatus();
         std::string getStatus();
 };
 
-class stillQueued: public DishStatus
+class StillQueued: public DishStatus
 {
     public:
         void updateDishStatus();
