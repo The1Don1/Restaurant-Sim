@@ -95,7 +95,7 @@ class Sprite: public Beverage
 };
 
 class StrawberryMilkshake: public Beverage
-
+{
     public:
         StrawberryMilkshake();
 };
