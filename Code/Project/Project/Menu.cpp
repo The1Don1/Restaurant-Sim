@@ -109,19 +109,94 @@ int CokeZero::getTimeToPrepare()
 }
 ///
 
+Coke::Coke()
+{
+    this->description = "Coke";
+    this->price = 20.00;
+    this->timeToPrepare = 1;
+}
+
 std::string Coke::getDescription()
 {
-    return "Coke";
+    return this->description;
 }
 
 double Coke::getPrice()
 {
-    return 20.00;
+    return this->price;
 }
 
 int Coke::getTimeToPrepare()
 {
-    return 1;
+    return this->timeToPrepare;
+}
+///
+
+Sprite::Sprite()
+{
+    this->description = "Sprite";
+    this->price = 20.00;
+    this->timeToPrepare = 1;
+}
+
+std::string Sprite::getDescription()
+{
+    return this->description;
+}
+
+double Sprite::getPrice()
+{
+    return this->price;
+}
+
+int Sprite::getTimeToPrepare()
+{
+    return this->timeToPrepare;
+}
+///
+
+BubblegumMilkshake::BubblegumMilkshake()
+{
+    this->description = "Bubblegum milkshake";
+    this->price = 25.00;
+    this->timeToPrepare = 1;
+}
+
+std::string BubblegumMilkshake::getDescription()
+{
+    return this->description;
+}
+
+double BubblegumMilkshake::getPrice()
+{
+    return this->price;
+}
+
+int BubblegumMilkshake::getTimeToPrepare()
+{
+    return this->timeToPrepare;
+}
+////
+StrawberryMilkshake::StrawberryMilkshake()
+{
+    this->description = "Strawberry milkshake";
+    this->price = 25.00;
+    this->timeToPrepare = 1;
+}
+
+std::string StrawberryMilkshake::getDescription()
+{
+    return this->description;
+}
+
+double StrawberryMilkshake::getPrice()
+{
+    return this->price;
+}
+
+int StrawberryMilkshake::getTimeToPrepare()
+{
+    return this->timeToPrepare;
 }
 
 //////
