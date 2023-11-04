@@ -12,21 +12,20 @@ protected:
     int timeToPrepare;
     double price;
 public:
-    virtual std::string getDescription() = 0;
-    virtual double getPrice() = 0;
-    virtual void menu() = 0;
-    virtual int getTimeToPrepare() = 0;
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 class MenuDecorator: public Menu
 {
 protected: Menu* item;
 public:
     Menu* menu;
-    std::string getDescription() = 0;
-    double getPrice() = 0;
+    std::string getDescription();
+    double getPrice();
     MenuDecorator();
     MenuDecorator(Menu* baseItem);
-    int getTimeToPrepare() = 0;
+    int getTimeToPrepare() ;
 };
 
 class Coleslaw: public MenuDecorator
@@ -75,68 +74,32 @@ class Beverage: public Menu
      * Beverages are coke zero, coke, sprite, strawberry milkshakes and bubblegum milkshakes
      * Beverages will all take 1 second to prepare
      */
-public:
-    std::string getDescription() = 0;
-
-    double getPrice() = 0;
-
-    int getTimeToPrepare() = 0;
 };
 
 class CokeZero: public Beverage
 {
     CokeZero();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Coke: public Beverage
 {
     Coke();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Sprite: public Beverage
 {
     Sprite();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class StrawberryMilkshake: public Beverage
 {
     StrawberryMilkshake();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 
 class BubblegumMilkshake: public Beverage
 {
     BubblegumMilkshake();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 }; 
 
 ////////
@@ -147,57 +110,34 @@ class Starter: public Menu
      * Starters are onion rings, chicken wings and chicken nuggets
      * Starters will all take 5 seconds to prepare
      */
-
-public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class OnionRings: public Starter
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    OnionRings();
 };
 
 class ChickenWings: public Starter
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    ChickenWings();
 };
 
 class Chips: public Starter
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    Chips();
 };
 
 class ChickenNuggets: public Starter
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    ChickenNuggets();
 };
 
 ///////
@@ -208,100 +148,62 @@ class MainDish: public Menu
      * Main dishes are cheeseburgers, hot dogs, mac and cheese, bbq ribs, chicken tenders, cheesesteak, bbq steak and buffalo wings
      * Main dishes will all take 10 seconds to prepare
      */
-public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class CheeseBurger: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    CheeseBurger();
 };
 
 class HotDog: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    HotDog();
 };
 
 class MacAndCheese: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    MacAndCheese();
 };
 
 class BBQRibs: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    BBQRibs();
 };
 
 class ChickenTenders: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    ChickenTenders();
 };
 
 class Cheesesteak: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    Cheesesteak();
 };
 
 class BBQSteak: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    BBQSteak();
 };
 
 class BuffaloWings: public MainDish
 {
 
 public:
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
+    BuffaloWings();
 };
 
 /////
@@ -312,54 +214,34 @@ class Dessert: public Menu
      * Desserts are waffle, chocolate brownies, donuts and pancakes
      * Desserts will all take 3 seconds to prepare
      */
-
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
 };
 
 class Pancakes: public Dessert
 {
 
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public: 
+    Pancakes();
 };
 
 
 class Donuts: public Dessert
 {
 
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public: 
+    Donuts();
 };
 
 
 class Waffles: public Dessert
 {
-
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public:
+    Waffles();
 };
 
 class ChocolateBrownies: public Dessert
 {
-
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public:
+    ChocolateBrownies();
 };
 
 #endif //PROJECT_MENU_H
