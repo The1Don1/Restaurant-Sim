@@ -11,10 +11,34 @@ Dish* Dish::createDish()
     std::uniform_int_distribution<int> distribution(0, 1);
     int randBool = distribution(gen);
 
-    /*if(randBool)
+    if(randBool)
     {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<int> distribution(1, 5);
 
-    }*/
+        int randBev = distribution(gen);
+
+        /*switch(randBev)
+        {
+            case 1:
+                this.be
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+        }*/
+    }
     throw "Not yet implemented";
 }
 
