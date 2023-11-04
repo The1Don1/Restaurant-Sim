@@ -187,9 +187,9 @@ HotDog::HotDog()
     this->timeToPrepare = 10;
 }
 
-Cheesesteak::Cheesesteak()
+CheeseSteak::CheeseSteak()
 {
-    this->description = "Cheesesteak";
+    this->description = "CheeseSteak";
     this->price = 169.99;
     this->timeToPrepare = 10;
 }
