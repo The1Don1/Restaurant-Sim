@@ -102,7 +102,7 @@ class StrawberryMilkshake: public Beverage
 
 
 class BubblegumMilkshake: public Beverage
-
+{
     public:
         BubblegumMilkshake();
 }; 
