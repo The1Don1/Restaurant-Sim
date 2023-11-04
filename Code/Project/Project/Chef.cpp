@@ -5,7 +5,7 @@
 
 void Chef::VisitTable(Table* table)
 {
-    throw "Not yet implemented";
+    this->currTable = table;
 }
 
 std::string Chef::GetRole()
@@ -18,26 +18,22 @@ void Chef::SetNextChef(Chef* chef)
     this->nextChef = chef;
 }
 
-commisChef::commisChef()
+commisChef::commisChef(HeadChef* headChef)
 {
+    this->headChef = headChef;
     this->role = "commisChef";
     this->nextChef = NULL;
     this->currTable = NULL;
 }
 
-void commisChef::VisitTable(Table* table)
+void commisChef::PrepareDish(Dish* dish)
 {
-    this->currTable = table;
-}
-
-void commisChef::PrepareDish(Dish dish)
-{
-    throw "Not yet implemented";
+    this->dish = dish;
 }
 
 void commisChef::Notify()
 {
-    throw "Not yet implemented";
+    this->headChef->Notify(this->headChef->waiter);
 }
 
 HeadChef::HeadChef()
@@ -47,19 +43,50 @@ HeadChef::HeadChef()
     this->currTable = NULL;
 }
 
-void HeadChef::VisitTable(Table* table)
+void HeadChef::PrepareDish(Dish* dish)
 {
-    this->currTable = table;
+    if(this->dishQueue.size() > 0)
+    {
+        commisChef* chef;
+
+        if(this->freeChefs.size() > 0)
+        {
+            chef = this->freeChefs.front();
+            this->freeChefs.pop();
+            chef->PrepareDish(dish);
+            this->busyChefs.push(chef);
+        }
+        else
+        {
+            std::cout << "There are no chefs available" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "There are no orders waiting to be made" << std::endl;
+    }
 }
 
-void HeadChef::PrepareDish(Dish dish)
+void HeadChef::addChef()
 {
-    throw "Not yet implemented";
+    this->freeChefs.push(new commisChef(this));
 }
 
-void HeadChef::Notify(generalWaiter waiter)
+void HeadChef::removeChef()
 {
-    throw "Not yet implemented";
+    if(this->freeChefs.size() > 0)
+    {
+        this->freeChefs.pop();
+    }
+    else
+    {
+        std::cout << "There's no one left to fire" << std::endl;
+    }
+}
+
+void HeadChef::Notify(generalWaiter* waiter)
+{
+    waiter->deliverOrder();
 }
 
 void HeadChef::Attach(generalWaiter* waiter)
@@ -75,12 +102,6 @@ void HeadChef::Detach()
     }
     else
     {
-        std::cout << "No more chefs left" << std::endl;
+        std::cout << "No more waiters left" << std::endl;
     }
 }
-
-void HeadChef::TakeOrder(generalWaiter& waiter, Dish* dish)
-{
-    throw "Not yet implemented";
-}
-

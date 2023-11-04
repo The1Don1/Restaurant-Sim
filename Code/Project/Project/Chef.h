@@ -26,16 +26,19 @@ class Chef
         Waiter* waiter;
         void VisitTable(Table* table);
         std::string GetRole();
-        virtual void PrepareDish(Dish dish) = 0;
+        virtual void PrepareDish(Dish* dish) = 0;
         void SetNextChef(Chef* chef);
 };
 
-class commisChef: public Chef
+class commisChef: public HeadChef
 {
+    private:
+        Dish* dish;
+        HeadChef* headChef;
+
     public:
-        commisChef();
-        void VisitTable(Table* table);
-        void PrepareDish(Dish dish);
+        commisChef(HeadChef* headChef);
+        void PrepareDish(Dish* dish);
         void Notify();
 };
 
@@ -46,18 +49,20 @@ class HeadChef: public Chef
     private:
         std::queue<generalWaiter*> waiters;
         std::queue<Dish*> dishQueue;
+        std::queue<commisChef*> freeChefs;
+        std::queue<commisChef*> busyChefs;
 
     public:
         generalWaiter* waiter;
         Dish* dish;
 
         HeadChef();
-        void VisitTable(Table* table);
-        void PrepareDish(Dish dish);
-        void Notify(generalWaiter waiter);
+        void PrepareDish(Dish* dish);
+        void addChef();
+        void removeChef();
+        void Notify(generalWaiter* waiter);
         void Attach(generalWaiter* waiter);
         void Detach();
-        void TakeOrder(generalWaiter& waiter, Dish* dish);
 };
 
 class ChefNotifier;
