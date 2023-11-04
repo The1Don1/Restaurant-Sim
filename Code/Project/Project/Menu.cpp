@@ -1,9 +1,11 @@
 //
 // Created by mathe on 2023/10/31.
 //
-
 #include "Menu.h"
-
+MenuDecorator::MenuDecorator(Menu *baseItem)
+{
+    this->menu = baseItem;
+}
 ////
 /**
  * @brief Custom additions can be added to an original menu item by a customer
@@ -83,3 +85,5 @@ double Dessert::getPrice() {
 int Dessert::getTimeToPrepare() {
     throw "Not yet implemented";
 }
+
+

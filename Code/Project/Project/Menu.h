@@ -18,11 +18,11 @@ class MenuDecorator: public Menu
 protected: Menu* item;
 public:
     Menu* menu;
-    std::string getDescription();
-    double getPrice();
+    std::string getDescription() = 0;
+    double getPrice() = 0;
     MenuDecorator();
     MenuDecorator(Menu* baseItem);
-    int getTimeToPrepare();
+    int getTimeToPrepare() = 0;
 };
 
 class Coleslaw: public MenuDecorator
