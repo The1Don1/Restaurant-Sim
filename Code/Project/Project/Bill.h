@@ -19,7 +19,8 @@ public:
     virtual double getTotalCost() = 0;
 
 };
-class Bill : public AbstractBill{
+class Bill : public AbstractBill
+{
 private:
     Customer* mood;
 
@@ -41,6 +42,8 @@ public:
     void handleTip();
 
     void getBill();
+    
+    void addTip(float tip);
 
     Bill(double price) : totalAmount(price){}
 

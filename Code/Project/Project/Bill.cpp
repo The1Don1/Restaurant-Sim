@@ -74,6 +74,11 @@ void Bill::handleTip() {
 
 }
 
+void Bill::addTip(float tip)
+{
+    totalAmount += tip;
+}
+
 void Bill::getBill() {
 
 }
