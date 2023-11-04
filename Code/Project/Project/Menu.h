@@ -76,8 +76,6 @@ class Beverage: public Menu
      * Beverages will all take 1 second to prepare
      */
 public:
-    Beverage();
-
     std::string getDescription() = 0;
 
     double getPrice() = 0;
@@ -87,6 +85,8 @@ public:
 
 class CokeZero: public Beverage
 {
+    CokeZero();
+
     std::string getDescription();
 
     double getPrice();
