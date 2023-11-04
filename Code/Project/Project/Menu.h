@@ -12,10 +12,10 @@ protected:
     int timeToPrepare;
     double price;
 public:
-    virtual std::string getDescription() = 0;
-    virtual double getPrice() = 0;
+    virtual std::string getDescription();
+    virtual double getPrice();
     virtual void menu() = 0;
-    virtual int getTimeToPrepare() = 0;
+    virtual int getTimeToPrepare();
 };
 class MenuDecorator: public Menu
 {
@@ -149,17 +149,19 @@ class Starter: public Menu
      */
 
 public:
-    std::string getDescription();
+    std::string getDescription() = 0;
 
-    double getPrice();
+    double getPrice() = 0;
 
-    int getTimeToPrepare();
+    int getTimeToPrepare() = 0;
 };
 
 class OnionRings: public Starter
 {
 
 public:
+    OnionRings();
+
     std::string getDescription();
 
     double getPrice();
@@ -171,6 +173,8 @@ class ChickenWings: public Starter
 {
 
 public:
+    ChickenWings();
+
     std::string getDescription();
 
     double getPrice();
@@ -182,6 +186,8 @@ class Chips: public Starter
 {
 
 public:
+    Chips();
+
     std::string getDescription();
 
     double getPrice();
@@ -193,6 +199,8 @@ class ChickenNuggets: public Starter
 {
 
 public:
+    ChickenNuggets();
+
     std::string getDescription();
 
     double getPrice();
@@ -209,17 +217,19 @@ class MainDish: public Menu
      * Main dishes will all take 10 seconds to prepare
      */
 public:
-    std::string getDescription();
+    std::string getDescription() = 0;
 
-    double getPrice();
+    double getPrice() = 0;
 
-    int getTimeToPrepare();
+    int getTimeToPrepare() = 0;
 };
 
 class CheeseBurger: public MainDish
 {
 
 public:
+    CheeseBurger();
+
     std::string getDescription();
 
     double getPrice();
@@ -231,6 +241,8 @@ class HotDog: public MainDish
 {
 
 public:
+    HotDog();
+
     std::string getDescription();
 
     double getPrice();
@@ -242,6 +254,8 @@ class MacAndCheese: public MainDish
 {
 
 public:
+    MacAndCheese();
+
     std::string getDescription();
 
     double getPrice();
@@ -253,6 +267,8 @@ class BBQRibs: public MainDish
 {
 
 public:
+    BBQRibs();
+
     std::string getDescription();
 
     double getPrice();
@@ -264,6 +280,8 @@ class ChickenTenders: public MainDish
 {
 
 public:
+    ChickenTenders();
+
     std::string getDescription();
 
     double getPrice();
@@ -275,6 +293,8 @@ class Cheesesteak: public MainDish
 {
 
 public:
+    Cheesesteak();
+
     std::string getDescription();
 
     double getPrice();
@@ -286,6 +306,8 @@ class BBQSteak: public MainDish
 {
 
 public:
+    BBQSteak();
+
     std::string getDescription();
 
     double getPrice();
@@ -297,6 +319,8 @@ class BuffaloWings: public MainDish
 {
 
 public:
+    BuffaloWings();
+
     std::string getDescription();
 
     double getPrice();
@@ -313,53 +337,51 @@ class Dessert: public Menu
      * Desserts will all take 3 seconds to prepare
      */
 
-public: std::string getDescription();
+public: std::string getDescription() = 0;
 
-public: double getPrice();
+public: double getPrice() = 0;
 
-public: int getTimeToPrepare();
+public: int getTimeToPrepare() = 0;
 };
 
 class Pancakes: public Dessert
 {
 
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public: 
+    Pancakes();
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 
 
 class Donuts: public Dessert
 {
 
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public: 
+    Donuts();
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 
 
 class Waffles: public Dessert
 {
-
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public:
+    Waffles();
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 
 class ChocolateBrownies: public Dessert
 {
-
-public: std::string getDescription();
-
-public: double getPrice();
-
-public: int getTimeToPrepare();
+public:
+    ChocolateBrownies();
+    std::string getDescription();
+    double getPrice();
+    int getTimeToPrepare();
 };
 
 #endif //PROJECT_MENU_H
