@@ -23,10 +23,10 @@ class Dish
         DishStatus* prepareState;
         std::string customerName;
         int customerTable;
-        Beverage* beverage;
-        Starter* starter;
-        MainDish* mainDish;
-        Dessert* dessert;
+        Menu* beverage;
+        Menu* starter;
+        Menu* mainDish;
+        Menu* dessert;
         
     public:
         Customer* customer;
