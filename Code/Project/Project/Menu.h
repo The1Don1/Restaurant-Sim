@@ -79,57 +79,27 @@ class Beverage: public Menu
 class CokeZero: public Beverage
 {
     CokeZero();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Coke: public Beverage
 {
     Coke();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Sprite: public Beverage
 {
     Sprite();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class StrawberryMilkshake: public Beverage
 {
     StrawberryMilkshake();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 
 class BubblegumMilkshake: public Beverage
 {
     BubblegumMilkshake();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 }; 
 
 ////////
@@ -147,12 +117,6 @@ class OnionRings: public Starter
 
 public:
     OnionRings();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class ChickenWings: public Starter
@@ -160,12 +124,6 @@ class ChickenWings: public Starter
 
 public:
     ChickenWings();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Chips: public Starter
@@ -173,12 +131,6 @@ class Chips: public Starter
 
 public:
     Chips();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class ChickenNuggets: public Starter
@@ -186,12 +138,6 @@ class ChickenNuggets: public Starter
 
 public:
     ChickenNuggets();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 ///////
@@ -209,12 +155,6 @@ class CheeseBurger: public MainDish
 
 public:
     CheeseBurger();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class HotDog: public MainDish
@@ -222,12 +162,6 @@ class HotDog: public MainDish
 
 public:
     HotDog();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class MacAndCheese: public MainDish
@@ -235,12 +169,6 @@ class MacAndCheese: public MainDish
 
 public:
     MacAndCheese();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class BBQRibs: public MainDish
@@ -248,12 +176,6 @@ class BBQRibs: public MainDish
 
 public:
     BBQRibs();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class ChickenTenders: public MainDish
@@ -261,12 +183,6 @@ class ChickenTenders: public MainDish
 
 public:
     ChickenTenders();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class Cheesesteak: public MainDish
@@ -274,12 +190,6 @@ class Cheesesteak: public MainDish
 
 public:
     Cheesesteak();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class BBQSteak: public MainDish
@@ -287,12 +197,6 @@ class BBQSteak: public MainDish
 
 public:
     BBQSteak();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 class BuffaloWings: public MainDish
@@ -300,12 +204,6 @@ class BuffaloWings: public MainDish
 
 public:
     BuffaloWings();
-
-    std::string getDescription();
-
-    double getPrice();
-
-    int getTimeToPrepare();
 };
 
 /////
@@ -323,9 +221,6 @@ class Pancakes: public Dessert
 
 public: 
     Pancakes();
-    std::string getDescription();
-    double getPrice();
-    int getTimeToPrepare();
 };
 
 
@@ -334,9 +229,6 @@ class Donuts: public Dessert
 
 public: 
     Donuts();
-    std::string getDescription();
-    double getPrice();
-    int getTimeToPrepare();
 };
 
 
@@ -344,18 +236,12 @@ class Waffles: public Dessert
 {
 public:
     Waffles();
-    std::string getDescription();
-    double getPrice();
-    int getTimeToPrepare();
 };
 
 class ChocolateBrownies: public Dessert
 {
 public:
     ChocolateBrownies();
-    std::string getDescription();
-    double getPrice();
-    int getTimeToPrepare();
 };
 
 #endif //PROJECT_MENU_H
