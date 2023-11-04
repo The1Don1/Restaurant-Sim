@@ -35,7 +35,7 @@ public:
     void customer();
     void checkOrder(Dish* order);
 //    CustomerMood getMood();
-    void setMood();
+    void setMood(CustomerMood* cstmrMood);
     CustomerMood* getMood(); 
     void leaveRestaurant(Bill* bill);
     std::string makeComplaint();
