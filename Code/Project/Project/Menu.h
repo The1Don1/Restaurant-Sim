@@ -14,7 +14,6 @@ protected:
 public:
     virtual std::string getDescription();
     virtual double getPrice();
-    virtual void menu() = 0;
     virtual int getTimeToPrepare();
 };
 class MenuDecorator: public Menu
