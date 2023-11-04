@@ -96,6 +96,8 @@ class CokeZero: public Beverage
 
 class Coke: public Beverage
 {
+    Coke();
+
     std::string getDescription();
 
     double getPrice();
@@ -105,6 +107,8 @@ class Coke: public Beverage
 
 class Sprite: public Beverage
 {
+    Sprite();
+
     std::string getDescription();
 
     double getPrice();
@@ -114,6 +118,8 @@ class Sprite: public Beverage
 
 class StrawberryMilkshake: public Beverage
 {
+    StrawberryMilkshake();
+
     std::string getDescription();
 
     double getPrice();
@@ -124,6 +130,8 @@ class StrawberryMilkshake: public Beverage
 
 class BubblegumMilkshake: public Beverage
 {
+    BubblegumMilkshake();
+
     std::string getDescription();
 
     double getPrice();
