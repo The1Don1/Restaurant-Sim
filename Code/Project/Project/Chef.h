@@ -33,6 +33,8 @@ class Chef
 
 class ChefNotifier;
 
+class commisChef;
+
 class HeadChef: public Chef
 {
     private:
