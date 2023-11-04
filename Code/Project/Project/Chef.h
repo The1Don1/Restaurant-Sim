@@ -30,17 +30,6 @@ class Chef
         void SetNextChef(Chef* chef);
 };
 
-class commisChef: public HeadChef
-{
-    private:
-        Dish* dish;
-        HeadChef* headChef;
-
-    public:
-        commisChef(HeadChef* headChef);
-        void PrepareDish(Dish* dish);
-        void Notify();
-};
 
 class ChefNotifier;
 
@@ -63,6 +52,18 @@ class HeadChef: public Chef
         void Notify(generalWaiter* waiter);
         void Attach(generalWaiter* waiter);
         void Detach();
+};
+
+class commisChef: public HeadChef
+{
+    private:
+        Dish* dish;
+        HeadChef* headChef;
+
+    public:
+        commisChef(HeadChef* headChef);
+        void PrepareDish(Dish* dish);
+        void Notify();
 };
 
 class ChefNotifier;
