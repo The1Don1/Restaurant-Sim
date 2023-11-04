@@ -3,25 +3,7 @@
 //
 
 #include "Menu.h"
-//
-// Created by mathe on 2023/10/31.
-//
 
-#include "Menu.h"
-std::string MenuDecorator::getDescription() {
-    throw "Not yet implemented";
-}
-
-double MenuDecorator::getPrice() {
-    throw "Not yet implemented";
-}
-
-MenuDecorator::MenuDecorator(Menu* baseItem) {
-}
-
-int MenuDecorator::getTimeToPrepare() {
-    throw "Not yet implemented";
-}
 ////
 /**
  * @brief Custom additions can be added to an original menu item by a customer
