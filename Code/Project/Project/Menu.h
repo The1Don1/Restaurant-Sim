@@ -78,28 +78,33 @@ class Beverage: public Menu
 
 class CokeZero: public Beverage
 {
-    CokeZero();
+    public:
+        CokeZero();
 };
 
 class Coke: public Beverage
 {
-    Coke();
+    public:
+        Coke();
 };
 
 class Sprite: public Beverage
 {
-    Sprite();
+    public:
+        Sprite();
 };
 
 class StrawberryMilkshake: public Beverage
 {
-    StrawberryMilkshake();
+    public:
+        StrawberryMilkshake();
 };
 
 
 class BubblegumMilkshake: public Beverage
 {
-    BubblegumMilkshake();
+    public:
+        BubblegumMilkshake();
 }; 
 
 ////////
@@ -185,11 +190,11 @@ public:
     ChickenTenders();
 };
 
-class Cheesesteak: public MainDish
+class CheeseSteak: public MainDish
 {
 
 public:
-    Cheesesteak();
+    CheeseSteak();
 };
 
 class BBQSteak: public MainDish
