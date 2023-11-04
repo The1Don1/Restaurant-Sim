@@ -3,74 +3,83 @@
 //
 #include "Chef.h"
 
-void Chef::visitTable(Table* table)
+void Chef::VisitTable(Table* table)
 {
     throw "Not yet implemented";
 }
 
-std::string Chef::getRole()
+std::string Chef::GetRole()
 {
     return this->role;
 }
 
+void Chef::SetNextChef(Chef* chef)
+{
+    this->nextChef = chef;
+}
 
-void Chef::setNextChef(Chef* chef)
+commisChef::commisChef()
+{
+    this->role = "commisChef";
+    this->nextChef = NULL;
+    this->currTable = NULL;
+}
+
+void commisChef::VisitTable(Table* table)
+{
+    this->currTable = table;
+}
+
+void commisChef::PrepareDish(Dish dish)
 {
     throw "Not yet implemented";
 }
 
-
-void commisChef::visitTable(Table* table)
+void commisChef::Notify()
 {
     throw "Not yet implemented";
 }
 
-void commisChef::prepareDish(Dish dish)
+HeadChef::HeadChef()
+{
+    this->role = "HeadChef";
+    this->nextChef = NULL;
+    this->currTable = NULL;
+}
+
+void HeadChef::VisitTable(Table* table)
+{
+    this->currTable = table;
+}
+
+void HeadChef::PrepareDish(Dish dish)
 {
     throw "Not yet implemented";
 }
 
-void commisChef::notify()
+void HeadChef::Notify(generalWaiter waiter)
 {
     throw "Not yet implemented";
 }
 
-void commisChef::setNextChef(Chef* chef)
+void HeadChef::Attach(generalWaiter* waiter)
 {
-    throw "Not yet implemented";
+    this->waiters.push(waiter);
 }
 
-void HeadChef::visitTable(Table* table)
+void HeadChef::Detach()
 {
-    throw "Not yet implemented";
+    if(this->waiters.size() > 0)
+    {
+        return waiters.pop();
+    }
+    else
+    {
+        std::cout << "No more chefs left" << std::endl;
+    }
 }
 
-void HeadChef::prepareDish(Dish dish)
-{
-    throw "Not yet implemented";
-}
-
-void HeadChef::notify(generalWaiter waiter)
-{
-    throw "Not yet implemented";
-}
-
-void HeadChef::attach(generalWaiter* waiter)
-{
-    throw "Not yet implemented";
-}
-
-void HeadChef::detach(generalWaiter* waiter)
-{
-    throw "Not yet implemented";
-}
-
-void HeadChef::setNextChef(Chef* chef)
-{
-    throw "Not yet implemented";
-}
-
-void HeadChef::takeOrder(generalWaiter& waiter, Dish* dish)
+void HeadChef::TakeOrder(generalWaiter& waiter, Dish* dish)
 {
     throw "Not yet implemented";
 }

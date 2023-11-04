@@ -15,27 +15,28 @@ class Kitchen;
 
 class Chef
 {
-    private:
+    protected:
         std::string role;
         Chef* nextChef;
+        Table* currTable;
 
     public:
         Kitchen* kitchen;
         Chef* chef;
         Waiter* waiter;
-        void visitTable(Table* table);
-        std::string getRole();
-        virtual void prepareDish(Dish dish) = 0;
-        void setNextChef(Chef* chef);
+        void VisitTable(Table* table);
+        std::string GetRole();
+        virtual void PrepareDish(Dish dish) = 0;
+        void SetNextChef(Chef* chef);
 };
 
 class commisChef: public Chef
 {
     public:
-        void visitTable(Table* table);
-        void prepareDish(Dish dish);
-        void notify();
-        void setNextChef(Chef* chef);
+        commisChef();
+        void VisitTable(Table* table);
+        void PrepareDish(Dish dish);
+        void Notify();
 };
 
 class ChefNotifier;
@@ -49,13 +50,14 @@ class HeadChef: public Chef
     public:
         generalWaiter* waiter;
         Dish* dish;
-        void visitTable(Table* table);
-        void prepareDish(Dish dish);
-        void notify(generalWaiter waiter);
-        void attach(generalWaiter* waiter);
-        void detach(generalWaiter* waiter);
-        void setNextChef(Chef* chef);
-        void takeOrder(generalWaiter& waiter, Dish* dish);
+
+        HeadChef();
+        void VisitTable(Table* table);
+        void PrepareDish(Dish dish);
+        void Notify(generalWaiter waiter);
+        void Attach(generalWaiter* waiter);
+        void Detach();
+        void TakeOrder(generalWaiter& waiter, Dish* dish);
 };
 
 class ChefNotifier;
@@ -64,7 +66,7 @@ class Observer
 {
     public:
         ChefNotifier* chefNotifier;
-        virtual void deliverOrder() = 0;
+        virtual void DeliverOrder() = 0;
 };
 
 class ChefNotifier
@@ -74,8 +76,8 @@ class ChefNotifier
         Observer* observer;
 
     public:
-        virtual void attach(Observer* observer) = 0;
-        virtual void detach(Observer* observer) = 0;
-        virtual void notify() = 0;
+        virtual void Attach(Observer* observer) = 0;
+        virtual void Detach(Observer* observer) = 0;
+        virtual void Notify() = 0;
 };
 #endif //PROJECT_CHEF_H
