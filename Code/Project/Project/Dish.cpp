@@ -104,7 +104,7 @@ Preparing::Preparing()
 
 void Preparing::updateDishStatus()
 {
-    this->setDishStatus(new Preparing());
+    this->setDishStatus(this);
 }
 
 std::string Preparing::getStatus()
@@ -117,7 +117,7 @@ ReadyForPickUp::ReadyForPickUp()
 
 void ReadyForPickUp::updateDishStatus()
 {
-    this->setDishStatus(new ReadyForPickUp());
+    this->setDishStatus(this);
 }
 
 std::string ReadyForPickUp::getStatus()
@@ -130,7 +130,7 @@ StillQueued::StillQueued()
 
 void StillQueued::updateDishStatus()
 {
-    this->setDishStatus(new StillQueued());
+    this->setDishStatus(this);
 }
 
 std::string StillQueued::getStatus()
