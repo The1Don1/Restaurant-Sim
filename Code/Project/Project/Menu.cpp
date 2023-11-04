@@ -9,7 +9,7 @@ MenuDecorator::MenuDecorator(Menu *baseItem)
 
 MenuDecorator::MenuDecorator()
 {
-    
+
 }
 ////
 /**
@@ -38,6 +38,26 @@ std::string Coleslaw::getDescription() {
 
 double Coleslaw::getPrice() {
     return 19.99 + menu->getPrice();
+}
+
+MushroomSauce::MushroomSauce(Menu *baseItem, std::string description, double price, int timeToprepare)
+{
+    this->menu = baseItem;
+    this->additionDescription = description;
+    this->additionPrice = price;
+    this->additionTimeToPrepare = timeToprepare;
+}
+
+int MushroomSauce::getTimeToPrepare() {
+    return 3 + menu->getTimeToPrepare();
+}
+
+std::string MushroomSauce::getDescription() {
+    return menu->getDescription() +  " and mushroom sauce";
+}
+
+double MushroomSauce::getPrice() {
+    return 24.99 + menu->getPrice();
 }
 
 ////
