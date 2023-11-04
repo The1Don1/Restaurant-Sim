@@ -12,9 +12,9 @@ protected:
     int timeToPrepare;
     double price;
 public:
-    virtual std::string getDescription();
-    virtual double getPrice();
-    virtual int getTimeToPrepare();
+    virtual std::string getDescription() = 0;
+    virtual double getPrice() = 0;
+    virtual int getTimeToPrepare() = 0;
 };
 class MenuDecorator: public Menu
 {
