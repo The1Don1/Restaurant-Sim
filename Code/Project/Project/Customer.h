@@ -14,7 +14,8 @@ class CustomerMood;
 class Tab;
 class AbstractBill;
 class SubBill;
-class Customer {
+class Customer 
+{
 private:
     Dish* order;
     CustomerMood* customerMood;
@@ -24,16 +25,18 @@ private:
     std::string name;
     AbstractBill* bill;
     int tableNum;
+    Table* myTable;
 public:
     Dish* dish;
     Table* table;
-    Customer(Bill* bill);
-    float pay();
+    Customer(/*Bill* bill*/std::string customerName, int tableNum, Table* table);
+    float pay(PaymentStrategy* aMethodOfPayment);
     bool tip();
     void customer();
     void checkOrder(Dish* order);
 //    CustomerMood getMood();
     void setMood();
+    CustomerMood* getMood(); 
     void leaveRestaurant(Bill* bill);
     std::string makeComplaint();
     SubBill getBill();
@@ -43,6 +46,8 @@ public:
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
+    void accept(Visitor* visitor);
+    void assignCustomerTable(Table* customerTable);
 };
 
 class CustomerMood{

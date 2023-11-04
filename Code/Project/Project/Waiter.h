@@ -9,12 +9,15 @@
 #include <utility>
 #include "Floor.h"
 #include "Chef.h"
+#include "Visitor.h"
 
 class Floor;
 class Table;
 class Tab;
 class Customer;
-class Waiter {
+class Visitor;
+class Waiter 
+{
 private:
 
 
@@ -37,8 +40,6 @@ public:
         virtual void performTask() = 0;
         void deliverOrder();
 
-        void visitTable(Table* table);
-
         void prepareDish();
 //
         void getOrders();
@@ -48,18 +49,16 @@ public:
 };
 
 //Template Method: Concrete Class
-class generalWaiter : public Waiter{
+class generalWaiter : public Waiter, public Visitor
+{
 public:
     generalWaiter(std::string basicString, Table *pTable, Floor *pFloor) : Waiter(basicString, pTable,
                                                                                   pFloor) {}
 
     void performTask();
-    void visitTable(Table table);
-
+    virtual void visitTable(Customer* customer);
     void addToTab(std::string name, double amount);
-
     void payTab(std::string name, double amount);
-
     Tab* getTab(std::string name);
     void decrementTimer(){
         if(this->waiterWaitTime <= 0){
@@ -90,7 +89,8 @@ public:
 };
 
 //Template Method: Concrete Class
-class MaitreD : public Waiter{
+class MaitreD : public Waiter
+{
 private:
     std::queue<Customer*> waitingList;
 public:

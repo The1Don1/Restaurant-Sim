@@ -9,6 +9,7 @@
 #include "Table.h"
 #include "Floor.h"
 #include "TableIterator.h"
+#include "Visitor.h"
 
 class TableState;
 class Bill;
@@ -75,12 +76,13 @@ private:
             TableIterator* createIterator();
             void accept(Visitor* visitor);
             AbstractTable* clone() ;
-            void acceptVisitor(Visitor visitor);
+            void acceptVisitor(Visitor* visitor);
             void handleState();
             void changeTableState();
             void setState(TableState* state);
             Bill* getBill(Customer* customer);
             void getOrders();
+            Customer* getCustomer();
     };
 class TableState
 {
@@ -101,7 +103,7 @@ public: std::string getState();
 class Occupied: public TableState
 {
 
-public: void acceptVisitor(Visitor visitor);
+public: void acceptVisitor(Visitor* visitor);
 
 public: void handleState();
 
@@ -114,5 +116,6 @@ public: void handleState();
 
 public: std::string getState();
 };
+
 
 #endif //PROJECT_TABLE_H

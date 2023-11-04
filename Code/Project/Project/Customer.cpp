@@ -3,11 +3,24 @@
 //
 
 #include "Customer.h"
-Customer::Customer(Bill* aMethodOfPayment) {
+Customer::Customer(/*Bill* */std::string customerName, int tableNum, Table* table) 
+{
+    order = NULL;
+    readyToPay = false;
+    readyToOrder = false;
+    readyToLeave = false;
+    name = customerName;
+    this->tableNum = tableNum;
+    myTable = table;
 }
 
-float Customer::pay() {
-    throw "Not yet implemented";
+/**
+ * method gets called when customer is ready to pay
+ * need to choose method of payment
+*/
+float Customer::pay(PaymentStrategy* aMethodOfPayment) 
+{
+    aMethodOfPayment->paymentMethod();
 }
 
 bool Customer::tip() {
@@ -60,6 +73,21 @@ void Customer::placeOrder() {
 
 void Customer::setTableNum(int table) {
     throw "Not yet implemented";
+}
+
+CustomerMood* Customer::getMood()
+{
+    return this->customerMood;
+}
+
+void Customer::accept(Visitor* visitor)
+{
+    visitor->visitTable(this);
+}
+
+void Customer::assignCustomerTable(Table* customerTable)
+{
+    myTable = customerTable;
 }
 
 int Customer::getTableNum() {

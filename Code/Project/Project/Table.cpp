@@ -4,7 +4,8 @@
 
 #include "Table.h"
 
-void AbstractTable::addTable(AbstractTable *table) {
+void AbstractTable::addTable(AbstractTable *table) 
+{
 
 }
 AbstractTable* ConcreteTable::clone() {
@@ -58,8 +59,12 @@ std::string Unoccupied::getState() {
 }
 
 
-void Occupied::acceptVisitor(Visitor visitor) {
+void Occupied::acceptVisitor(Visitor* visitor) {
     throw "Not yet implemented";
+}
+Customer* Table::getCustomer()
+{
+    return this->customer;
 }
 
 void Occupied::handleState() {

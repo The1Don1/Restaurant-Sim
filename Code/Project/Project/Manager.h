@@ -9,11 +9,11 @@
 #include <vector>
 #include "Visitor.h"
 
-class Manager
+class Manager: public Visitor
 {
 private: std::vector<std::string> complaints;
 
-public: void visitTable(Table* table);
+public: virtual void visitTable(Customer* customer);
 
 public: std::vector<std::string> getComplaints();
 };
