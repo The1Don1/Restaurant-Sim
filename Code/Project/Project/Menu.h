@@ -7,6 +7,10 @@
 #include "iostream"
 #include "Dish.h"
 class Menu{
+protected:
+    std::string description;
+    int timeToPrepare;
+    double price;
 public:
     virtual std::string getDescription() = 0;
     virtual double getPrice() = 0;
@@ -72,11 +76,13 @@ class Beverage: public Menu
      * Beverages will all take 1 second to prepare
      */
 public:
-    std::string getDescription();
+    Beverage();
 
-    double getPrice();
+    std::string getDescription() = 0;
 
-    int getTimeToPrepare();
+    double getPrice() = 0;
+
+    int getTimeToPrepare() = 0;
 };
 
 class CokeZero: public Beverage

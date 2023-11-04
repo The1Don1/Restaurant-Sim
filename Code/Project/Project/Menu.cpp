@@ -82,19 +82,53 @@ double Salad::getPrice() {
 }
 ////
 
-
-std::string Beverage::getDescription() {
-    throw "Not yet implemented";
+Beverage::Beverage()
+{   
 }
 
-double Beverage::getPrice() {
-    throw "Not yet implemented";
+/*
+    Beverages:
+*/
+///
+CokeZero::CokeZero()
+{
+    this->description = "CokeZero";
+    this->price = 20.00;
+    this->timeToPrepare = 1;
 }
 
-int Beverage::getTimeToPrepare() {
-    throw "Not yet implemented";
+std::string CokeZero::getDescription()
+{
+    return this->description;
 }
 
+double CokeZero::getPrice()
+{
+    return this->price;
+}
+
+int CokeZero::getTimeToPrepare()
+{
+    return this->timeToPrepare;
+}
+///
+
+std::string Coke::getDescription()
+{
+    return "Coke";
+}
+
+double Coke::getPrice()
+{
+    return 20.00;
+}
+
+int Coke::getTimeToPrepare()
+{
+    return 1;
+}
+
+//////
 std::string Starter::getDescription() {
     throw "Not yet implemented";
 }
