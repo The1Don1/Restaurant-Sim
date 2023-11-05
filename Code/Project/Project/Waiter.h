@@ -21,7 +21,7 @@ private:
 public:
     Floor* waiterFloor;
     int waiterWaitTime;
-
+    std::vector<Tab*> tabs;
     std::string waiterName;
 
     Table* waiterHeadTable;

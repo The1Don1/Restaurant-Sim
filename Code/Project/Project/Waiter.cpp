@@ -5,7 +5,10 @@ void Waiter::visitTable(Table *table) {
 }
 
 void Waiter::prepareDish(Dish  dish) {
-    headChef->prepareDish(dish);
+   // headChef->prepareDish(dish);
+   //Note, i need to indicate what dish to prepare and the only way to do that it to pass 
+   //the Dish object as a parameter to this function. 
+    std::cout << "Preparing dish..." << std::endl;
 }
 
 void Waiter::getOrders() {
@@ -26,19 +29,54 @@ void generalWaiter::visitTable(Table occupiedTable) {
 }
 
 void generalWaiter::addToTab(std::string customerName, double amount) {
+    //need to be able to add the amount to a tab as well.
+    for (auto tab : tabs)
+    {
+        if (tab->getName() == customerName)
+        {
+            tab->addToTab(amount);
+        }
+    }
     
 }
 
 void generalWaiter::payTab(std::string customerName, double amount) {
-    throw "Not yet implemented";
+    for (auto tab : tabs)
+    {
+        if (tab->getName() == customerName)
+        {
+            tab->payTab(amount);
+            if (tab->getTabTotal() == 0)
+            {
+                tab->setPayedOff(true);
+            }
+            else 
+            {
+                std::cout << "Tab for " << customerName << " is not fully payed off yet." << std::endl;
+            }
+        }
+    }
+
+    std::cout << "No tab found for " << customerName << std::endl;
 }
 
 Tab* generalWaiter::getTab(std::string customerName) {
-    throw "Not yet implemented";
+    for (auto tab : tabs)
+    {
+        if (tab->getName() == customerName)
+        {
+            std::cout << "Returning tab for " << customerName << std::endl;
+            return tab;
+        }
+    }
+
+    std::cout << "Tab for " << customerName << " is not found." << std::endl;
+
+    return NULL;
 }
 
 void generalWaiter::performTask() {
-    throw "Not yet implemented";
+    std::cout << "General waiter is performing task..." << std::endl;
 }
 
 void MaitreD::checkReservation() {
@@ -67,5 +105,5 @@ void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
 }
 
 void MaitreD::performTask() {
-    throw "Not yet implemented";
+    std::cout << "Maitre D is performing task..." << std::endl;
 }

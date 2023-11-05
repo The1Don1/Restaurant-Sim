@@ -4,16 +4,22 @@
 
 #include "Tab.h"
 Tab::Tab(std::string customerName) {
+    name = customerName;
+    total = 0;
+    payedOff = false;
+
 }
 
 std::string Tab::getName() {
     return this->name;
 }
 
-double Tab::getTab() {
-    throw "Not yet implemented";
+
+double Tab::getTabTotal() {
+    return total;
 }
 
-void Tab::addToTab() {
-    throw "Not yet implemented";
+void Tab::addToTab(double amount) {
+    total = total + amount;
+    
 }

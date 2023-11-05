@@ -50,16 +50,12 @@ void SubBill::addItem(BillItem item) {
 
 Bill* SubBill::getSubBill(std::string customerName) {
 
-    // Iterate over all items in the bill
     for (auto &item : items)
     {
-        // Check if the item has any customers
         if (!item.getCustomers().empty())
         {
-            // Iterate over all customers of the item
             for (auto &customer : item.getCustomers())
             {
-                // If the customer's name matches the input, print the item details
                 if (customer->getName() == customerName)
                 {
                     return &item;

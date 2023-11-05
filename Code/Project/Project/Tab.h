@@ -11,12 +11,25 @@ class Tab {
     private:
         std::string name;
         double total;
+        bool payedOff;
     public:
         Floor* floor;
         Tab(std::string customerName);
         std::string getName();
-        double getTab();
-        void addToTab();
+        double getTabTotal();
+        void addToTab(double amount);
+        void payTab(double amount)
+        {
+            total = total - amount;
+        }
+        void setPayedOff(bool payed)
+        {
+            this->payedOff = payed;
+        }
+        bool getPayedOff()
+        {
+            return payedOff;
+        }
 };
 
 
