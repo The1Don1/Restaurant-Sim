@@ -21,6 +21,7 @@ class Visitor;
 class TableIterator;
 class ConcreteTableIterator;
 //class AbstractTable;
+
 class AbstractTable 
 {
     private:
