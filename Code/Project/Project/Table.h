@@ -81,6 +81,11 @@ private:
             void setState(TableState* state);
             Bill* getBill(Customer* customer);
             void getOrders();
+
+    int getTableID()
+    {
+        return tableID;
+    }
     };
 class TableState
 {

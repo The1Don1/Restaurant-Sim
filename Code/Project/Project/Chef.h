@@ -45,6 +45,11 @@ private: std::queue<Dish*> dishQueue;
 public: generalWaiter* waiter;
 public: Dish* dish;
 
+std::queue<Dish*> getDishQueue()
+{
+    return dishQueue;
+}
+
 public: void visitTable(Table* table);
 
 public: void prepareDish(Dish dish);

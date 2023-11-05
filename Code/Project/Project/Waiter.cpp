@@ -1,59 +1,71 @@
 #include "Waiter.h"
-
-Waiter::Waiter(string name, Table* headTable)
-{
-    waiterName = name;
-    this->headTable = headTable;
-    waitTime = 0;
+void Waiter::visitTable(Table *table) {
+   
+    std::cout << "Visiting table " << table->getTableID() << std::endl;
 }
 
-void Waiter::reduceTimer()
-{
-    if (waitTime > 0)
-        waitTime--;
-} 
-
-void Waiter::deliverOrder()
-{
-    if (waitTime == 0)
-    {
-        cout << "Waiter " << waiterName << " delivers order to table " << headTable->getTableNumber() << endl;
-        //headTable->setOrderDelivered();
-    }
+void Waiter::prepareDish(Dish  dish) {
+    headChef->prepareDish(dish);
 }
 
-void Waiter::visitTable(Table* table)
-{
-    headTable = table;
+void Waiter::getOrders() {
+    waiterHeadTable->getOrders();
 }
 
-void Waiter::getOrders()
-{
-    if (headTable->getOrderStatus() == false)
-    {
-        cout << "Waiter " << waiterName << " gets order from table " << headTable->getTableNumber() << endl;
-        headTable->setOrderStatus();
-        waitTime = 5;
-    }
+void Waiter::sendOrders() {
+    std::cout << "Sending order to table with table ID of " << waiterHeadTable->getTableID() << std::endl;
 }
 
-void Waiter::setOrders()
-{
-    if (headTable->getOrderStatus() == true)
-    {
-        cout << "Waiter " << waiterName << " sets order for table " << headTable->getTableNumber() << endl;
-        headTable->setOrderDelivered();
-        waitTime = 5;
-    }
+void Waiter::deliverOrder() {
+    std::cout << "Delivering order to table with table ID of " << waiterHeadTable->getTableID() << std::endl;
+
 }
 
-void Waiter::prepareDish()
-{
-    if (waitTime == 0)
-    {
-        cout << "Waiter " << waiterName << " prepares dish for table " << headTable->getTableNumber() << endl;
-        headTable->setOrderDelivered();
-    }
+void generalWaiter::visitTable(Table occupiedTable) {
+    std::cout << "Visiting table " << occupiedTable.getTableID() << std::endl;
+}
+
+void generalWaiter::addToTab(std::string customerName, double amount) {
+    
+}
+
+void generalWaiter::payTab(std::string customerName, double amount) {
+    throw "Not yet implemented";
+}
+
+Tab* generalWaiter::getTab(std::string customerName) {
+    throw "Not yet implemented";
+}
+
+void generalWaiter::performTask() {
+    throw "Not yet implemented";
+}
+
+void MaitreD::checkReservation() {
+    //note i need to be able to check what the current state of the table is
+    //std::cout << "Current state of table: " << waiterHeadTable->getTableState();
+    std::cout << "Checking reservation" << std::endl;
+}
+
+void MaitreD::allocateTable() {
+    std::cout << "Allocating table " << waiterHeadTable->getTableID()
+              << ". Current table state: Occupied" << std::endl;
+            
+    Occupied* occupied;
+    waiterHeadTable->setState(occupied); 
+    //waiterHeadTable->setCustomer(waitingList.pop());
+    waitingList.pop();
 }
 
 
+void MaitreD::mergeTables(int table1, int table2) {
+    std::cout << "Merging table " << table1 << " with table " << table2 << std::endl;
+}
+
+void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
+    std::cout << "Splitting table " << tableNumber << " for waiter " << waiter->waiterName << std::endl;
+}
+
+void MaitreD::performTask() {
+    throw "Not yet implemented";
+}

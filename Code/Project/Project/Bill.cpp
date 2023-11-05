@@ -44,7 +44,7 @@ double SubBill::getTotalCost() {
     return total;
 }
 
-void SubBill::addItem(SubBill item) {
+void SubBill::addItem(BillItem item) {
     items.push_back(item);
 }
 
@@ -139,5 +139,5 @@ double Bill::getTotalCost() {
 
 /*---------Notes------------*/
 /*
-1. The bill
+
 */

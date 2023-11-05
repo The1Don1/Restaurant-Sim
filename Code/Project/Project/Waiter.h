@@ -39,7 +39,7 @@ public:
 
         void visitTable(Table* table);
 
-        void prepareDish();
+        void prepareDish(Dish dish);
 //
         void getOrders();
 
