@@ -8,8 +8,7 @@
 #include "Kitchen.h"
 #include "Waiter.h"
 #include "Dish.h"
-#include "Table.h"
-class Table;
+//class Visitor;
 class generalWaiter;
 
 class Kitchen;
@@ -55,6 +54,7 @@ class HeadChef: public Chef
         void Notify(generalWaiter* waiter);
         void Attach(generalWaiter* waiter);
         void Detach();
+        std::queue<Dish*> getDishQueue();
 };
 
 class commisChef: public HeadChef

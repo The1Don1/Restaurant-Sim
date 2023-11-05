@@ -72,6 +72,11 @@ void HeadChef::addChef()
     this->freeChefs.push(new commisChef(this));
 }
 
+std::queue<Dish*> HeadChef::getDishQueue()
+{
+    return this->dishQueue;
+}
+
 void HeadChef::removeChef()
 {
     if(this->freeChefs.size() > 0)
