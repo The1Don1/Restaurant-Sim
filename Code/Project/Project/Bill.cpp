@@ -14,7 +14,7 @@ double BillItem::getTotalCost() {
 }
 
 void BillItem::addItem(SubBill item) {
-    throw "Not yet implemented";
+    return;
 }
 
 void BillItem::paymentMethod() {
@@ -38,27 +38,27 @@ double BillDecorator::getTotalCost() {
 double SubBill::getTotalCost() {
 
     double total = 0.0;
-    for (auto &item : items) {
-        total += item.getTotalCost();
+    for (auto item : items) {
+        total += item->getTotalCost();
     }
     return total;
 }
 
-void SubBill::addItem(BillItem item) {
+void SubBill::addItem(BillItem* item) {
     items.push_back(item);
 }
 
 Bill* SubBill::getSubBill(std::string customerName) {
 
-    for (auto &item : items)
+    for (auto item : items)
     {
-        if (!item.getCustomers().empty())
+        if (!item->getCustomers().empty())
         {
-            for (auto &customer : item.getCustomers())
+            for (auto customer : item->getCustomers())
             {
                 if (customer->getName() == customerName)
                 {
-                    return &item;
+                    return item;
                 }
             }
         }

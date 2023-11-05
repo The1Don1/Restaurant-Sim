@@ -23,3 +23,12 @@ void Tab::addToTab(double amount) {
     total = total + amount;
     
 }
+
+/* ------------Changes--------------*/
+/*
+1. Added a boolean member variable 'payedOff' to indicate whether the tab is payedOff or not.   
+   Initially set to false;
+2. Added the functions setPayedOff(), getPayedOff(), payTab() with parameters
+3. Included a parameter for the addToTab function to add an amount to the tab.
+*/
+

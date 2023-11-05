@@ -97,7 +97,36 @@ void MaitreD::allocateTable() {
 
 
 void MaitreD::mergeTables(int table1, int table2) {
+    // std::cout << "Merging table " << table1 << " with table " << table2 << std::endl;
+    // Table* merged = new Table(table1 + table2);
+    // waiterFloor->getFloorTables().push_back(merged);
+
+    // for (auto table : waiterFloor->getFloorTables())
+    // {
+    //     if (table->getTableID() == table1)
+    //     {
+    //         waiterFloor->getFloorTables().erase(&table);
+    //     }
+
+    //     if (table->getTableID() == table2)
+    //     {
+    //         waiterFloor->getFloorTables().erase(&table);
+    //     }
+    // }
+
     std::cout << "Merging table " << table1 << " with table " << table2 << std::endl;
+    Table* merged = new Table(table1 + table2);
+    waiterFloor->getFloorTables().push_back(merged);
+
+    for (auto it = waiterFloor->getFloorTables().begin(); it != waiterFloor->getFloorTables().end(); /* no increment here */) {
+        if ((*it)->getTableID() == table1 || (*it)->getTableID() == table2) {
+            it = waiterFloor->getFloorTables().erase(it);
+        } else {
+            ++it;
+        }
+    }
+
+    
 }
 
 void MaitreD::splitTables(Waiter* waiter, int tableNumber) {

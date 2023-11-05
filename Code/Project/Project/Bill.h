@@ -74,12 +74,12 @@ public:
 
 class SubBill: public Bill{
 private:
-    std::vector<BillItem> items;
+    std::vector<BillItem*> items;
 public:
     void paymentMethod();
     Bill* bill;
     double getTotalCost();
-    void addItem(BillItem item);
+    void addItem(BillItem* item);
     Bill* getSubBill(std::string customerName);
 
 };
