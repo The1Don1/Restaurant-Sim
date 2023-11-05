@@ -31,5 +31,8 @@
 *.out
 *.app
 
+#bloat
+*.txt
+
 # Folders
 Code/Project/build/
