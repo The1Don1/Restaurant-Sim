@@ -56,10 +56,6 @@ void Facade::createWaiter(){
 
 }
 
-Facade* Facade::instance() {
-    throw "Not yet implemented";
-}
-
 Facade::Facade() {
 }
 
