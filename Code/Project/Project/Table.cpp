@@ -81,3 +81,8 @@ void Reserved::handleState() {
 std::string Reserved::getState() {
     throw "Not yet implemented";
 }
+
+Waiter* Table::getWaiter()
+{
+    return waiter;
+}

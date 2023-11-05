@@ -50,5 +50,6 @@ public:
     int getTableNum();
     void accept(Visitor* visitor);
     void assignCustomerTable(Table* customerTable);
+    std::string complimentWaiter();
 };
 #endif //PROJECT_CUSTOMER_H

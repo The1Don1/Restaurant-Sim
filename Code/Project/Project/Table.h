@@ -22,6 +22,7 @@ class ConcreteTableIterator;
 //class AbstractTable;
 class AbstractTable {
 private:
+
     int customerNumber;
 public:
     explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
@@ -30,9 +31,9 @@ public:
     virtual void addTable(AbstractTable* table) = 0;
     virtual AbstractTable* clone() = 0;
 };
+
 class ConcreteTable: public AbstractTable
 {
-
 public: AbstractTable* clone();
 };
 
@@ -61,7 +62,7 @@ private:
     AbstractTable* abstractTable;
     MaitreD* maD;
     Floor* floor;
-    Waiter* waiter;
+    generalWaiter* waiter;
     ConcreteTableIterator* concreteTableIterator;
     public:
             Table(int customerNumber) : AbstractTable(customerNumber){}
@@ -85,7 +86,10 @@ private:
             Bill* getBill(Customer* customer);
             void getOrders();
             Customer* getCustomer();
-    };
+            generalWaiter* getWaiter();
+};
+
+
 class TableState
 {
 public: Table* _unnamed_Table_;

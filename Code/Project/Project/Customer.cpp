@@ -52,13 +52,18 @@ void Customer::setMood(std::string cstmrMood)
 void Customer::leaveRestaurant(Bill* bill) 
 {
     //make payment
-    if(bill->getTotalCost() != 0.0)
+    if(bill->getTotalCost() != 0.0 && customerComplaint == "")
     {
         std::cout << this->name << " please settle bill before you leave" << std::endl;
     }
+    else if(bill->getTotalCost() != 0.0 && customerComplaint != "")
+    {
+        std::cout << "Customer cleared to leave without paying due to bad service experienced." << std::endl;
+        this->~Customer();
+    }
     else
     {
-        std::cout << "Thank you " << this->name << "!" << std::endl;
+        std::cout << "Thank you " << this->name << "! We hope to see you again soon 🌟" << std::endl;
         
         //delete customer object
         this->~Customer();
@@ -136,6 +141,14 @@ bool Customer::tip()
     std::cout << "Enter tip amount:" << std::endl;
     std::cin >> tip;
     customerBill->addTip(tip);
+}
+
+std::string Customer::complimentWaiter()
+{
+    std::string compliment;
+    std::cout << "Please enter your compliment for the waiter:\n";
+    std::getline(std::cin, compliment);
+    return compliment;
 }
 
 /**

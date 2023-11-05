@@ -72,6 +72,8 @@ public:
 
         }
     };
+
+    void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
 //    void setWaiterHeadTable(Table *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
