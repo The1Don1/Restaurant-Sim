@@ -29,7 +29,7 @@ Customer::~Customer()
  * method gets called when customer is ready to pay
  * need to choose method of payment (strategy design pattern)
 */
-float Customer::pay(PaymentStrategy* aMethodOfPayment)
+void Customer::pay(PaymentStrategy* aMethodOfPayment)
 {
     aMethodOfPayment->paymentMethod();
 }
@@ -73,7 +73,7 @@ void Customer::leaveRestaurant(Bill* bill)
  * sends the complaint to the manager
  * customer can still make a complaint even when the manager is not visiting the table
 */
-std::string Customer::makeComplaint(Manager* manager) 
+void Customer::makeComplaint(Manager* manager) 
 {
     std::cout << "Please enter you complaint:" << std::endl;
     std::getline(std::cin, customerComplaint);
@@ -87,9 +87,10 @@ Bill* Customer::getBill()
 }
 
 
-Tab Customer::createTab() 
+Tab* Customer::createTab() 
 {
     customerTab = new Tab(name);
+    return customerTab;
 }
 
 void Customer::setTab(Tab* tab) 
@@ -133,7 +134,7 @@ int Customer::getTableNum()
  * allows customer to add a tip to the Bill
  * customer chooses how much to tip
 */
-bool Customer::tip()
+void Customer::tip()
 {
     float tip = 0.0;
     std::cout << "Enter tip amount:" << std::endl;
