@@ -34,6 +34,7 @@
 #bloat
 *.txt
 *.log
+*.xml
 
 # Folders
 Code/Project/build/
