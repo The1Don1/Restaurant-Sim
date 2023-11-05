@@ -8,15 +8,15 @@
 #include "Floor.h"
 
 class Tab {
-    private:
-        std::string name;
-        double total;
-    public:
-        Floor* floor;
-        Tab(std::string customerName);
-        std::string getName();
-        double getTab();
-        void addToTab();
+private:
+    std::string name;
+    double total;
+public:
+    Floor* floor;
+    Tab(std::string customerName);
+    std::string getName();
+    double getTab();
+    void addToTab();
 };
 
 
