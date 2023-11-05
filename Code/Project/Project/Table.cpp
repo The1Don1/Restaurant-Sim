@@ -7,9 +7,6 @@
 void AbstractTable::addTable(AbstractTable *table) {
 
 }
-AbstractTable* ConcreteTable::clone() {
-    throw "Not yet implemented";
-}
 TableIterator* Table::createIterator() {
     throw "Not yet implemented";
 }
