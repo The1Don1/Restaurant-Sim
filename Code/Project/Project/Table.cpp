@@ -82,7 +82,7 @@ std::string Reserved::getState() {
     throw "Not yet implemented";
 }
 
-Waiter* Table::getWaiter()
+generalWaiter* Table::getWaiter()
 {
     return waiter;
 }

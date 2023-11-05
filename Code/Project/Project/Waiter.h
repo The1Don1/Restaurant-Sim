@@ -51,29 +51,29 @@ public:
 //Template Method: Concrete Class
 class generalWaiter : public Waiter, public Visitor
 {
-public:
-    generalWaiter(std::string basicString, Table *pTable, Floor *pFloor) : Waiter(basicString, pTable,
-                                                                                  pFloor) {}
+    public:
+        generalWaiter(std::string basicString, Table *pTable, Floor *pFloor) : Waiter(basicString, pTable,
+                                                                                    pFloor) {}
 
-    void performTask();
-    virtual void visitTable(Customer* customer);
-    void addToTab(std::string name, double amount);
-    void payTab(std::string name, double amount);
-    Tab* getTab(std::string name);
-    void decrementTimer()
-    {
-        if(this->waiterWaitTime <= 0){
-            std::cout << this->waiterName << " time out resetting" << std::endl;
-            srand((unsigned) time(NULL));
-            int random =60 + (rand() % 2);
-            this->waiterWaitTime = random;
-        }else{
-            this->waiterWaitTime-=1;
+        void performTask();
+        virtual void visitTable(Table* table);
+        void addToTab(std::string name, double amount);
+        void payTab(std::string name, double amount);
+        Tab* getTab(std::string name);
+        void decrementTimer()
+        {
+            if(this->waiterWaitTime <= 0){
+                std::cout << this->waiterName << " time out resetting" << std::endl;
+                srand((unsigned) time(NULL));
+                int random =60 + (rand() % 2);
+                this->waiterWaitTime = random;
+            }else{
+                this->waiterWaitTime-=1;
 
-        }
-    };
+            }
+        };
 
-    void receiveCompliment(const std::string& compliment);
+        void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
 //    void setWaiterHeadTable(Table *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
