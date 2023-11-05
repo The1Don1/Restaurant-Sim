@@ -11,16 +11,24 @@
 #include <thread>
 class Facade {
 private:
+    Facade* instance;
     Engine* mediator;
     Floor* floor;
+
 public:
+
     Facade(Floor* f, Engine* e) : mediator(e), floor(f){
         e->setFloor(f);
     }
     void Decrement();
     void displayMenu();
     void createWaiter();
-    Facade* instance();
+    Facade* GetInstance(Floor* f, Engine* e){
+        if(!instance){
+            instance = new Facade(f, e);
+        }
+        return instance;
+    }
     Facade();
     void operation();
     Facade(std::string);
