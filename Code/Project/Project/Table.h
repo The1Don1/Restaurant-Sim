@@ -46,7 +46,8 @@ public:
     void addTable(AbstractTable* aTable);
 };
 
-class Table : public AbstractTable{
+class Table : public AbstractTable
+{
 private:
     int tableID;
     Table* up;
@@ -70,7 +71,8 @@ private:
             int getCustomerNumber(){
                 return 0;
             };
-            void decrementTimer(){
+            void decrementTimer()
+            {
                 std::cout << "";
             };
             TableIterator* createIterator();

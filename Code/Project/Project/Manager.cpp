@@ -8,23 +8,13 @@ void Manager::visitTable(Table* table)
     CustomerMood* customerMood = table->cu
 }
 
-std::vector<std::string> Manager::getComplaints() {
+std::vector<std::string> Manager::getComplaints() 
+{
     return this->complaints;
 }
 
-
-//manager needs to check customer's mood at that table
-    CustomerMood* customerMood = customer->getMood();
-
-    if(customerMood != NULL)
-    {
-        if(/*customerMood == || customerMood == */ )//extremely satisfied & satisfied, tip()
-        {
-            //ask if they want to tip and rate waiter heheh
-            customer->tip();
-        }
-        else// extremely unsatisfied & unsatisfied, make a complaint
-        {
-            customer->makeComplaint();
-        } 
-    }
+void Manager::handleComplaint(const std::string& complaint)
+{
+    std::cout << "Restaurant Manager: Thank you for your feedback. We will address your complaint.\n";
+    std::cout << "Complaint details: " << complaint << "\n";
+}

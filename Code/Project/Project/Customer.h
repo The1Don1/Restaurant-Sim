@@ -18,7 +18,7 @@ class Customer
 {
 private:
     Dish* order;
-    CustomerMood* customerMood;
+    std::string customerMood;
     bool readyToPay;
     bool readyToOrder;
     bool readyToLeave;
@@ -26,55 +26,29 @@ private:
     AbstractBill* bill;
     int tableNum;
     Table* myTable;
+    Bill* customerBill;
+    std::string customerComplaint;
+    Tab* customerTab;
 public:
     Dish* dish;
     Table* table;
-    Customer(/*Bill* bill*/std::string customerName, int tableNum, Table* table);
+    Customer(std::string customerName, int tableNum, Table* table);
+    ~Customer();
     float pay(PaymentStrategy* aMethodOfPayment);
     bool tip();
     void customer();
     void checkOrder(Dish* order);
-//    CustomerMood getMood();
-    void setMood(CustomerMood* cstmrMood);
-    CustomerMood* getMood(); 
+    void setMood(std::string cstmrMood);
+    std::string getMood(); 
     void leaveRestaurant(Bill* bill);
-    std::string makeComplaint();
-    SubBill getBill();
-//    CustomerMood getCustomerState();
+    std::string makeComplaint(Manager* manager);
+    Bill* getBill();
     Tab createTab();
-    void setTab(Tab table);
+    void setTab(Tab* table);
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
     void accept(Visitor* visitor);
     void assignCustomerTable(Table* customerTable);
-};
-
-class CustomerMood{
-public: Customer* customer;
-
-public: virtual bool considerTip() = 0;
-};
-class extremelySatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-class extremelyUnsatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-
-class Unsatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-
-class Satisfied: public CustomerMood
-{
-
-public: bool considerTip();
 };
 #endif //PROJECT_CUSTOMER_H

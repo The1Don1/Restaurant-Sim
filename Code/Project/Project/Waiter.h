@@ -60,7 +60,8 @@ public:
     void addToTab(std::string name, double amount);
     void payTab(std::string name, double amount);
     Tab* getTab(std::string name);
-    void decrementTimer(){
+    void decrementTimer()
+    {
         if(this->waiterWaitTime <= 0){
             std::cout << this->waiterName << " time out resetting" << std::endl;
             srand((unsigned) time(NULL));

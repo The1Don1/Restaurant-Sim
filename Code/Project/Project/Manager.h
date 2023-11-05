@@ -11,11 +11,14 @@
 
 class Manager: public Visitor
 {
-private: std::vector<std::string> complaints;
+    private: 
+        std::vector<std::string> complaints;
 
-public: virtual void visitTable(Customer* customer);
+    public:
+        virtual void visitTable(Customer* customer);
+        std::vector<std::string> getComplaints();
+        void handleComplaint(const std::string& complaint);
 
-public: std::vector<std::string> getComplaints();
 };
 
 

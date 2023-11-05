@@ -5,10 +5,9 @@
 #include <iostream>
 #include "Customer.h"
 
-using namespace std;
-Customer::Customer(std::string customerName, int tableNum, Table* table) //DONE
+Customer::Customer(std::string customerName, int tableNum, Table* table)
 {
-    order = NULL;
+    order = nullptr;
     readyToPay = false;
     readyToOrder = false;
     readyToLeave = false;
@@ -18,28 +17,125 @@ Customer::Customer(std::string customerName, int tableNum, Table* table) //DONE
 }
 
 /**
+ * Customer destructor
+ * deletes the object that calls the destructor
+*/
+Customer::~Customer()
+{
+    delete this;
+}
+
+
+/**
  * method gets called when customer is ready to pay
  * need to choose method of payment (strategy design pattern)
 */
-float Customer::pay(PaymentStrategy* aMethodOfPayment) //DONE
+float Customer::pay(PaymentStrategy* aMethodOfPayment)
 {
     aMethodOfPayment->paymentMethod();
+}
+
+
+/**
+ * method sets customer's mood
+*/
+void Customer::setMood(std::string cstmrMood)
+{
+    customerMood = cstmrMood;
+}
+
+
+/**
+ * method is called when the customer is ready to leave the restaurant
+ * acts as the constructor (conditional)
+*/
+void Customer::leaveRestaurant(Bill* bill) 
+{
+    //make payment
+    if(bill->getTotalCost() != 0.0)
+    {
+        std::cout << this->name << " please settle bill before you leave" << std::endl;
+    }
+    else
+    {
+        std::cout << "Thank you " << this->name << "!" << std::endl;
+        
+        //delete customer object
+        this->~Customer();
+    } 
+}
+
+
+/**
+ * gets called when customer is not happy with her waiting period state of the food
+ * sends the complaint to the manager
+ * customer can still make a complaint even when the manager is not visiting the table
+*/
+std::string Customer::makeComplaint(Manager* manager) 
+{
+    std::cout << "Please enter you complaint:" << std::endl;
+    std::getline(std::cin, customerComplaint);
+
+    manager->handleComplaint(customerComplaint);
+}
+
+Bill* Customer::getBill() 
+{
+    return customerBill;
+}
+
+
+Tab Customer::createTab() 
+{
+    customerTab = new Tab(name);
+}
+
+void Customer::setTab(Tab* tab) 
+{
+    customerTab = tab;
+}
+
+void Customer::placeOrder()
+{
+    order = new Dish(name, tableNum);
+    customerBill = new Bill();
+}
+
+void Customer::setTableNum(int table)
+{
+    this->tableNum = table;
+}
+
+std::string Customer::getMood()
+{
+    return customerMood;
+}
+
+void Customer::accept(Visitor* visitor)
+{
+    visitor->visitTable(this);
+}
+
+void Customer::assignCustomerTable(Table* customerTable)
+{
+    myTable = customerTable;
+}
+
+int Customer::getTableNum()
+{
+    return this->tableNum;
 }
 
 /**
  * allows customer to add a tip to the Bill
  * customer chooses how much to tip
 */
-bool Customer::tip() //PARTIALLY IMPLEMENTED
+bool Customer::tip()
 {
-    //prompt user to enter tip
     float tip = 0.0;
-    cout << "Enter tip amount:" << endl;
-    cin >> tip;
-
-    //need to add tip to the bill
-    
-    throw "Not yet implemented";
+    std::cout << "Enter tip amount:" << std::endl;
+    std::cin >> tip;
+    customerBill->addTip(tip);
 }
 
 /**
@@ -48,86 +144,7 @@ bool Customer::tip() //PARTIALLY IMPLEMENTED
 */
 void Customer::checkOrder(Dish* order) 
 {
+    //get time from Engine
+    //set customerMood
     throw "Not yet implemented";
 }
-
-void Customer::setMood(CustomerMood* cstmrMood) //PARTIALLY DONE
-{
-    if(customerMood!= nullptr)
-        delete customerMood;
-
-    customerMood = cstmrMood;
-}
-
-void Customer::leaveRestaurant(Bill* bill) {
-    throw "Not yet implemented";
-}
-
-std::string Customer::makeComplaint() {
-    throw "Not yet implemented";
-}
-
-SubBill Customer::getBill() 
-{
-    throw "Not yet implemented";
-}
-
-//CustomerMood Customer::getCustomerState() {
-//    throw "Not yet implemented";
-//}
-
-Tab Customer::createTab() 
-{
-    throw "Not yet implemented";
-}
-
-void Customer::setTab(Tab tab) {
-    throw "Not yet implemented";
-}
-
-void Customer::placeOrder()  //PARTIAL IMPLEMENTATION
-{
-    order = new Dish(name, myTable);
-}
-
-void Customer::setTableNum(int table) //DONE
-{
-    this->tableNum = table;
-}
-
-CustomerMood* Customer::getMood() //DONE
-{
-    return this->customerMood;
-}
-
-void Customer::accept(Visitor* visitor) //DONE
-{
-    visitor->visitTable(this);
-}
-
-void Customer::assignCustomerTable(Table* customerTable) //DONE
-{
-    myTable = customerTable;
-}
-
-int Customer::getTableNum() //DONE
-{
-    return this->tableNum;
-}
-bool extremelySatisfied::considerTip() 
-{
-    throw "Not yet implemented";
-}
-
-bool extremelyUnsatisfied::considerTip() {
-    throw "Not yet implemented";
-}
-bool Unsatisfied::considerTip() {
-    throw "Not yet implemented";
-}
-bool Satisfied::considerTip() {
-    throw "Not yet implemented";
-}
-
-
-

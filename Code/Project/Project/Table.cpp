@@ -46,7 +46,7 @@ std::string TableState::getState() {
     throw "Not yet implemented";
 }
 
-void TableState::handleState(Table* tabke) {
+void TableState::handleState(Table* table) {
     throw "Not yet implemented";
 }
 
