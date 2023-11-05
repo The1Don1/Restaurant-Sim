@@ -10,10 +10,15 @@
 #include "Dish.h"
 #include "Table.h"
 #include "Bill.h"
+#include "Visitor.h"
+#include "Manager.h"
+
+class Manager;
 class CustomerMood;
 class Tab;
 class AbstractBill;
 class SubBill;
+class Visitor;
 class Customer 
 {
 private:
