@@ -10,6 +10,7 @@
 #include "Floor.h"
 #include "TableIterator.h"
 #include "Visitor.h"
+#include "Waiter.h"
 
 class TableState;
 class Bill;
