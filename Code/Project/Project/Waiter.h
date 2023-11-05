@@ -39,7 +39,7 @@ public:
 
         void visitTable(Table* table);
 
-        void prepareDish(Dish dish);
+        void prepareDish(Dish* dish);
 //
         void getOrders();
 
@@ -95,8 +95,8 @@ private:
     std::queue<Customer*> waitingList;
 public:
     void performTask();
-    void allocateTable();
-    void checkReservation();
+    void allocateTable(int partySize);
+    void checkReservation(int tableNo);
 //
     void mergeTables(int table1, int table2);
 //

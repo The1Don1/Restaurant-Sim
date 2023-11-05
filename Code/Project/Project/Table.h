@@ -86,6 +86,11 @@ private:
     {
         return tableID;
     }
+
+    TableState* getTableState() {
+        return tableState;
+    }
+    
     };
 class TableState
 {
