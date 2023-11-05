@@ -6,22 +6,6 @@
 int main()
 {
     /**
-     * create the floor
-     * create the kitchen
-    */
-    //create tables
-    
-
-
-
-    //create customers
-    
-    return 0;
-}
-
-void testFloorInterface()
-{
-    /**
      * floor needs:
      *  manager
      *  tables
@@ -57,11 +41,11 @@ void testFloorInterface()
     
     customer1->setReadyToOrderStatus(true);
     customer1->placeOrder();
-
     
+
+    //visitor design pattern
+    //customer1->accept();
+    return 0;
 }
 
-void testKitchenInterface()
-{
 
-}
