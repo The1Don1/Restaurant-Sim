@@ -25,7 +25,6 @@ Customer::~Customer()
     delete this;
 }
 
-
 /**
  * method gets called when customer is ready to pay
  * need to choose method of payment (strategy design pattern)
@@ -35,7 +34,6 @@ float Customer::pay(PaymentStrategy* aMethodOfPayment)
     aMethodOfPayment->paymentMethod();
 }
 
-
 /**
  * method sets customer's mood
 */
@@ -44,13 +42,13 @@ void Customer::setMood(std::string cstmrMood)
     customerMood = cstmrMood;
 }
 
-
 /**
  * method is called when the customer is ready to leave the restaurant
  * acts as the constructor (conditional)
 */
 void Customer::leaveRestaurant(Bill* bill) 
 {
+    this->readyToLeave = true;
     //make payment
     if(bill->getTotalCost() != 0.0 && customerComplaint == "")
     {
@@ -69,7 +67,6 @@ void Customer::leaveRestaurant(Bill* bill)
         this->~Customer();
     } 
 }
-
 
 /**
  * gets called when customer is not happy with her waiting period state of the food
@@ -102,6 +99,7 @@ void Customer::setTab(Tab* tab)
 
 void Customer::placeOrder()
 {
+    this->readyToOrder = true;
     order = new Dish(name, tableNum);
     customerBill = new Bill();
 }
@@ -118,7 +116,7 @@ std::string Customer::getMood()
 
 void Customer::accept(Visitor* visitor)
 {
-    visitor->visitTable(this);
+    visitor->visitTable(this->table);
 }
 
 void Customer::assignCustomerTable(Table* customerTable)
@@ -160,4 +158,19 @@ void Customer::checkOrder(Dish* order)
     //get time from Engine
     //set customerMood
     throw "Not yet implemented";
+}
+
+void Customer::setReadyToOrderStatus(bool readyToOrderStatus)
+{
+    this->readyToOrder = readyToOrderStatus;
+}
+
+void Customer::setReadyToLeaveStatus(bool readyToLeaveStatus)
+{
+    this->readyToLeave = readyToLeaveStatus;
+}
+
+void Customer::setReadyToPayStatus(bool readyToPayStatus)
+{
+    this->readyToPay = readyToPayStatus;
 }

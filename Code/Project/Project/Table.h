@@ -20,31 +20,32 @@ class Visitor;
 class TableIterator;
 class ConcreteTableIterator;
 //class AbstractTable;
-class AbstractTable {
-private:
+class AbstractTable 
+{
+    private:
 
-    int customerNumber;
-public:
-    explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
-    virtual TableIterator* createIterator() = 0;
-    virtual void accept(Visitor* visitor) = 0;
-    virtual void addTable(AbstractTable* table) = 0;
-    virtual AbstractTable* clone() = 0;
+        int customerNumber;
+    public:
+        explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
+        virtual TableIterator* createIterator() = 0;
+        virtual void accept(Visitor* visitor) = 0;
+        virtual void addTable(AbstractTable* table) = 0;
+        virtual AbstractTable* clone() = 0;
 };
 
 class ConcreteTable: public AbstractTable
 {
-public: AbstractTable* clone();
+    public: AbstractTable* clone();
 };
 
 class TableGroup: public AbstractTable
 {
-private:
-    std::vector<AbstractTable*> children;
-public:
-    AbstractTable* abstractiTable;
+    private:
+        std::vector<AbstractTable*> children;
+    public:
+        AbstractTable* abstractiTable;
 
-    void addTable(AbstractTable* aTable);
+        void addTable(AbstractTable* aTable);
 };
 
 class Table : public AbstractTable

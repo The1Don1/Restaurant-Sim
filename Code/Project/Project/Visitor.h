@@ -9,6 +9,6 @@ class Customer; //just changed from Table (not sure why we need this)
 class Visitor 
 {
 public:
-    virtual void visitTable(Customer* customer) = 0;
+    virtual void visitTable(Table* table) = 0;
 };
 #endif //PROJECT_VISITOR_H

@@ -16,6 +16,7 @@ class Table;
 class Tab;
 class Customer;
 class Visitor;
+
 class Waiter 
 {
 private:
@@ -32,7 +33,7 @@ public:
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
     public: HeadChef* headChef;
-        Waiter(std::string WaiterName, Table* WaiterTable, Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(WaiterTable), waiterFloor(floor) {
+        Waiter(std::string WaiterName, Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterFloor(floor) {
             srand((unsigned) time(NULL));
             int random = 60 + (rand() % 2);
             this->waiterWaitTime = random;
@@ -52,9 +53,8 @@ public:
 class generalWaiter : public Waiter, public Visitor
 {
     public:
-        generalWaiter(std::string basicString, Table *pTable, Floor *pFloor) : Waiter(basicString, pTable,
-                                                                                    pFloor) {}
-
+        generalWaiter(std::string basicString, Floor *pFloor) : Waiter(basicString,pFloor) {}
+        void getAllocatedAtable(Table* table);
         void performTask();
         virtual void visitTable(Table* table);
         void addToTab(std::string name, double amount);
@@ -97,8 +97,9 @@ class MaitreD : public Waiter
 private:
     std::queue<Customer*> waitingList;
 public:
+    MaitreD();
     void performTask();
-    void allocateTable();
+    void allocateTable(Customer* customer);
     void checkReservation();
 //
     void mergeTables(int table1, int table2);

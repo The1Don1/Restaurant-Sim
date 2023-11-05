@@ -51,5 +51,8 @@ public:
     void accept(Visitor* visitor);
     void assignCustomerTable(Table* customerTable);
     std::string complimentWaiter();
+    void setReadyToOrderStatus(bool readyToOrderStatus);
+    void setReadyToLeaveStatus(bool readyToLeaveStatus);
+    void setReadyToPayStatus(bool readyToPayStatus);
 };
 #endif //PROJECT_CUSTOMER_H

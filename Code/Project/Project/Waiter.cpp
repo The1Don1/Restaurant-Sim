@@ -40,7 +40,7 @@ void MaitreD::checkReservation() {
     throw "Not yet implemented";
 }
 
-void MaitreD::allocateTable() {
+void MaitreD::allocateTable(Customer* customer) {
     throw "Not yet implemented";
 }
 
