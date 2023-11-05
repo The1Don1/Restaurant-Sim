@@ -29,11 +29,6 @@ public:
     virtual void addTable(AbstractTable* table) = 0;
     virtual AbstractTable* clone() = 0;
 };
-class ConcreteTable: public AbstractTable
-{
-
-public: AbstractTable* clone();
-};
 
 class TableGroup: public AbstractTable
 {
