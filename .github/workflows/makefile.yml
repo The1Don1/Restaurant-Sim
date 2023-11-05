@@ -2,10 +2,10 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "Mathenda", "Sage", "ntando", "SelenatorXo", "Rea", "Fentse" ]
   pull_request:
-    branches: [ "main" ]
-
+    branches: [ "main", "Mathenda", "Sage", "ntando", "SelenatorXo", "Rea", "Fentse" ]
+    
 env:
   BUILD_TYPE: Release
 
@@ -15,12 +15,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-
-    - name: Configure
-      run: |
-        rm -rf ${{github.workspace}}/build/*
-        cmake -S ${{github.workspace}} -B ${{github.workspace}}/Code/Project/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
     
+    - name: Configure CMake
+      run: |
+        rm -rf ${{github.workspace}}/Code/Project/build/*
+        cmake -S ${{github.workspace}}/Code/Project/Project -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
     - name: Build
-      working-directory: ${{github.workspace}}/Code/Project/build
+      working-directory: ${{github.workspace}}/build
       run: make

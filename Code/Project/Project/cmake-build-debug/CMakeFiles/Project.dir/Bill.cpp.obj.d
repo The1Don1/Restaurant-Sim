@@ -1,6 +1,6 @@
 CMakeFiles/Project.dir/Bill.cpp.obj: \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Bill.cpp \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Bill.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Bill.cpp \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Bill.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -140,12 +140,12 @@ CMakeFiles/Project.dir/Bill.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Customer.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Dish.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Menu.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Table.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Floor.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Waiter.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Customer.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Dish.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Menu.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Table.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Floor.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Waiter.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
@@ -155,10 +155,10 @@ CMakeFiles/Project.dir/Bill.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/utility \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Chef.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Visitor.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Kitchen.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Engine.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Tab.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\Manager.h \
- C:\Users\mathe\Documents\School\cos214\Restaurant-Sim\Code\Project\Project\TableIterator.h
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Chef.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Visitor.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Kitchen.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Engine.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Tab.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\Manager.h \
+ C:\Users\mathe\OneDrive\Documents\GitHub\Restaurant-Sim\Code\Project\Project\TableIterator.h
