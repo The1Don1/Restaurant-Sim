@@ -2,6 +2,21 @@
 // Created by mathe on 2023/10/31.
 //
 #include "Menu.h"
+std::string Menu::getDescription()
+{
+    return this->description;
+}
+
+double Menu::getPrice()
+{
+    return this->price;
+}
+
+int Menu::getTimeToPrepare()
+{
+    return this->timeToPrepare;
+}
+
 MenuDecorator::MenuDecorator(Menu *baseItem)
 {
     this->menu = baseItem;
@@ -93,44 +108,12 @@ CokeZero::CokeZero()
     this->timeToPrepare = 1;
 }
 
-std::string CokeZero::getDescription()
-{
-    return this->description;
-}
-
-double CokeZero::getPrice()
-{
-    return this->price;
-}
-
-int CokeZero::getTimeToPrepare()
-{
-    return this->timeToPrepare;
-}
-///
-
 Coke::Coke()
 {
     this->description = "Coke";
     this->price = 20.00;
     this->timeToPrepare = 1;
 }
-
-std::string Coke::getDescription()
-{
-    return this->description;
-}
-
-double Coke::getPrice()
-{
-    return this->price;
-}
-
-int Coke::getTimeToPrepare()
-{
-    return this->timeToPrepare;
-}
-///
 
 Sprite::Sprite()
 {
@@ -139,22 +122,6 @@ Sprite::Sprite()
     this->timeToPrepare = 1;
 }
 
-std::string Sprite::getDescription()
-{
-    return this->description;
-}
-
-double Sprite::getPrice()
-{
-    return this->price;
-}
-
-int Sprite::getTimeToPrepare()
-{
-    return this->timeToPrepare;
-}
-///
-
 BubblegumMilkshake::BubblegumMilkshake()
 {
     this->description = "Bubblegum milkshake";
@@ -162,21 +129,6 @@ BubblegumMilkshake::BubblegumMilkshake()
     this->timeToPrepare = 1;
 }
 
-std::string BubblegumMilkshake::getDescription()
-{
-    return this->description;
-}
-
-double BubblegumMilkshake::getPrice()
-{
-    return this->price;
-}
-
-int BubblegumMilkshake::getTimeToPrepare()
-{
-    return this->timeToPrepare;
-}
-////
 StrawberryMilkshake::StrawberryMilkshake()
 {
     this->description = "Strawberry milkshake";
@@ -184,56 +136,128 @@ StrawberryMilkshake::StrawberryMilkshake()
     this->timeToPrepare = 1;
 }
 
-std::string StrawberryMilkshake::getDescription()
-{
-    return this->description;
-}
-
-double StrawberryMilkshake::getPrice()
-{
-    return this->price;
-}
-
-int StrawberryMilkshake::getTimeToPrepare()
-{
-    return this->timeToPrepare;
-}
-
 //////
-std::string Starter::getDescription() {
-    throw "Not yet implemented";
+/*
+    Starters:
+*/
+OnionRings::OnionRings()
+{
+    this->description = "Onion rings";
+    this->price = 79.99;
+    this->timeToPrepare = 5;
 }
 
-double Starter::getPrice() {
-    throw "Not yet implemented";
+ChickenWings::ChickenWings()
+{
+    this->description = "Chicken wings";
+    this->price = 125.95;
+    this->timeToPrepare = 5;
 }
 
-int Starter::getTimeToPrepare() {
-    throw "Not yet implemented";
+Chips::Chips()
+{
+    this->description = "Chips";
+    this->price = 39.99;
+    this->timeToPrepare = 5;
 }
 
-std::string MainDish::getDescription() {
-    throw "Not yet implemented";
+ChickenNuggets::ChickenNuggets()
+{
+    this->description = "Chicken nuggets";
+    this->price = 54.99;
+    this->timeToPrepare = 5;
+}
+////
+
+/*
+    Main dishes:
+*/
+
+CheeseBurger::CheeseBurger()
+{
+    this->description = "Cheese burger";
+    this->price = 74.99;
+    this->timeToPrepare = 10;
 }
 
-double MainDish::getPrice() {
-    throw "Not yet implemented";
+HotDog::HotDog()
+{
+    this->description = "Hot dog";
+    this->price = 49.99;
+    this->timeToPrepare = 10;
 }
 
-int MainDish::getTimeToPrepare() {
-    throw "Not yet implemented";
+CheeseSteak::CheeseSteak()
+{
+    this->description = "CheeseSteak";
+    this->price = 169.99;
+    this->timeToPrepare = 10;
 }
 
-std::string Dessert::getDescription() {
-    throw "Not yet implemented";
+BBQRibs::BBQRibs()
+{
+    this->description = "BBQ ribs";
+    this->price = 199.99;
+    this->timeToPrepare = 10;
 }
 
-double Dessert::getPrice() {
-    throw "Not yet implemented";
+ChickenTenders::ChickenTenders()
+{
+    this->description = "Chicken tenders";
+    this->price = 129.99;
+    this->timeToPrepare = 10;
 }
 
-int Dessert::getTimeToPrepare() {
-    throw "Not yet implemented";
+MacAndCheese::MacAndCheese()
+{
+    this->description = "Mac and cheese";
+    this->price = 109.99;
+    this->timeToPrepare = 10;
 }
 
+BBQSteak::BBQSteak()
+{
+    this->description = "BBQ steak";
+    this->price = 209.99;
+    this->timeToPrepare = 10;
+}
 
+BuffaloWings::BuffaloWings()
+{
+    this->description = "Buffalo wings";
+    this->price = 179.99;
+    this->timeToPrepare = 10;
+}
+/////
+
+
+/*
+    Desserts:
+*/
+Pancakes::Pancakes()
+{
+    this->description = "Pancakes";
+    this->price = 49.99;
+    this->timeToPrepare = 3;
+}
+
+Donuts::Donuts()
+{
+    this->description = "Donuts";
+    this->price = 59.99;
+    this->timeToPrepare = 3;
+}
+
+Waffles::Waffles()
+{
+    this->description = "Waffles";
+    this->price = 69.99;
+    this->timeToPrepare = 3;
+}
+
+ChocolateBrownies::ChocolateBrownies()
+{
+    this->description = "Chocolate brownies";
+    this->price = 89.99;
+    this->timeToPrepare = 3;
+}
