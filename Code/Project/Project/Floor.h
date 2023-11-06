@@ -8,12 +8,17 @@
 #include "Table.h"
 #include "Tab.h"
 #include "Manager.h"
+#include "TableIterator.h"
 
 class Table;
 class AbstractTable;
 class Manager;
-class generalWaiter;
 class TableIterator;
+class ConcreteTableIterator;
+class generalWaiter;
+class Waiter;
+class Tab;
+
 class Floor {
     private:
         std::vector<generalWaiter*> floorWaiters;
@@ -40,7 +45,8 @@ public:
             return this->headTable;
         }
         TableIterator* createIterator(){
-            return new ConcreteTableIterator(this->getHeadTable());
+            ConcreteTableIterator* iterator = new ConcreteTableIterator(this->headTable);
+            return iterator;
         }
         void constructWaiter(std::string name, AbstractTable* table);
         void printWaiters();

@@ -1,7 +1,12 @@
 #ifndef PROJECT_TABLEITERATOR_H
 #define PROJECT_TABLEITERATOR_H
 #include "Table.h"
+#include "Floor.h"
+
+class AbstractTable;
 class Table;
+class TableGroup;
+class Floor;
 class TableIterator{
 public:
     AbstractTable* currTable;
