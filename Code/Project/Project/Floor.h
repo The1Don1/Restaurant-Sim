@@ -16,6 +16,7 @@ class Table;
 class Manager;
 class generalWaiter;
 class TableIterator;
+class ConcreteTableIterator;
 class Floor {
 private:
     std::vector<generalWaiter*> floorWaiters;
