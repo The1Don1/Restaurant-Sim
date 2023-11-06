@@ -20,18 +20,30 @@ class TableIterator;
 class ConcreteTableIterator;
 //class AbstractTable;
 class AbstractTable {
-private:
-    int numberOfSeats;
 public:
-    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats){}
-    virtual TableIterator* createIterator() = 0;
-    virtual void accept(Visitor* visitor) = 0;
-    virtual void addTable(AbstractTable* table) = 0;
-    virtual AbstractTable* clone() = 0;
-    int getnumberOfSeats()
-    {
-        return numberOfSeats;
-    };
+    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
+    virtual void acceptVisitor(Visitor* visitor) = 0;
+    // virtual AbstractTable *operator+(TableGroup *tableGroup);
+    // virtual AbstractTable *operator+(Table *table);
+    virtual AbstractTable *clone() = 0;
+    int getnumberOfSeats();
+    int getTableID();
+    std::vector<Customer *> getCustomers();
+    void setState(TableState *tableState);
+    TableState *getState();
+    void handleState();
+    Bill *getBill(Customer *customer);
+    void setWaiter(Waiter *waiter);
+    void getOrders();
+    //static int tableCount;
+    AbstractTable *next;
+protected:
+    TableState *tableState;
+    std::vector<Customer *> customers;
+    Bill *bill;
+    Waiter *waiter;
+    int numberOfSeats;
+    int tableID;
 };
 
 class TableGroup: public AbstractTable
@@ -72,9 +84,8 @@ private:
                 std::cout << "";
             };
             TableIterator* createIterator();
-            void accept(Visitor* visitor);
             AbstractTable* clone() ;
-            void acceptVisitor(Visitor visitor);
+            void acceptVisitor(Visitor* visitor);
             void handleState();
             void changeTableState();
             void setState(TableState* state);
