@@ -18,13 +18,13 @@ class MaitreD;
 class Visitor;
 class TableIterator;
 class ConcreteTableIterator;
-//class AbstractTable;
+class TableGroup;
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
     virtual void acceptVisitor(Visitor* visitor) = 0;
-    // virtual AbstractTable *operator+(TableGroup *tableGroup);
-    // virtual AbstractTable *operator+(Table *table);
+    virtual AbstractTable *operator+(TableGroup *tableGroup) = 0;
+    virtual AbstractTable *operator+(Table *table) = 0;
     virtual AbstractTable *clone() = 0;
     int getnumberOfSeats();
     int getTableID();
@@ -56,8 +56,8 @@ public:
     //~TableGroup();
     void addTable(AbstractTable *aTable);
     void acceptVisitor(Visitor* visitor);
-    // AbstractTable *operator+(TableGroup *tableGroup);
-    // AbstractTable *operator+(Table *table);
+    AbstractTable *operator+(TableGroup *tableGroup);
+    AbstractTable *operator+(Table *table);
     AbstractTable *clone();
     std::vector<AbstractTable *> getTables();
 };
@@ -66,8 +66,8 @@ class Table : public AbstractTable
 {
 public:
     Table(int numberOfSeats) : AbstractTable(numberOfSeats) {}
-    // AbstractTable *operator+(Table *table);
-    // AbstractTable *operator+(TableGroup *tableGroup);
+    AbstractTable *operator+(Table *table);
+    AbstractTable *operator+(TableGroup *tableGroup);
     void acceptVisitor(Visitor* visitor);
     AbstractTable *clone();
     std::vector<Customer *> getCustomers();

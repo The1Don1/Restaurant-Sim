@@ -39,8 +39,11 @@ Bill* AbstractTable::getBill(Customer *customer)
 void AbstractTable::setWaiter(Waiter *waiter)
 {
     this->waiter = waiter;
+}
+Waiter *AbstractTable::getWaiter()
+{
+    return waiter;
 };
-
 
 AbstractTable *Table::clone() {
     return nullptr;
@@ -65,6 +68,11 @@ void Table::setState(TableState* state) {
     handleState();
 }
 
+TableState *Table::getState()
+{
+    return tableState;
+}
+
 Bill* Table::getBill(Customer* customer) {
     return bill;
 }
@@ -72,6 +80,11 @@ Bill* Table::getBill(Customer* customer) {
 void Table::setWaiter(Waiter *waiter)
 {
     this->waiter = waiter;
+}
+
+Waiter *Table::getWaiter()
+{
+    return waiter;
 }
 
 void Table::getOrders() {
@@ -126,4 +139,44 @@ void TableGroup::acceptVisitor(Visitor *visitor)
 AbstractTable *TableGroup::clone()
 {
     return this;
+}
+
+std::vector<AbstractTable *> TableGroup::getTables()
+{
+    return tables;
+}
+
+//+ operator overload to add 2 table groups and return a table group
+AbstractTable* TableGroup::operator+(TableGroup *tableGroup)
+{
+    TableGroup *newTableGroup = new TableGroup();
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(tableGroup);
+    return newTableGroup;
+}
+
+//+ operator overload to add a table to the table group
+AbstractTable* TableGroup::operator+(Table *table)
+{
+    TableGroup *newTableGroup = new TableGroup();
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(table);
+    return newTableGroup;
+}
+
+//+ operator overload to add 2 tables and return a table group
+AbstractTable *Table::operator+(Table *table)
+{
+    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + table->getnumberOfSeats());
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(table);
+    return newTableGroup;
+}
+//+ operator overload to add a table to a table group
+AbstractTable *Table::operator+(TableGroup *tableGroup)
+{
+    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + tableGroup->getnumberOfSeats());
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(tableGroup);
+    return newTableGroup;
 }
