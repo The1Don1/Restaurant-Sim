@@ -5,18 +5,18 @@
 #ifndef PROJECT_TABLEITERATOR_H
 #define PROJECT_TABLEITERATOR_H
 #include "Table.h"
-class Table;
+class AbstractTable;
 class ConcreteTableIterator;
 
 class TableIterator{
 public:
-    virtual Table* next() = 0;
+    virtual AbstractTable* next() = 0;
     virtual bool hasNext() = 0;
 };
 class ConcreteTableIterator : public TableIterator{
 public:
-    Table* table;
-    Table* next()
+    AbstractTable* table;
+    AbstractTable* next()
     {
         return table->next;
     };
