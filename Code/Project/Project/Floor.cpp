@@ -31,7 +31,7 @@ AbstractTable* Floor::constructTable(){
 }
 
 void Floor::constructWaiter(std::string name, AbstractTable* table){
-    generalWaiter* g = new generalWaiter(name, table, this);
+    generalWaiter* g = new generalWaiter(name, this);
     std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
     floorWaiters.push_back(g);
 }

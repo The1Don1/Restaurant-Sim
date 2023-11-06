@@ -3,14 +3,19 @@
 //
 #include "TableIterator.h"
 
-Table* ConcreteTableIterator::next() {
-    throw "Not yet implemented";
+AbstractTable* ConcreteTableIterator::next() 
+{
+    currTable = currTable->next;
+    return currTable;
 }
 
-bool ConcreteTableIterator::hasNext() {
-    throw "Not yet implemented";
+bool ConcreteTableIterator::hasNext()
+{
+    return currTable->next != nullptr;
 }
 
-ConcreteTableIterator::ConcreteTableIterator() {
+ConcreteTableIterator::ConcreteTableIterator(AbstractTable* aTable) 
+{
+    this->currTable = aTable;
 }
 
