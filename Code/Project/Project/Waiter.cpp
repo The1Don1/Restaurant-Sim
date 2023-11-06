@@ -1,8 +1,8 @@
 #include "Waiter.h"
-void generalWaiter::visitTable(Table *table)
-{
-    throw "Not yet implemented";
-}
+// void generalWaiter::visitTable(Table *table)
+// {
+//     throw "Not yet implemented";
+// }
 
 void Waiter::prepareDish() {
     throw "Not yet implemented";
