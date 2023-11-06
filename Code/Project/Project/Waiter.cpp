@@ -38,6 +38,7 @@ void generalWaiter::performTask() {
 
 void generalWaiter::visitTable(AbstractTable *table)
 {
+    std::cout << "Waiter: " << waiterName << " visiting table "<< table->getTableID() << "\n";
 }
 
 void MaitreD::checkReservation() {
@@ -57,7 +58,7 @@ void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
 }
 
 void MaitreD::performTask() {
-    throw "Not yet implemented";
+    std::cout << "Waiter: " << waiterName << " performing task\n";
 }
 
 void generalWaiter::receiveCompliment(const std::string& compliment)
