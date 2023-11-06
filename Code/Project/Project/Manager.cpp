@@ -26,8 +26,8 @@ std::vector<std::string> Manager::getComplaints()
     return this->complaints;
 }
 
-// void Manager::handleComplaint(const std::string& complaint)
-// {
-//     std::cout << "Restaurant Manager: Thank you for your feedback. We will address your complaint.\n";
-//     std::cout << "Complaint details: " << complaint << "\n";
-// }
+void Manager::handleComplaint(const std::string& complaint)
+{
+    std::cout << "Restaurant Manager: Thank you for your feedback. We will address your complaint.\n";
+    std::cout << "Complaint details: " << complaint << "\n";
+}
