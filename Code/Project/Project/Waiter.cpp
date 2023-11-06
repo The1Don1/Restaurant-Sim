@@ -44,7 +44,6 @@ void Waiter::deliverOrder(Dish* order)
                 {
                     customer->setReadyToPayStatus(true);
                     std::cout << "Waiter: " << this->waiterName << " delivered order to customer: " << order->getCustomerName();
-                    break;
                 }
             }
         }
