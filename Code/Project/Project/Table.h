@@ -21,18 +21,17 @@ class ConcreteTableIterator;
 //class AbstractTable;
 class AbstractTable {
 private:
-    int customerNumber;
+    int numberOfSeats;
 public:
-    explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
+    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats){}
     virtual TableIterator* createIterator() = 0;
     virtual void accept(Visitor* visitor) = 0;
     virtual void addTable(AbstractTable* table) = 0;
     virtual AbstractTable* clone() = 0;
-};
-class ConcreteTable: public AbstractTable
-{
-
-public: AbstractTable* clone();
+    int getnumberOfSeats()
+    {
+        return numberOfSeats;
+    };
 };
 
 class TableGroup: public AbstractTable
@@ -62,11 +61,11 @@ private:
     Waiter* waiter;
     ConcreteTableIterator* concreteTableIterator;
     public:
-            Table(int customerNumber) : AbstractTable(customerNumber){}
+            Table(int numberOfSeats) : AbstractTable(numberOfSeats){}
             void addTable(AbstractTable* table){
                 std::cout << "";
             }
-            int getCustomerNumber(){
+            int getnumberOfSeats(){
                 return 0;
             };
             void decrementTimer(){
