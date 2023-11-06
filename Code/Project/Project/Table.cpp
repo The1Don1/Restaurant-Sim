@@ -39,8 +39,11 @@ Bill* AbstractTable::getBill(Customer *customer)
 void AbstractTable::setWaiter(Waiter *waiter)
 {
     this->waiter = waiter;
+}
+Waiter *AbstractTable::getWaiter()
+{
+    return waiter;
 };
-
 
 AbstractTable *Table::clone() {
     return nullptr;
@@ -82,6 +85,11 @@ void Table::setState(TableState* state) {
     handleState();
 }
 
+TableState *Table::getState()
+{
+    return tableState;
+}
+
 Bill* Table::getBill(Customer* customer) {
     return bill;
 }
@@ -89,6 +97,11 @@ Bill* Table::getBill(Customer* customer) {
 void Table::setWaiter(Waiter *waiter)
 {
     this->waiter = waiter;
+}
+
+Waiter *Table::getWaiter()
+{
+    return waiter;
 }
 
 void Table::getOrders() {
@@ -161,4 +174,9 @@ AbstractTable* TableGroup::operator+(Table *table)
 AbstractTable *TableGroup::clone()
 {
     return this;
+}
+
+std::vector<AbstractTable *> TableGroup::getTables()
+{
+    return tables;
 }
