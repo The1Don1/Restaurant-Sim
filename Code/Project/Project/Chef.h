@@ -8,6 +8,7 @@
 #include "Kitchen.h"
 #include "Waiter.h"
 #include "Dish.h"
+#include "Table.h"
 //class Visitor;
 class generalWaiter;
 
