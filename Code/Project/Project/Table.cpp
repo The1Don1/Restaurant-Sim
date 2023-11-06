@@ -105,6 +105,7 @@ std::vector<AbstractTable *> TableGroup::getTables()
 AbstractTable *Table::clone()
 {
     Table *table = new Table(this->getnumberOfSeats());
+    return table;
 }
 
 //+ operator overload to add 2 tables and return a table group
