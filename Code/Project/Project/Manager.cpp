@@ -6,7 +6,7 @@
 
 //Doxigen comments
 /**
- * @brief Manager visits the table and checks the customer's mood
+ * @brief Manager visits the table and checks the customer's mood 
  * 
  * @param table 
 */
