@@ -15,6 +15,7 @@ class Floor;
 class Table;
 class Tab;
 class Customer;
+class AbstractTable;
 
 class Waiter
 {
