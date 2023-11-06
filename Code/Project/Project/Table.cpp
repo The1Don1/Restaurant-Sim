@@ -109,7 +109,7 @@ void Occupied::handleState(AbstractTable *table)
 
 std::string Occupied::getState()
 {
-    throw "Not yet implemented";
+    return "Occupied";
 }
 
 void TableGroup::addTable(AbstractTable *aTable)
