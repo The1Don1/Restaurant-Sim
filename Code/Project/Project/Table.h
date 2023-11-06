@@ -6,7 +6,7 @@
 #define PROJECT_TABLE_H
 #include <iostream>
 #include "Customer.h"
-#include "Table.h"
+#include "Table.cpp"
 #include "Floor.h"
 #include "TableIterator.h"
 
