@@ -30,7 +30,7 @@ public:
     Table* getHeadTable(){
         return this->floorTables.front();
     }
-    void constructWaiter(std::string name, Table* table);
+    void constructWaiter(std::string name);
     void printWaiters();
     Tab* getTab(std::string aName);
     Manager* getManager();

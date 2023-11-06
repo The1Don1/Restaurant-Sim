@@ -12,7 +12,7 @@ Table* Floor::constructTable(){
     return t;
 }
 
-void Floor::constructWaiter(std::string name, Table* table){
+void Floor::constructWaiter(std::string name){
     generalWaiter* g = new generalWaiter(name, this);
     std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
     floorWaiters.push_back(g);
