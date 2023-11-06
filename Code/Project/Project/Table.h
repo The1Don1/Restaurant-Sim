@@ -8,6 +8,12 @@
 class Bill;
 class Waiter;
 class Visitor;
+class TableGroup;
+class Table;
+class AbstractTable;
+class TableState;
+class Unoccupied;
+class Occupied;
 
 /*
     TableState is a state class that will be used to determine if the table is occupied or not
@@ -30,25 +36,6 @@ class Occupied : public TableState
 public:
     void handleState(AbstractTable *table);
     std::string getState();
-};
-
-/*
-    TableGroup is a composite class that will store a vector of AbstractTables
-    It will be used to store the tables that are grouped together
-*/
-class TableGroup : public AbstractTable
-{
-private:
-    std::vector<AbstractTable *> tables;
-public:
-    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
-    ~TableGroup();
-    void addTable(AbstractTable *aTable);
-    void acceptVisitor(Visitor visitor);
-    AbstractTable *operator+(TableGroup *tableGroup);
-    AbstractTable *operator+(Table *table);
-    AbstractTable *clone();
-    std::vector<AbstractTable *> getTables();
 };
 
 /*
@@ -86,6 +73,24 @@ protected:
     int tableID;
 };
 int AbstractTable::tableCount = 0;
+/*
+    TableGroup is a composite class that will store a vector of AbstractTables
+    It will be used to store the tables that are grouped together
+*/
+class TableGroup : public AbstractTable
+{
+private:
+    std::vector<AbstractTable *> tables;
+public:
+    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
+    ~TableGroup();
+    void addTable(AbstractTable *aTable);
+    void acceptVisitor(Visitor visitor);
+    AbstractTable *operator+(TableGroup *tableGroup);
+    AbstractTable *operator+(Table *table);
+    AbstractTable *clone();
+    std::vector<AbstractTable *> getTables();
+};
 
 /*
     Table is a leaf class that will be a single table
