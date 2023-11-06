@@ -54,10 +54,6 @@ public:
     void addToTab(std::string name, double amount);
 
     void payTab(std::string name, double amount);
-    void update(AbstractTable* table)
-    {
-        std::cout << "Waiter: " << this->waiterName << " notified of table: " << table->getTableID() << std::endl;
-    }
     Tab* getTab(std::string name);
     void decrementTimer(){
         if(this->waiterWaitTime <= 0){
