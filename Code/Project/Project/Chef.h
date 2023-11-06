@@ -67,6 +67,10 @@ class HeadChef: public Chef
         void Notify(generalWaiter* waiter);
         void Attach(generalWaiter* waiter);
         void Detach();
+        std::queue<Dish*> getDishQueue()
+        {
+            return dishQueue;
+        }
 };
 
 /**

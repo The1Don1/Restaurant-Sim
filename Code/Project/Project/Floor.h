@@ -36,6 +36,10 @@ public:
     Manager* getManager();
     void setManager(Manager* aManager);
     void getManagerComplaints();
+    std::vector<Table*> getFloorTables()
+    {
+        return floorTables;
+    }
 };
 
 

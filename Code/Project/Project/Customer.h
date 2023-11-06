@@ -60,5 +60,9 @@ public:
     void setReadyToOrderStatus(bool readyToOrderStatus);
     void setReadyToLeaveStatus(bool readyToLeaveStatus);
     void setReadyToPayStatus(bool readyToPayStatus);
+    std::string getName()
+    {
+        return name;
+    }
 };
 #endif //PROJECT_CUSTOMER_H
