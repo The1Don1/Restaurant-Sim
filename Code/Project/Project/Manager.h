@@ -9,7 +9,7 @@
 #include <vector>
 #include "Visitor.h"
 
-class Manager: public Visitor
+class Manager
 {
     private: 
         std::vector<std::string> complaints;
