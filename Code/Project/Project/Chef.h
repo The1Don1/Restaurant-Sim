@@ -36,7 +36,6 @@ class Chef
         void SetNextChef(Chef* chef);
 };
 
-
 class ChefNotifier;
 
 class commisChef;
