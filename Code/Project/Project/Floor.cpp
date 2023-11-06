@@ -50,4 +50,4 @@ void Floor::setManager(Manager* manager) {
 
 void Floor::getManagerComplaints() {
     throw "Not yet implemented";
-}
+ }

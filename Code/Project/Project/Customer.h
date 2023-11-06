@@ -10,66 +10,55 @@
 #include "Dish.h"
 #include "Table.h"
 #include "Bill.h"
+#include "Visitor.h"
+#include "Manager.h"
+
+class Manager;
 class CustomerMood;
 class Tab;
 class AbstractBill;
 class SubBill;
-class Customer {
+class Visitor;
+class PaymentStrategy;
+class Customer
+{
 private:
     Dish* order;
-    CustomerMood* customerMood;
+    std::string customerMood;
     bool readyToPay;
     bool readyToOrder;
     bool readyToLeave;
     std::string name;
     AbstractBill* bill;
     int tableNum;
+    Table* myTable;
+    Bill* customerBill;
+    std::string customerComplaint;
+    Tab* customerTab;
 public:
     Dish* dish;
     Table* table;
-    Customer(Bill* bill);
-    float pay();
-    bool tip();
+    Customer(std::string customerName, int tableNum, Table* table);
+    ~Customer();
+    void pay(PaymentStrategy* aMethodOfPayment);
+    void tip();
     void customer();
     void checkOrder(Dish* order);
-//    CustomerMood getMood();
-    void setMood();
+    void setMood(std::string cstmrMood);
+    std::string getMood();
     void leaveRestaurant(Bill* bill);
-    std::string makeComplaint();
-    SubBill getBill();
-//    CustomerMood getCustomerState();
-    Tab createTab();
-    void setTab(Tab table);
+    void makeComplaint(Manager* manager);
+    Bill* getBill();
+    Tab* createTab();
+    void setTab(Tab* table);
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
-};
-
-class CustomerMood{
-public: Customer* customer;
-
-public: virtual bool considerTip() = 0;
-};
-class extremelySatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-class extremelyUnsatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-
-class Unsatisfied: public CustomerMood
-{
-
-public: bool considerTip();
-};
-
-class Satisfied: public CustomerMood
-{
-
-public: bool considerTip();
+    void accept(Visitor* visitor);
+    void assignCustomerTable(Table* customerTable);
+    std::string complimentWaiter();
+    void setReadyToOrderStatus(bool readyToOrderStatus);
+    void setReadyToLeaveStatus(bool readyToLeaveStatus);
+    void setReadyToPayStatus(bool readyToPayStatus);
 };
 #endif //PROJECT_CUSTOMER_H

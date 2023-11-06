@@ -1,5 +1,6 @@
 #include "Waiter.h"
-void Waiter::visitTable(Table *table) {
+void generalWaiter::visitTable(Table *table)
+{
     throw "Not yet implemented";
 }
 
@@ -16,10 +17,6 @@ void Waiter::sendOrders() {
 }
 
 void Waiter::deliverOrder() {
-    throw "Not yet implemented";
-}
-
-void generalWaiter::visitTable(Table occupiedTable) {
     throw "Not yet implemented";
 }
 
@@ -43,7 +40,7 @@ void MaitreD::checkReservation() {
     throw "Not yet implemented";
 }
 
-void MaitreD::allocateTable() {
+void MaitreD::allocateTable(Customer* customer) {
     throw "Not yet implemented";
 }
 
@@ -57,4 +54,10 @@ void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
 
 void MaitreD::performTask() {
     throw "Not yet implemented";
+}
+
+void generalWaiter::receiveCompliment(const std::string& compliment)
+{
+    std::cout << "Waiter: Thank you for your kind words! I'm glad you enjoyed your dining experience.\n";
+    std::cout << "Compliment details: " << compliment << "\n";
 }
