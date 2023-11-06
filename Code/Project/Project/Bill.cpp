@@ -18,7 +18,10 @@ void BillItem::addItem(SubBill item) {
 }
 
 void BillItem::paymentMethod() {
-    Bill::paymentMethod();
+    if(getPaymentStrategy() != NULL)
+        getPaymentStrategy()->paymentMethod();
+    else
+        std::cout << "Payment strategy not set.\n";
 }
 
 Bill* BillItem::getSubBill(std::string customerName) {
@@ -116,7 +119,16 @@ double CustomTipDecorator::getTotalCost() {
 
 void Bill::handleTip() {
     //Billdecorator->getTotalCost() function returns the custom tip given
-    totalAmount = totalAmount + this->billDecorator->getTotalCost();
+    //totalAmount = totalAmount + this->billDecorator->getTotalCost();
+
+    if (splitBill)
+    {
+        totalAmount = totalAmount + (totalAmount * 0.15);
+    }
+    else
+    {
+        totalAmount = totalAmount + (totalAmount * 0.20);
+    }
 
 }
 
@@ -140,6 +152,10 @@ double Bill::getTotalCost() {
         
 }
 
+Bill::Bill(double price) : totalAmount(price), paymentStrategy(NULL), splitBill(false)
+{
+    
+}
 
 /* ------------Changes--------------*/
 /*

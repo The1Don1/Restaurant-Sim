@@ -1,19 +1,21 @@
 #include "Waiter.h"
 void Waiter::visitTable(Table *table)
 {
+    if (table != NULL)
+        std::cout << "Visiting table " << table->getTableID() << std::endl;
 
-    std::cout << "Visiting table " << table->getTableID() << std::endl;
     // Visitor* visitor = new Visitor();
     // table->acceptVisitor(*visitor);
     // visitor->visitTable(table);
 }
 
-void Waiter::prepareDish(Dish* dish)
+void Waiter::prepareDish(Dish *dish)
 {
     std::cout << "Preparing dish..." << std::endl;
 
-    //headChef->getDishQueue().push(dish);
-    headChef->PrepareDish(dish);
+    // headChef->getDishQueue().push(dish);
+    if (headChef != NULL)
+        headChef->PrepareDish(dish);
 }
 
 void Waiter::getOrders()
@@ -21,7 +23,7 @@ void Waiter::getOrders()
     std::cout << waiterName << " is getting orders..." << std::endl;
 }
 
-void Waiter::sendOrders(Dish* dish)
+void Waiter::sendOrders(Dish *dish)
 {
     std::cout << "Sending order to headchef. Adding dish to dishQueue" << std::endl;
     headChef->getDishQueue().push(dish);
@@ -39,7 +41,6 @@ void generalWaiter::visitTable(Table occupiedTable)
     // Visitor* visitor = new Visitor();
     // occupiedTable.acceptVisitor(*visitor);
     // visitor->visitTable(&occupiedTable);
-
 }
 
 void generalWaiter::addToTab(std::string customerName, double amount)
@@ -69,6 +70,7 @@ void generalWaiter::payTab(std::string customerName, double amount)
             {
                 std::cout << "Tab for " << customerName << " is not fully payed off yet." << std::endl;
             }
+            return;
         }
     }
 
@@ -100,9 +102,9 @@ void MaitreD::checkReservation(int tableNo)
 {
     std::cout << "Checking reservation..." << std::endl;
 
-    Reserved* reserved = new Reserved();
+    Reserved *reserved = new Reserved();
 
-    for (Table* table : waiterFloor->getFloorTables())
+    for (Table *table : waiterFloor->getFloorTables())
     {
         if (table->getTableID() == tableNo)
         {
@@ -116,6 +118,8 @@ void MaitreD::checkReservation(int tableNo)
             }
         }
     }
+
+    delete reserved;
 }
 
 void MaitreD::allocateTable(int partySize)
@@ -150,31 +154,35 @@ void MaitreD::allocateTable(int partySize)
 
         for (int i = 0; i <= partySize; i++)
             waitingList.pop();
+
+        delete occupied;
+
+        return;
     }
-    else
+
+    // If no suitable table is found, merge tables
+    std::cout << "No suitable table available for a party size of " << partySize << ". Merging tables..." << std::endl;
+
+    for (int i = 0; i <= waiterFloor->getFloorTables().size(); i++)
     {
-        // If no suitable table is found, merge tables
-        std::cout << "No suitable table available for a party size of " << partySize << ". Merging tables..." << std::endl;
+        int table1 = waiterFloor->getFloorTables()[i]->getnumberOfSeats();
 
-        for (int i = 0; i <= waiterFloor->getFloorTables().size(); i++)
+        for (int j = i + 1; j < waiterFloor->getFloorTables().size() - 1; j++)
         {
-            int table1 = waiterFloor->getFloorTables()[i]->getnumberOfSeats();
+            int table2 = waiterFloor->getFloorTables()[j]->getnumberOfSeats();
 
-            for (int j = i + 1; j < waiterFloor->getFloorTables().size() - 1; j++)
+            if ((table1 + table2) >= partySize)
             {
-                int table2 = waiterFloor->getFloorTables()[j]->getnumberOfSeats();
+                mergeTables(table1, table2);
+                for (int i = 0; i <= partySize; i++)
+                    waitingList.pop();
 
-                if ((table1 + table2) >= partySize)
-                {
-                    mergeTables(table1, table2);
-                    for (int i = 0; i <= partySize; i++)
-                        waitingList.pop();
-
-                    break;
-                }
+                break;
             }
         }
     }
+
+    delete occupied;
 }
 
 void MaitreD::mergeTables(int table1, int table2)
@@ -199,6 +207,8 @@ void MaitreD::mergeTables(int table1, int table2)
     Occupied *occupied = new Occupied();
 
     merged->setState(occupied);
+
+    delete occupied;
 }
 
 void MaitreD::splitTables(Waiter *waiter, int tableNumber)
@@ -216,7 +226,7 @@ void MaitreD::splitTables(Waiter *waiter, int tableNumber)
     }
 
     int maxCustomers = 10;
-    for (Table* table : waiterFloor->getFloorTables())
+    for (Table *table : waiterFloor->getFloorTables())
     {
         if (table->getTableID() == tableNumber)
         {
@@ -228,8 +238,8 @@ void MaitreD::splitTables(Waiter *waiter, int tableNumber)
     if (it != waiterFloor->getFloorTables().end())
     {
         // If the table is found, split it into two smaller tables
-        Table *table1 = new Table(maxCustomers/2);
-        Table *table2 = new Table(maxCustomers/2);
+        Table *table1 = new Table(maxCustomers / 2);
+        Table *table2 = new Table(maxCustomers / 2);
 
         // Add the new tables to the floor
         waiterFloor->getFloorTables().push_back(table1);
@@ -252,18 +262,14 @@ void MaitreD::performTask()
 }
 
 /* ---------Notes---------*/
-/*
-1. For the function, void Waiter::prepareDish(Dish* dish), i need the headchef to prepare the specific
-dish, hence the prepareDish() function needs a parameter.
-
 
 /* ------------Changes--------------*/
 /*
 1. Added a dish parameter for the function void Waiter::prepareDish(Dish* dish).
-2. Added a partySize parameter for the function void MaitreD::allocateTable(int partySize) to 
+2. Added a partySize parameter for the function void MaitreD::allocateTable(int partySize) to
 indicate the party size that needs to be allocated to a table, and allowing us to allocate a big
 enough table for them (or merge if necessary).
-3. For checkReservation(), i included tableNo as a parameter to reference a specific tableID and 
+3. For checkReservation(), i included tableNo as a parameter to reference a specific tableID and
 check if that specific table has already been reserved or not.
 4. Added a tabs vector to keep track of all the tabs. Each tab has a name and amount associated with
 it.

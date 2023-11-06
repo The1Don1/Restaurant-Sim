@@ -58,6 +58,11 @@ public:
     {
         return customers;
     }
+
+    PaymentStrategy* getPaymentStrategy()
+    {
+        return paymentStrategy;
+    }
 };
 
 class BillItem: public Bill{
