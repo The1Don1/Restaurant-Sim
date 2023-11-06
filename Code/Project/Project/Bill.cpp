@@ -62,7 +62,7 @@ void Card::getPaymentMethod() {
 }
 
 
-CustomTipDecorator::CustomTipDecorator(Bill *bill, Bill *bill2, double tip) : BillDecorator(bill) {
+CustomTipDecorator::CustomTipDecorator(Bill *bill, double tip) : BillDecorator(bill) {
 }
 
 double CustomTipDecorator::getTotalCost() {
@@ -72,6 +72,11 @@ double CustomTipDecorator::getTotalCost() {
 
 void Bill::handleTip() {
 
+}
+
+void Bill::addTip(float tip)
+{
+    totalAmount += tip;
 }
 
 void Bill::getBill() {
@@ -88,4 +93,16 @@ void Bill::setPaymentMethod(PaymentStrategy *method) {
 
 double Bill::getTotalCost() {
     return 0;
+}
+
+void Bill::paymentMethod() {
+
+}
+
+Bill::Bill() {
+
+}
+
+void Bill::getSubBill(std::string customerName) {
+
 }

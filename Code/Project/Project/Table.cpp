@@ -3,29 +3,59 @@
 //
 
 #include "Table.h"
+int AbstractTable::getnumberOfSeats()
+{
+    return numberOfSeats;
+}
 
-void AbstractTable::addTable(AbstractTable *table) {
+int AbstractTable::getTableID()
+{
+    return tableID;
+};
+std::vector<Customer *> AbstractTable::getCustomers()
+{
+    return customers;
+};
+void AbstractTable::setState(TableState *tableState)
+{
+    delete this->tableState;
+    this->tableState = tableState;
+    handleState();
+};
 
-}
-AbstractTable* ConcreteTable::clone() {
-    throw "Not yet implemented";
-}
-TableIterator* Table::createIterator() {
-    throw "Not yet implemented";
-}
-void Table::accept(Visitor* visitor) {
-    throw "Not yet implemented";
-}
+TableState* AbstractTable::getState()
+{
+    return tableState;
+};
+void AbstractTable::handleState()
+{
+    //tableState->handleState(this);
+};
+
+Bill* AbstractTable::getBill(Customer *customer)
+{
+    return bill;
+};
+void AbstractTable::setWaiter(Waiter *waiter)
+{
+    this->waiter = waiter;
+};
+
 
 AbstractTable *Table::clone() {
     return nullptr;
 }
-void Table::handleState() {
-    throw "Not yet implemented";
+std::vector<Customer *> Table::getCustomers()
+{
+    return customers;
 }
 
-
-void Table::changeTableState() {
+void Table::acceptVisitor(Visitor *visitor)
+{
+    visitor->visitTable(this);
+}
+void Table::handleState()
+{
     throw "Not yet implemented";
 }
 
@@ -34,6 +64,11 @@ void Table::setState(TableState* state) {
 }
 
 Bill* Table::getBill(Customer* customer) {
+    throw "Not yet implemented";
+}
+
+void Table::setWaiter(Waiter *waiter)
+{
     throw "Not yet implemented";
 }
 
@@ -75,4 +110,19 @@ void Reserved::handleState() {
 
 std::string Reserved::getState() {
     throw "Not yet implemented";
+}
+
+void TableGroup::addTable(AbstractTable *aTable)
+{
+    throw "Not yet implemented";
+}
+
+void TableGroup::acceptVisitor(Visitor *visitor)
+{
+    throw "Not yet implemented";
+}
+
+AbstractTable *TableGroup::clone()
+{
+    return this;
 }

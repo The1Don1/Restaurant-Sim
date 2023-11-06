@@ -27,7 +27,7 @@ void Floor::Decrement() {
         floorWaiter->decrementTimer();
     }
     for(auto & floorTable : floorTables){
-        floorTable->decrementTimer();
+        // floorTable->decrementTimer();
     }
 }
 void Floor::printWaiters(){
@@ -50,4 +50,4 @@ void Floor::setManager(Manager* manager) {
 
 void Floor::getManagerComplaints() {
     throw "Not yet implemented";
-}
+ }
