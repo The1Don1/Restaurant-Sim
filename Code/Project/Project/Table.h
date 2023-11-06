@@ -32,6 +32,24 @@ public:
     std::string getState();
 };
 
+/*
+    TableGroup is a composite class that will store a vector of AbstractTables
+    It will be used to store the tables that are grouped together
+*/
+class TableGroup : public AbstractTable
+{
+private:
+    std::vector<AbstractTable *> tables;
+public:
+    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
+    ~TableGroup();
+    void addTable(AbstractTable *aTable);
+    void acceptVisitor(Visitor visitor);
+    AbstractTable *operator+(TableGroup *tableGroup);
+    AbstractTable *operator+(Table *table);
+    AbstractTable *clone();
+    std::vector<AbstractTable *> getTables();
+};
 
 /*
 Abstract Class that will be the base for the Tables
@@ -68,25 +86,6 @@ protected:
     int tableID;
 };
 int AbstractTable::tableCount = 0;
-
-/*
-    TableGroup is a composite class that will store a vector of AbstractTables
-    It will be used to store the tables that are grouped together
-*/
-class TableGroup : public AbstractTable
-{
-private:
-    std::vector<AbstractTable *> tables;
-public:
-    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
-    ~TableGroup();
-    void addTable(AbstractTable *aTable);
-    void acceptVisitor(Visitor visitor);
-    AbstractTable *operator+(TableGroup *tableGroup);
-    AbstractTable *operator+(Table *table);
-    AbstractTable *clone();
-    std::vector<AbstractTable *> getTables();
-};
 
 /*
     Table is a leaf class that will be a single table
