@@ -3,6 +3,8 @@
 //
 
 #include "Kitchen.h"
-void Kitchen::receiveOrder(Waiter* waiter) {
-    throw "Not yet implemented";
+void Kitchen::receiveOrder(std::vector<Dish*> orders) {
+    for (auto* order : orders) {
+        headChef->AddDish(order);
+    }
 }

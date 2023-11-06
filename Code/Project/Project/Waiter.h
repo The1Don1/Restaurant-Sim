@@ -10,16 +10,18 @@
 #include "Floor.h"
 #include "Chef.h"
 #include "Visitor.h"
+#include <vector>
+#include <ctime>
 
 class Floor;
 class Table;
 class Tab;
 class Customer;
-
+class Kitchen;
 class Waiter
 {
 private:
-
+    Kitchen* kitchen;
 
 public:
     Floor* waiterFloor;
@@ -32,10 +34,11 @@ public:
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
 public: HeadChef* headChef;
-    Waiter(std::string WaiterName, Table* waiterTable,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
+    Waiter(std::string WaiterName, Table* waiterTable,  Floor* floor, Kitchen* kitchen) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
         srand((unsigned) time(NULL));
         int random = 60 + (rand() % 2);
         this->waiterWaitTime = random;
+        this->kitchen = kitchen;
     }
     virtual void performTask() = 0;
     void deliverOrder();
@@ -44,7 +47,7 @@ public: HeadChef* headChef;
 //
     void getOrders();
 
-    void sendOrders();
+    void sendOrders(std::vector<Dish*> dish);
 
 };
 
@@ -52,7 +55,7 @@ public: HeadChef* headChef;
 class generalWaiter : public Waiter
 {
 public:
-    generalWaiter(std::string basicString, Table* t, Floor *pFloor) : Waiter(basicString,t, pFloor) {}
+    generalWaiter(std::string basicString, Table* t, Floor *pFloor, Kitchen* kitchen) : Waiter(basicString,t, pFloor, kitchen) {}
     void getAllocatedAtable(Table* table);
     void performTask();
     virtual void visitTable(Table* table);

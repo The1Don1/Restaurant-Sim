@@ -15,9 +15,9 @@ class Kitchen {
 private:
     std::vector<Dish*> order;
     Engine* engine;
-    Chef* chef;
+    HeadChef* headChef;
 public:
-    void receiveOrder(Waiter* aWaiter);
+    void receiveOrder(std::vector<Dish*> orders);
 };
 
 
