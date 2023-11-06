@@ -19,12 +19,14 @@ class Visitor;
 class TableIterator;
 class ConcreteTableIterator;
 class TableGroup;
+
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
     virtual void acceptVisitor(Visitor* visitor) = 0;
     virtual AbstractTable *operator+(TableGroup *tableGroup) = 0;
     virtual AbstractTable *operator+(Table *table) = 0;
+
     virtual AbstractTable *clone() = 0;
     int getnumberOfSeats();
     int getTableID();
@@ -99,5 +101,4 @@ public:
     void handleState(AbstractTable *table);
     std::string getState();
 };
-
 #endif //PROJECT_TABLE_H
