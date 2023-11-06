@@ -20,8 +20,9 @@ class TableIterator;
 class ConcreteTableIterator;
 //class AbstractTable;
 class AbstractTable {
-private:
+protected:
     int numberOfSeats;
+    int tableID;
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats){}
     virtual TableIterator* createIterator() = 0;
@@ -32,6 +33,8 @@ public:
     {
         return numberOfSeats;
     };
+    int getTableID();
+    
 };
 
 class TableGroup: public AbstractTable

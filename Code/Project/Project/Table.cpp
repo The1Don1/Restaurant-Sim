@@ -7,7 +7,14 @@
 void AbstractTable::addTable(AbstractTable *table) {
 
 }
-TableIterator* Table::createIterator() {
+
+int AbstractTable::getTableID()
+{
+    return tableID;
+};
+
+TableIterator *Table::createIterator()
+{
     throw "Not yet implemented";
 }
 void Table::accept(Visitor* visitor) {
