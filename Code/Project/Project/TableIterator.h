@@ -16,9 +16,18 @@ public:
 class ConcreteTableIterator : public TableIterator{
 public:
     Table* table;
-    Table* next();
-    bool hasNext();
-    ConcreteTableIterator();
+    Table* next()
+    {
+        return table->next;
+    };
+    bool hasNext()
+    {
+        return table->next != nullptr;
+    };
+    ConcreteTableIterator()
+    {
+        table = nullptr;
+    };
 };
 
 #endif //PROJECT_TABLEITERATOR_H
