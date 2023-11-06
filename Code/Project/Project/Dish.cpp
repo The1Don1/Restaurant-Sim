@@ -4,6 +4,16 @@
 #include "Dish.h"
 #include <random>
 
+Dish::Dish()
+{
+    this->customerName = "";
+    this->customerTable = 0;
+    this->beverage = NULL;
+    this->starter = NULL;
+    this->mainDish = NULL;
+    this->dessert = NULL;
+}
+
 Dish::Dish(std::string customerName, int customerTable)
 {
     this->customerName = customerName;
@@ -184,9 +194,17 @@ void Dish::setCustomerTable(int customerTableID)
     this->customerTable = customerTableID;
 }
 
+DishStatus::DishStatus()
+{}
+
 void DishStatus::DishState()
 {
     throw "Not yet implemented";
+}
+
+Preparing::Preparing()
+{
+    this->status = "Preparing";
 }
 
 void Preparing::updateDishStatus()
@@ -196,7 +214,12 @@ void Preparing::updateDishStatus()
 
 std::string Preparing::getStatus()
 {
-    return "Preparing";
+    return this->status;
+}
+
+ReadyForPickUp::ReadyForPickUp()
+{
+    this->status = "ReadyForPickUp";
 }
 
 void ReadyForPickUp::updateDishStatus()
@@ -206,7 +229,12 @@ void ReadyForPickUp::updateDishStatus()
 
 std::string ReadyForPickUp::getStatus()
 {
-    return "Ready for Pick Up!";
+    return this->status;
+}
+
+StillQueued::StillQueued()
+{
+    this->status = "StillQueued";
 }
 
 void StillQueued::updateDishStatus()
@@ -217,5 +245,5 @@ void StillQueued::updateDishStatus()
 std::string StillQueued::getStatus()
 
 {
-    return "Still Queued";
+    return this->status;
 }
