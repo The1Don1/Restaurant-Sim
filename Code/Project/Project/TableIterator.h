@@ -6,11 +6,7 @@
 #define PROJECT_TABLEITERATOR_H
 #include "Table.h"
 class Table;
-class TableIterator{
-public:
-    virtual Table* next() = 0;
-    virtual bool hasNext() = 0;
-};
+class TableIterator;
 
 class ConcreteTableIterator : public TableIterator{
 public:
@@ -18,5 +14,11 @@ public:
     Table* next();
     bool hasNext();
     ConcreteTableIterator();
+};
+
+class TableIterator{
+public:
+    virtual Table* next() = 0;
+    virtual bool hasNext() = 0;
 };
 #endif //PROJECT_TABLEITERATOR_H
