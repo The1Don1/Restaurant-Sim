@@ -33,6 +33,7 @@ void generalWaiter::performTask() {
 
 void generalWaiter::visitTable(AbstractTable *table)
 {
+    throw "Not yet implemented";
 }
 
 void MaitreD::checkReservation() {
