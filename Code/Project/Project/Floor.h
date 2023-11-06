@@ -1,3 +1,6 @@
+//
+// Created by mathe on 2023/10/30.
+//
 //Mediator: concreteColleague
 #ifndef PROJECT_FLOOR_H
 #define PROJECT_FLOOR_H
@@ -8,50 +11,28 @@
 #include "Table.h"
 #include "Tab.h"
 #include "Manager.h"
-#include "TableIterator.h"
 
 class Table;
-class AbstractTable;
 class Manager;
-class TableIterator;
-class ConcreteTableIterator;
 class generalWaiter;
-class Waiter;
-class Tab;
-
 class Floor {
     private:
         std::vector<generalWaiter*> floorWaiters;
-        AbstractTable* headTable;
+        std::vector<Table*> floorTables;
         Manager* manager;
         int floorCapacity;
-        std::vector<Tab*> tabs;
+
 public:
-        Floor(int capacity = 4) : floorCapacity(capacity) {
-            for (int i = 0; i < capacity; i++)
-            {
-                std::string name = "Waiter" + std::to_string(i);
-                Waiter* w = new generalWaiter(name, this);
-            }
-            for (int i = 0; i < capacity; i++)
-            {
-                this->headTable = constructTable();
-            }
-        }
-        AbstractTable* constructTable();
-        virtual ~Floor();
+        Table* constructTable();
+        Table* destructTable();
         void Decrement();
-        AbstractTable* getHeadTable(){
-            return this->headTable;
+        ~Floor()= default;
+        Table* getHeadTable(){
+            return this->floorTables.front();
         }
-        TableIterator* createIterator(){
-            ConcreteTableIterator* iterator = new ConcreteTableIterator(this->headTable);
-            return iterator;
-        }
-        void constructWaiter(std::string name, AbstractTable* table);
+        void constructWaiter(std::string name, Table* table);
         void printWaiters();
         Tab* getTab(std::string aName);
-        void storeTab(Tab* aTab);
         Manager* getManager();
         void setManager(Manager* aManager);
         void getManagerComplaints();
