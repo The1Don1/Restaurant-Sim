@@ -17,7 +17,7 @@ class Tab;
 class Customer;
 class Visitor;
 
-class Waiter 
+class Waiter
 {
 private:
 
@@ -32,48 +32,48 @@ public:
 //public: Chef* _unnamed_Chef_;
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
-    public: HeadChef* headChef;
-        Waiter(std::string WaiterName, Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterFloor(floor) {
-            srand((unsigned) time(NULL));
-            int random = 60 + (rand() % 2);
-            this->waiterWaitTime = random;
-        }
-        virtual void performTask() = 0;
-        void deliverOrder();
+public: HeadChef* headChef;
+    Waiter(std::string WaiterName, Table* waiterTable,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
+        srand((unsigned) time(NULL));
+        int random = 60 + (rand() % 2);
+        this->waiterWaitTime = random;
+    }
+    virtual void performTask() = 0;
+    void deliverOrder();
 
-        void prepareDish();
+    void prepareDish();
 //
-        void getOrders();
+    void getOrders();
 
-        void sendOrders();
+    void sendOrders();
 
 };
 
 //Template Method: Concrete Class
-class generalWaiter : public Waiter, public Visitor
+class generalWaiter : public Waiter
 {
-    public:
-        generalWaiter(std::string basicString, Floor *pFloor) : Waiter(basicString,pFloor) {}
-        void getAllocatedAtable(Table* table);
-        void performTask();
-        virtual void visitTable(Table* table);
-        void addToTab(std::string name, double amount);
-        void payTab(std::string name, double amount);
-        Tab* getTab(std::string name);
-        void decrementTimer()
-        {
-            if(this->waiterWaitTime <= 0){
-                std::cout << this->waiterName << " time out resetting" << std::endl;
-                srand((unsigned) time(NULL));
-                int random =60 + (rand() % 2);
-                this->waiterWaitTime = random;
-            }else{
-                this->waiterWaitTime-=1;
+public:
+    generalWaiter(std::string basicString, Table* t, Floor *pFloor) : Waiter(basicString,t, pFloor) {}
+    void getAllocatedAtable(Table* table);
+    void performTask();
+    virtual void visitTable(Table* table);
+    void addToTab(std::string name, double amount);
+    void payTab(std::string name, double amount);
+    Tab* getTab(std::string name);
+    void decrementTimer()
+    {
+        if(this->waiterWaitTime <= 0){
+            std::cout << this->waiterName << " time out resetting" << std::endl;
+            srand((unsigned) time(NULL));
+            int random =60 + (rand() % 2);
+            this->waiterWaitTime = random;
+        }else{
+            this->waiterWaitTime-=1;
 
-            }
-        };
+        }
+    };
 
-        void receiveCompliment(const std::string& compliment);
+    void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
 //    void setWaiterHeadTable(Table *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;

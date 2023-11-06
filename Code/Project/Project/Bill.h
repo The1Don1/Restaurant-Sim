@@ -45,7 +45,7 @@ public:
     void handleTip();
 
     void getBill();
-    
+
     void addTip(float tip);
     Bill();
     Bill(double price) : totalAmount(price){}
@@ -63,14 +63,14 @@ public:
 
 class BillItem: public Bill{
 private:
-        std::string name;
-        double price;
+    std::string name;
+    double price;
 public:
-        BillItem(double price, std::string item, double cost);
-        void paymentMethod();
+    BillItem(double price, std::string item, double cost);
+    void paymentMethod();
     void getSubBill(std::string customerName);
-        double getTotalCost();
-        void addItem(SubBill item);
+    double getTotalCost();
+    void addItem(SubBill item);
 };
 
 class SubBill: public Bill{
@@ -86,11 +86,11 @@ public:
 };
 class BillDecorator: public AbstractBill{
 private:
-        Bill* bill;
+    Bill* bill;
 public:
-        AbstractBill* abstractBill;
-        BillDecorator(Bill* bill);
-        double getTotalCost();
+    AbstractBill* abstractBill;
+    BillDecorator(Bill* bill);
+    double getTotalCost();
 
 };
 

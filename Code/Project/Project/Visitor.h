@@ -8,9 +8,9 @@
 #include "Table.h"
 class Customer; //just changed from Table (not sure why we need this)
 class Table;
-class Visitor 
+class Visitor
 {
 public:
-    virtual void visitTable(Table* table) = 0;
+    virtual void visitTable(Table* table) ;
 };
 #endif //PROJECT_VISITOR_H

@@ -19,7 +19,8 @@ class Tab;
 class AbstractBill;
 class SubBill;
 class Visitor;
-class Customer 
+class PaymentStrategy;
+class Customer
 {
 private:
     Dish* order;
@@ -44,7 +45,7 @@ public:
     void customer();
     void checkOrder(Dish* order);
     void setMood(std::string cstmrMood);
-    std::string getMood(); 
+    std::string getMood();
     void leaveRestaurant(Bill* bill);
     void makeComplaint(Manager* manager);
     Bill* getBill();

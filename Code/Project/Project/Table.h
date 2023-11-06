@@ -19,35 +19,36 @@ class Waiter;
 class MaitreD;
 class Visitor;
 class TableIterator;
+class generalWaiter;
 class ConcreteTableIterator;
 //class AbstractTable;
 
-class AbstractTable 
+class AbstractTable
 {
-    private:
+private:
 
-        int customerNumber;
-    public:
-        explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
-        virtual TableIterator* createIterator() = 0;
-        virtual void accept(Visitor* visitor) = 0;
-        virtual void addTable(AbstractTable* table) = 0;
-        virtual AbstractTable* clone() = 0;
+    int customerNumber;
+public:
+    explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
+    virtual TableIterator* createIterator() = 0;
+    virtual void accept(Visitor* visitor) = 0;
+    virtual void addTable(AbstractTable* table) = 0;
+    virtual AbstractTable* clone() = 0;
 };
 
 class ConcreteTable: public AbstractTable
 {
-    public: AbstractTable* clone();
+public: AbstractTable* clone();
 };
 
 class TableGroup: public AbstractTable
 {
-    private:
-        std::vector<AbstractTable*> children;
-    public:
-        AbstractTable* abstractiTable;
+private:
+    std::vector<AbstractTable*> children;
+public:
+    AbstractTable* abstractiTable;
 
-        void addTable(AbstractTable* aTable);
+    void addTable(AbstractTable* aTable);
 };
 
 class Table : public AbstractTable
@@ -67,29 +68,29 @@ private:
     Floor* floor;
     generalWaiter* waiter;
     ConcreteTableIterator* concreteTableIterator;
-    public:
-            Table(int customerNumber) : AbstractTable(customerNumber){}
-            void addTable(AbstractTable* table){
-                std::cout << "";
-            }
-            int getCustomerNumber(){
-                return 0;
-            };
-            void decrementTimer()
-            {
-                std::cout << "";
-            };
-            TableIterator* createIterator();
-            void accept(Visitor* visitor);
-            AbstractTable* clone() ;
-            void acceptVisitor(Visitor* visitor);
-            void handleState();
-            void changeTableState();
-            void setState(TableState* state);
-            Bill* getBill(Customer* customer);
-            void getOrders();
-            Customer* getCustomer();
-            generalWaiter* getWaiter();
+public:
+    Table(int customerNumber) : AbstractTable(customerNumber){}
+    void addTable(AbstractTable* table){
+        std::cout << "";
+    }
+    int getCustomerNumber(){
+        return 0;
+    };
+    void decrementTimer()
+    {
+        std::cout << "";
+    };
+    TableIterator* createIterator();
+    void accept(Visitor* visitor);
+    AbstractTable* clone() ;
+    void acceptVisitor(Visitor* visitor);
+    void handleState();
+    void changeTableState();
+    void setState(TableState* state);
+    Bill* getBill(Customer* customer);
+    void getOrders();
+    Customer* getCustomer();
+    generalWaiter* getWaiter();
 };
 
 

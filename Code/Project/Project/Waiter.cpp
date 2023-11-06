@@ -1,5 +1,5 @@
 #include "Waiter.h"
-void generalWaiter::visitTable(Table *table) 
+void generalWaiter::visitTable(Table *table)
 {
     throw "Not yet implemented";
 }

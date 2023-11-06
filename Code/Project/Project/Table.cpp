@@ -4,7 +4,7 @@
 
 #include "Table.h"
 
-void AbstractTable::addTable(AbstractTable *table) 
+void AbstractTable::addTable(AbstractTable *table)
 {
 
 }

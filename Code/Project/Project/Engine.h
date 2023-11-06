@@ -7,7 +7,7 @@
 #define PROJECT_ENGINE_H
 #include "Floor.h"
 class Floor;
-class Mediator 
+class Mediator
 {
 private:
     Floor* floor;

@@ -46,7 +46,7 @@ void Customer::setMood(std::string cstmrMood)
  * method is called when the customer is ready to leave the restaurant
  * acts as the constructor (conditional)
 */
-void Customer::leaveRestaurant(Bill* bill) 
+void Customer::leaveRestaurant(Bill* bill)
 {
     this->readyToLeave = true;
     //make payment
@@ -62,10 +62,10 @@ void Customer::leaveRestaurant(Bill* bill)
     else
     {
         std::cout << "Thank you " << this->name << "! We hope to see you again soon 🌟" << std::endl;
-        
+
         //delete customer object
         this->~Customer();
-    } 
+    }
 }
 
 /**
@@ -73,7 +73,7 @@ void Customer::leaveRestaurant(Bill* bill)
  * sends the complaint to the manager
  * customer can still make a complaint even when the manager is not visiting the table
 */
-void Customer::makeComplaint(Manager* manager) 
+void Customer::makeComplaint(Manager* manager)
 {
     std::cout << "Please enter you complaint:" << std::endl;
     std::getline(std::cin, customerComplaint);
@@ -81,19 +81,19 @@ void Customer::makeComplaint(Manager* manager)
     manager->handleComplaint(customerComplaint);
 }
 
-Bill* Customer::getBill() 
+Bill* Customer::getBill()
 {
     return customerBill;
 }
 
 
-Tab* Customer::createTab() 
+Tab* Customer::createTab()
 {
     customerTab = new Tab(name);
     return customerTab;
 }
 
-void Customer::setTab(Tab* tab) 
+void Customer::setTab(Tab* tab)
 {
     customerTab = tab;
 }
@@ -154,7 +154,7 @@ std::string Customer::complimentWaiter()
  * sets customer mood according to how long it took for
  * their dish to be prepared
 */
-void Customer::checkOrder(Dish* order) 
+void Customer::checkOrder(Dish* order)
 {
     //get time from Engine
     //set customerMood

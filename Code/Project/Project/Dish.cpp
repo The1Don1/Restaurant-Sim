@@ -118,7 +118,7 @@ void Dish::createDish()
                 break;
         }
     }
-    
+
     randBool = distribution(gen);
 
     if(randBool)

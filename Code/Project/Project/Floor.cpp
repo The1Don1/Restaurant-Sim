@@ -23,7 +23,7 @@ Table* Floor::destructTable(){
     return nullptr;
 }
 
-void Floor::Decrement() 
+void Floor::Decrement()
 {
     for(auto & floorWaiter : floorWaiters){
         floorWaiter->decrementTimer();
