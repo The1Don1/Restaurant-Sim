@@ -60,11 +60,13 @@ void Table::handleState()
 }
 
 void Table::setState(TableState* state) {
-    throw "Not yet implemented";
+    delete this->tableState;
+    this->tableState = tableState;
+    handleState();
 }
 
 Bill* Table::getBill(Customer* customer) {
-    throw "Not yet implemented";
+    return bill;
 }
 
 void Table::setWaiter(Waiter *waiter)
@@ -76,45 +78,45 @@ void Table::getOrders() {
     throw "Not yet implemented";
 }
 
-std::string TableState::getState() {
-    throw "Not yet implemented";
+void Unoccupied::handleState(AbstractTable *table)
+{
+    if (table->getCustomers().size() == 0)
+    {
+        table->setState(new Unoccupied());
+    }
+    else if (table->getCustomers().size() > 0)
+    {
+        return;
+    }
 }
 
-void TableState::handleState(Table* tabke) {
-    throw "Not yet implemented";
+std::string Unoccupied::getState()
+{
+    return "Unoccupied";
 }
 
-void Unoccupied::handleState() {
-    throw "Not yet implemented";
+void Occupied::handleState(AbstractTable *table)
+{
+    if (table->getCustomers().size() == 0)
+    {
+        table->setState(new Unoccupied());
+    }
+    else if (table->getCustomers().size() > 0)
+    {
+        return;
+    }
 }
 
-std::string Unoccupied::getState() {
-    throw "Not yet implemented";
-}
-
-
-void Occupied::acceptVisitor(Visitor visitor) {
-    throw "Not yet implemented";
-}
-
-void Occupied::handleState() {
-    throw "Not yet implemented";
-}
-
-std::string Occupied::getState() {
-    throw "Not yet implemented";
-}
-void Reserved::handleState() {
-    throw "Not yet implemented";
-}
-
-std::string Reserved::getState() {
-    throw "Not yet implemented";
+std::string Occupied::getState()
+{
+    return "Occupied";
 }
 
 void TableGroup::addTable(AbstractTable *aTable)
 {
-    throw "Not yet implemented";
+    tables.push_back(aTable);
+    numberOfSeats += aTable->getnumberOfSeats();
+
 }
 
 void TableGroup::acceptVisitor(Visitor *visitor)

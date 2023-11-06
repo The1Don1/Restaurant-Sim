@@ -82,35 +82,21 @@ public:
 };
 class TableState
 {
-public: Table* _unnamed_Table_;
-
-public: std::string getState();
-
-public: void handleState(Table* table);
+public:
+    virtual std::string getState() = 0;
+    virtual void handleState(AbstractTable *table) = 0;
 };
 
-class Unoccupied: public TableState
+class Unoccupied : public TableState
 {
-
-public: void handleState();
-
-public: std::string getState();
+public:
+    void handleState(AbstractTable *table);
+    std::string getState();
 };
-class Occupied: public TableState
+class Occupied : public TableState
 {
-
-public: void acceptVisitor(Visitor visitor);
-
-public: void handleState();
-
-public: std::string getState();
+public:
+    void handleState(AbstractTable *table);
+    std::string getState();
 };
-class Reserved: public TableState
-{
-
-public: void handleState();
-
-public: std::string getState();
-};
-
 #endif //PROJECT_TABLE_H
