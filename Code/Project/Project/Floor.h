@@ -30,7 +30,7 @@ public:
     AbstractTable* getHeadTable(){
         return headTable;
     }
-    void constructWaiter(std::string name);
+    void constructWaiter(std::string);
     void printWaiters();
     Tab* getTab(std::string aName);
     Manager* getManager();

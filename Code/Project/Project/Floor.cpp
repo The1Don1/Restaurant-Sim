@@ -30,11 +30,7 @@ AbstractTable* Floor::constructTable(){
     return t;
 }
 
-void Floor::constructWaiter(std::string name){
-    generalWaiter* g = new generalWaiter(name, this);
-    std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
-    floorWaiters.push_back(g);
-}
+
 
 AbstractTable* Floor::destructTable(){
     return nullptr;
@@ -45,7 +41,13 @@ void Floor::Decrement() {
         floorWaiter->decrementTimer();
     }
 }
-void Floor::printWaiters(){
+void Floor::constructWaiter(std::string name){
+    generalWaiter* g = new generalWaiter(name, this);
+    std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
+    floorWaiters.push_back(g);
+}
+void Floor::printWaiters()
+{
     for(auto & floorWaiter : floorWaiters){
         std::cout << floorWaiter->waiterName << " " << floorWaiter->waiterWaitTime << std::endl;
     }
