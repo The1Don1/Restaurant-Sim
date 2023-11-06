@@ -43,6 +43,13 @@ void AbstractTable::setWaiter(Waiter *waiter)
 Waiter *AbstractTable::getWaiter()
 {
     return waiter;
+}
+void AbstractTable::setCustomers(std::vector<Customer *> newCustomers)
+{
+    for(auto customer: newCustomers)
+    {
+        this->customers.push_back(customer);
+    }
 };
 
 AbstractTable *Table::clone() {

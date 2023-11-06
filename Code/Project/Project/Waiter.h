@@ -40,11 +40,11 @@ public:
         this->waiterWaitTime = random;
     }
     virtual void performTask() = 0;
-    void deliverOrder();
+    void deliverOrder(Dish* dish);
 //
     void getOrders();
 
-    void sendOrders(std::vector<Dish*>);
+    void sendOrder(Dish*);
 
 };
 
@@ -98,8 +98,7 @@ private:
 public:
     MaitreD();
     void performTask();
-    void allocateTable(Customer* customer);
-    void checkReservation();
+    void allocateTable(std::vector<Customer*>);
 //
     void mergeTables(int table1, int table2);
 //

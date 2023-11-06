@@ -130,6 +130,11 @@ int Customer::getTableNum()
     return this->tableNum;
 }
 
+std::string Customer::getName()
+{
+    return this->name;
+}
+
 /**
  * allows customer to add a tip to the Bill
  * customer chooses how much to tip

@@ -54,6 +54,7 @@ public:
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
+    std::string getName();
     void accept(Visitor* visitor);
     void assignCustomerTable(Table* customerTable);
     std::string complimentWaiter();

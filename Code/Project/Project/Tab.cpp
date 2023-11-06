@@ -11,9 +11,15 @@ std::string Tab::getName() {
 }
 
 double Tab::getTab() {
-    throw "Not yet implemented";
+    return this->total;
 }
 
-void Tab::addToTab() {
-    throw "Not yet implemented";
+
+void Tab::addToTab(double valueToAdd) {
+    this->total += valueToAdd;
+}
+
+void Tab::subtractFromTab(double valueToSubtract)
+{
+    this->total -= valueToSubtract;
 }

@@ -16,7 +16,8 @@ public:
     Tab(std::string customerName);
     std::string getName();
     double getTab();
-    void addToTab();
+    void addToTab(double);
+    void subtractFromTab(double);
 };
 
 
