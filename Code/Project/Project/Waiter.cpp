@@ -4,20 +4,26 @@
 //     throw "Not yet implemented";
 // }
 
-void Waiter::prepareDish() {
-    throw "Not yet implemented";
-}
-
 void Waiter::getOrders() {
     throw "Not yet implemented";
 }
 
-void Waiter::sendOrders() {
-    throw "Not yet implemented";
+/**
+ * @brief Send order function for the waiter class
+ * This function sends all the customer orders to the head chef and
+ * changes the state of the dishes sent to "preparing"
+ * @param order 
+ * 
+ */
+void Waiter::sendOrders(std::vector<Dish*> order) {
+    for(auto dish: order){
+        dish->setDishStatus(new Preparing);
+        headChef->AddDish(dish);
+    }
 }
 
 void Waiter::deliverOrder() {
-    throw "Not yet implemented";
+    
 }
 
 void generalWaiter::addToTab(std::string customerName, double amount) {

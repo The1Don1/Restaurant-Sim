@@ -41,12 +41,10 @@ public:
     }
     virtual void performTask() = 0;
     void deliverOrder();
-
-    void prepareDish();
 //
     void getOrders();
 
-    void sendOrders();
+    void sendOrders(std::vector<Dish*>);
 
 };
 
