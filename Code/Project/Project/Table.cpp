@@ -45,8 +45,10 @@ Waiter *AbstractTable::getWaiter()
     return waiter;
 };
 
-AbstractTable *Table::clone() {
-    return nullptr;
+AbstractTable *Table::clone()
+{
+    Table *table = new Table(this->getnumberOfSeats());
+    return table;
 }
 std::vector<Customer *> Table::getCustomers()
 {
@@ -173,7 +175,12 @@ AbstractTable* TableGroup::operator+(Table *table)
 
 AbstractTable *TableGroup::clone()
 {
-    return this;
+    TableGroup *tableGroup = new TableGroup();
+    for (auto table : tables)
+    {
+        tableGroup->addTable(table->clone());
+    }
+    return tableGroup;
 }
 
 std::vector<AbstractTable *> TableGroup::getTables()
