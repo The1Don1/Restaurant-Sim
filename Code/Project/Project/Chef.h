@@ -48,6 +48,7 @@ class HeadChef: public Chef
         Dish* dish;
 
         HeadChef();
+        void AddDish(Dish* d);
         void PrepareDish(Dish* dish);
         void addChef();
         void removeChef();
