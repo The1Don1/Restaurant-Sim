@@ -118,6 +118,7 @@ void TableGroup::addTable(AbstractTable *aTable)
 {
     tables.push_back(aTable);
     numberOfSeats += aTable->getnumberOfSeats();
+
 }
 
 void TableGroup::acceptVisitor(Visitor *visitor)
