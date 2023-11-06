@@ -7,6 +7,33 @@ int AbstractTable::getTableID()
 {
     return tableID;
 };
+std::vector<Customer *> AbstractTable::getCustomers()
+{
+    return customers;
+};
+void AbstractTable::setState(TableState *tableState)
+{
+    delete this->tableState;
+    this->tableState = tableState;
+    handleState();
+};
+TableState* AbstractTable::getState()
+{
+    return tableState;
+};
+void AbstractTable::handleState()
+{
+    //tableState->handleState(this);
+};
+
+Bill* AbstractTable::getBill(Customer *customer)
+{
+    return bill;
+};
+void AbstractTable::setWaiter(Waiter *waiter)
+{
+    this->waiter = waiter;
+};
 
 TableIterator *Table::createIterator()
 {
