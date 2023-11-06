@@ -36,6 +36,8 @@ private:
     SubBill* subBill;
 
 public:
+    Bill();
+
     virtual void paymentMethod();
 
     void addTip(double amount);
