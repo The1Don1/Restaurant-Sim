@@ -16,30 +16,26 @@ class Table;
 class Manager;
 class generalWaiter;
 class Floor {
-    private:
-        std::vector<generalWaiter*> floorWaiters;
-        std::vector<Table*> floorTables;
-        Manager* manager;
-        int floorCapacity;
+private:
+    std::vector<generalWaiter*> floorWaiters;
+    std::vector<Table*> floorTables;
+    Manager* manager;
+    int floorCapacity;
 
 public:
-        Table* constructTable();
-        Table* destructTable();
-        void Decrement();
-        ~Floor()= default;
-        Table* getHeadTable(){
-            return this->floorTables.front();
-        }
-        void constructWaiter(std::string name, Table* table);
-        void printWaiters();
-        Tab* getTab(std::string aName);
-        Manager* getManager();
-        void setManager(Manager* aManager);
-        void getManagerComplaints();
-        std::vector<Table*> getFloorTables()
-        {
-            return floorTables;
-        }
+    Table* constructTable();
+    Table* destructTable();
+    void Decrement();
+    ~Floor()= default;
+    Table* getHeadTable(){
+        return this->floorTables.front();
+    }
+    void constructWaiter(std::string name, Table* table);
+    void printWaiters();
+    Tab* getTab(std::string aName);
+    Manager* getManager();
+    void setManager(Manager* aManager);
+    void getManagerComplaints();
 };
 
 

@@ -4,12 +4,13 @@
 
 #ifndef PROJECT_VISITOR_H
 #define PROJECT_VISITOR_H
+#include "Customer.h"
 #include "Table.h"
-class Table;
-class Visitor {
+class Customer; //just changed from Table (not sure why we need this)
+class AbstractTable;
+class Visitor
+{
 public:
-    void visitTable(Table* table);
+    virtual void visitTable(AbstractTable*) ;
 };
-
-
 #endif //PROJECT_VISITOR_H
