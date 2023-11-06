@@ -9,6 +9,8 @@
 #include "Table.h"
 #include "Floor.h"
 #include "TableIterator.h"
+#include "Visitor.h"
+#include "Waiter.h"
 
 class TableState;
 class Bill;
@@ -17,33 +19,26 @@ class Waiter;
 class MaitreD;
 class Visitor;
 class TableIterator;
+class generalWaiter;
 class ConcreteTableIterator;
 //class AbstractTable;
-class AbstractTable {
+
+class AbstractTable
+{
+private:
+
+    int customerNumber;
 public:
-    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
-    virtual void acceptVisitor(Visitor* visitor) = 0;
-    // virtual AbstractTable *operator+(TableGroup *tableGroup);
-    // virtual AbstractTable *operator+(Table *table);
-    virtual AbstractTable *clone() = 0;
-    int getnumberOfSeats();
-    int getTableID();
-    std::vector<Customer *> getCustomers();
-    void setState(TableState *tableState);
-    TableState *getState();
-    void handleState();
-    Bill *getBill(Customer *customer);
-    void setWaiter(Waiter *waiter);
-    void getOrders();
-    //static int tableCount;
-    AbstractTable *next;
-protected:
-    TableState *tableState;
-    std::vector<Customer *> customers;
-    Bill *bill;
-    Waiter *waiter;
-    int numberOfSeats;
-    int tableID;
+    explicit AbstractTable(int customerNumber) : customerNumber(customerNumber){}
+    virtual TableIterator* createIterator() = 0;
+    virtual void accept(Visitor* visitor) = 0;
+    virtual void addTable(AbstractTable* table) = 0;
+    virtual AbstractTable* clone() = 0;
+};
+
+class ConcreteTable: public AbstractTable
+{
+public: AbstractTable* clone();
 };
 
 class TableGroup: public AbstractTable
@@ -56,7 +51,8 @@ public:
     void addTable(AbstractTable* aTable);
 };
 
-class Table : public AbstractTable{
+class Table : public AbstractTable
+{
 private:
     int tableID;
     Table* up;
@@ -70,28 +66,34 @@ private:
     AbstractTable* abstractTable;
     MaitreD* maD;
     Floor* floor;
-    Waiter* waiter;
+    generalWaiter* waiter;
     ConcreteTableIterator* concreteTableIterator;
-    public:
-            Table(int numberOfSeats) : AbstractTable(numberOfSeats){}
-            void addTable(AbstractTable* table){
-                std::cout << "";
-            }
-            int getnumberOfSeats(){
-                return 0;
-            };
-            void decrementTimer(){
-                std::cout << "";
-            };
-            TableIterator* createIterator();
-            AbstractTable* clone() ;
-            void acceptVisitor(Visitor* visitor);
-            void handleState();
-            void changeTableState();
-            void setState(TableState* state);
-            Bill* getBill(Customer* customer);
-            void getOrders();
+public:
+    Table(int customerNumber) : AbstractTable(customerNumber){}
+    void addTable(AbstractTable* table){
+        std::cout << "";
+    }
+    int getCustomerNumber(){
+        return 0;
     };
+    void decrementTimer()
+    {
+        std::cout << "";
+    };
+    TableIterator* createIterator();
+    void accept(Visitor* visitor);
+    AbstractTable* clone() ;
+    void acceptVisitor(Visitor* visitor);
+    void handleState();
+    void changeTableState();
+    void setState(TableState* state);
+    Bill* getBill(Customer* customer);
+    void getOrders();
+    Customer* getCustomer();
+    generalWaiter* getWaiter();
+};
+
+
 class TableState
 {
 public: Table* _unnamed_Table_;
@@ -111,7 +113,7 @@ public: std::string getState();
 class Occupied: public TableState
 {
 
-public: void acceptVisitor(Visitor visitor);
+public: void acceptVisitor(Visitor* visitor);
 
 public: void handleState();
 
@@ -124,5 +126,6 @@ public: void handleState();
 
 public: std::string getState();
 };
+
 
 #endif //PROJECT_TABLE_H
