@@ -42,7 +42,8 @@ public:
             return this->headTable;
         }
         TableIterator* createIterator(){
-            return new ConcreteTableIterator(this->getHeadTable());
+            ConcreteTableIterator* iterator = new ConcreteTableIterator(this->headTable);
+            return iterator;
         }
         void constructWaiter(std::string name, AbstractTable* table);
         void printWaiters();
