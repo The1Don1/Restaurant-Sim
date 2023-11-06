@@ -60,11 +60,13 @@ void Table::handleState()
 }
 
 void Table::setState(TableState* state) {
-    throw "Not yet implemented";
+    delete this->tableState;
+    this->tableState = tableState;
+    handleState();
 }
 
 Bill* Table::getBill(Customer* customer) {
-    throw "Not yet implemented";
+    return bill;
 }
 
 void Table::setWaiter(Waiter *waiter)
@@ -114,7 +116,8 @@ std::string Reserved::getState() {
 
 void TableGroup::addTable(AbstractTable *aTable)
 {
-    throw "Not yet implemented";
+    tables.push_back(aTable);
+    numberOfSeats += aTable->getnumberOfSeats();
 }
 
 void TableGroup::acceptVisitor(Visitor *visitor)
