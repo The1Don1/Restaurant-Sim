@@ -4,7 +4,7 @@
 
 #ifndef PROJECT_TABLEITERATOR_H
 #define PROJECT_TABLEITERATOR_H
-#include "Table.h"
+#include "Table.cpp"
 class AbstractTable;
 class ConcreteTableIterator;
 
