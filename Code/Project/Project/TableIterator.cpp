@@ -1,18 +1,16 @@
+//
+// Created by mathe on 2023/10/31.
+//
 #include "TableIterator.h"
 
-AbstractTable* ConcreteTableIterator::next() 
-{
-    currTable = currTable->next;
-    return currTable;
+Table* ConcreteTableIterator::next() {
+    throw "Not yet implemented";
 }
 
-bool ConcreteTableIterator::hasNext()
-{
-    return currTable->next != nullptr;
+bool ConcreteTableIterator::hasNext() {
+    throw "Not yet implemented";
 }
 
-ConcreteTableIterator::ConcreteTableIterator(AbstractTable* aTable) 
-{
-    this->currTable = aTable;
+ConcreteTableIterator::ConcreteTableIterator() {
 }
 
