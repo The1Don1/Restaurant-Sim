@@ -84,9 +84,8 @@ private:
                 std::cout << "";
             };
             TableIterator* createIterator();
-            void accept(Visitor* visitor);
             AbstractTable* clone() ;
-            void acceptVisitor(Visitor visitor);
+            void acceptVisitor(Visitor* visitor);
             void handleState();
             void changeTableState();
             void setState(TableState* state);

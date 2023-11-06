@@ -12,17 +12,17 @@ TableIterator *Table::createIterator()
 {
     throw "Not yet implemented";
 }
-void Table::accept(Visitor* visitor) {
-    throw "Not yet implemented";
-}
-
 AbstractTable *Table::clone() {
     return nullptr;
 }
-void Table::handleState() {
+void Table::acceptVisitor(Visitor *visitor)
+{
     throw "Not yet implemented";
 }
-
+void Table::handleState()
+{
+    throw "Not yet implemented";
+}
 
 void Table::changeTableState() {
     throw "Not yet implemented";
