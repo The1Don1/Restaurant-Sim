@@ -10,5 +10,5 @@ void Visitor::visitTable(Table *table) {
 }*/
 void Visitor::visitTable(AbstractTable *table)
 {
-    std::cout << "Table ID: " << table->getTableID() << std::endl;
+    std::cout << "Table ID: " << std::endl;
 }

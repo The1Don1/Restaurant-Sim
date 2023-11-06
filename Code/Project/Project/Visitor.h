@@ -7,10 +7,10 @@
 #include "Customer.h"
 #include "Table.h"
 class Customer; //just changed from Table (not sure why we need this)
-class Table;
+class AbstractTable;
 class Visitor
 {
 public:
-    virtual void visitTable(AbstractTable* table) ;
+    virtual void visitTable(AbstractTable*) ;
 };
 #endif //PROJECT_VISITOR_H
