@@ -4,105 +4,164 @@
 
 #include "Bill.h"
 BillItem::BillItem(double price, std::string item, double cost) : Bill(price) {
+    name = item;
+    this->price = cost;
+
 }
 
 double BillItem::getTotalCost() {
-    throw "Not yet implemented";
+    return price;
 }
 
 void BillItem::addItem(SubBill item) {
-    throw "Not yet implemented";
+    return;
 }
 
 void BillItem::paymentMethod() {
-
+    if(getPaymentStrategy() != NULL)
+        getPaymentStrategy()->paymentMethod();
+    else
+        std::cout << "Payment strategy not set.\n";
 }
 
-void BillItem::getSubBill(std::string customerName) {
+Bill* BillItem::getSubBill(std::string customerName) {
+   
+    // for (Customer* customer : getCustomers())
+    // {
+    //     if (customer->getName() == customerName)
+    //     {
+    //         return customer->getBill();
+    //     }
+    // }
 
+    return NULL;
 }
 
 
 BillDecorator::BillDecorator(Bill* bill) {
+    this->bill = bill;
 }
 
 double BillDecorator::getTotalCost() {
-    throw "Not yet implemented";
+    if (bill != NULL)
+        return bill->getTotalCost();
+    else return 0;
 }
 
 double SubBill::getTotalCost() {
-    throw "Not yet implemented";
+
+    double total = 0.0;
+    for (auto item : items) {
+        total += item->getTotalCost();
+    }
+    return total;
 }
 
-void SubBill::addItem(SubBill item) {
-    throw "Not yet implemented";
+void SubBill::addItem(BillItem* item) {
+    if (item != NULL)
+        items.push_back(item);
 }
 
-void SubBill::getSubBill(std::string customerName) {
-    throw "Not yet implemented";
+Bill* SubBill::getSubBill(std::string customerName) {
+
+    for (auto item : items)
+    {
+        if (!item->getCustomers().empty())
+        {
+            for (auto customer : item->getCustomers())
+            {
+                if (customer->getName() == customerName)
+                {
+                    return item;
+                }
+            }
+        }
+    }
+
+    return NULL;
+}
+
+void SubBill::paymentMethod()
+{
+    bill->paymentMethod();
 }
 
 void PaymentStrategy::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Processing payment..." << std::endl;
 }
 
 void Cash::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Payment made by cash." << std::endl;
 }
 
 void Cash::getPaymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Cash." << std::endl;
 }
 void Card::paymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Payment made by card." << std::endl;
 }
 
 void Card::getPaymentMethod() {
-    throw "Not yet implemented";
+    std::cout << "Card" << std::endl;
 }
 
 
 CustomTipDecorator::CustomTipDecorator(Bill *bill, double tip) : BillDecorator(bill) {
+    _tipAmount = tip;
 }
 
 double CustomTipDecorator::getTotalCost() {
-    throw "Not yet implemented";
+    return  _tipAmount;
 }
 
 
 void Bill::handleTip() {
+    //Billdecorator->getTotalCost() function returns the custom tip given
+    //totalAmount = totalAmount + this->billDecorator->getTotalCost();
+
+    if (splitBill)
+    {
+        totalAmount = totalAmount + (totalAmount * 0.15);
+    }
+    else
+    {
+        totalAmount = totalAmount + (totalAmount * 0.20);
+    }
 
 }
 
-void Bill::addTip(float tip)
-{
-    totalAmount += tip;
-}
-
-void Bill::getBill() {
-
+Bill* Bill::getBill() {
+    return this;
+ 
 }
 
 double Bill::calculateBill() {
-    return 0;
+    totalAmount = totalAmount + subBill->getTotalCost();
+    return totalAmount;
 }
 
 void Bill::setPaymentMethod(PaymentStrategy *method) {
+    paymentStrategy = method;
 
 }
 
 double Bill::getTotalCost() {
-    return 0;
+    return totalAmount;
+        
 }
 
-void Bill::paymentMethod() {
-
+Bill::Bill(double price) : totalAmount(price), paymentStrategy(NULL), splitBill(false)
+{
+    
 }
 
-Bill::Bill() {
+/* ------------Changes--------------*/
+/*
+1. Changed the return type of getSubBill from void to Bill*
+2. Added a getter for customers and items
+*/
 
-}
+/*---------Notes------------*/
+/*
 
-void Bill::getSubBill(std::string customerName) {
-
-}
+*/
