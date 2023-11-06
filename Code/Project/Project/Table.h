@@ -23,6 +23,16 @@ public:
     virtual AbstractTable *operator+(TableGroup *tableGroup);
     virtual AbstractTable *operator+(Table *table);
     virtual AbstractTable *clone() = 0;
+    virtual ~AbstractTable()
+    {
+        delete tableState;
+        delete bill;
+        delete waiter;
+        for (auto customer : customers)
+        {
+            delete customer;
+        }
+    }
     int getnumberOfSeats()
     {
         return numberOfSeats;
@@ -37,9 +47,14 @@ public:
     };
     void setState(TableState *tableState)
     {
+        delete this->tableState;
         this->tableState = tableState;
+        handleState();
     };
-    
+    TableState *getState()
+    {
+        return tableState;
+    };
     void handleState()
     {
         tableState->handleState(this);
@@ -49,13 +64,14 @@ public:
     {
         return bill;
     };
+    void setWaiter(Waiter *waiter)
+    {
+        this->waiter = waiter;
+    };
     void getOrders();
     static int tableCount;
+    AbstractTable *next;
 protected:
-    Table *up;
-    Table *left;
-    Table *down;
-    Table *right;
     TableState *tableState;
     std::vector<Customer *> customers;
     Bill *bill;
@@ -74,7 +90,14 @@ class TableGroup : public AbstractTable
 private:
     std::vector<AbstractTable *> tables;
 public:
-    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {}
+    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
+    ~TableGroup()
+    {
+        for (auto table : tables)
+        {
+            delete table;
+        }
+    }
 
     //Add a table to the vector of tables
     void addTable(AbstractTable *aTable)
