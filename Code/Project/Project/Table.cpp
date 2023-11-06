@@ -3,7 +3,6 @@
 //
 
 #include "Table.h"
-
 int AbstractTable::getTableID()
 {
     return tableID;

@@ -22,7 +22,7 @@ class ConcreteTableIterator;
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
-    virtual void acceptVisitor(Visitor visitor);
+    virtual void acceptVisitor(Visitor* visitor) = 0;
     // virtual AbstractTable *operator+(TableGroup *tableGroup);
     // virtual AbstractTable *operator+(Table *table);
     virtual AbstractTable *clone() = 0;
