@@ -13,7 +13,6 @@
 class Table;
 class AbstractTable;
 class Manager;
-class generalWaiter;
 class TableIterator;
 class ConcreteTableIterator;
 class Floor {
