@@ -12,6 +12,7 @@
 #include "Visitor.h"
 
 class Floor;
+class AbstractTable;
 class Table;
 class Tab;
 class Customer;
@@ -27,12 +28,12 @@ public:
 
     std::string waiterName;
 
-    Table* waiterHeadTable;
+    AbstractTable* waiterHeadTable;
 //public: Chef* _unnamed_Chef_;
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
 public: HeadChef* headChef;
-    Waiter(std::string WaiterName, Table* waiterTable,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
+    Waiter(std::string WaiterName, AbstractTable* waiterTable,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
         srand((unsigned) time(NULL));
         int random = 60 + (rand() % 2);
         this->waiterWaitTime = random;
@@ -52,10 +53,10 @@ public: HeadChef* headChef;
 class generalWaiter : public Waiter
 {
 public:
-    generalWaiter(std::string basicString, Table* t, Floor *pFloor) : Waiter(basicString,t, pFloor) {}
-    void getAllocatedAtable(Table* table);
+    generalWaiter(std::string basicString, AbstractTable* t, Floor *pFloor) : Waiter(basicString,t, pFloor) {}
+    void getAllocatedAtable(AbstractTable* table);
     void performTask();
-    virtual void visitTable(Table* table);
+    virtual void visitTable(AbstractTable* table);
     void addToTab(std::string name, double amount);
     void payTab(std::string name, double amount);
     Tab* getTab(std::string name);
@@ -74,7 +75,7 @@ public:
 
     void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
-//    void setWaiterHeadTable(Table *waiterHeadTable) {
+//    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
 //    }
 //    void setWaiterName(const std::string &waiterName) {
