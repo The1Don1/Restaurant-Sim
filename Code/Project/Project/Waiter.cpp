@@ -1,5 +1,5 @@
 #include "Waiter.h"
-void Waiter::visitTable(Table *table) {
+void Waiter::visitTable(AbstractTable *table) {
     throw "Not yet implemented";
 }
 
@@ -19,7 +19,7 @@ void Waiter::deliverOrder() {
     throw "Not yet implemented";
 }
 
-void generalWaiter::visitTable(Table occupiedTable) {
+void generalWaiter::visitTable(AbstractTable* occupiedTable) {
     throw "Not yet implemented";
 }
 

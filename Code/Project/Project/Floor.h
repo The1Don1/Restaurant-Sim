@@ -10,8 +10,10 @@
 #include "Manager.h"
 
 class Table;
+class AbstractTable;
 class Manager;
 class generalWaiter;
+class TableIterator;
 class Floor {
     private:
         std::vector<generalWaiter*> floorWaiters;
@@ -23,7 +25,8 @@ public:
         Floor(int capacity = 4) : floorCapacity(capacity) {
             for (int i = 0; i < capacity; i++)
             {
-                Waiter* w = new generalWaiter("Waiter" + std::to_string(i), this);
+                std::string name = "Waiter" + std::to_string(i);
+                Waiter* w = new generalWaiter(name, this);
             }
             for (int i = 0; i < capacity; i++)
             {

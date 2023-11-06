@@ -11,7 +11,7 @@
 #include "Chef.h"
 
 class Floor;
-class Table;
+class AbstractTable;
 class Tab;
 class Customer;
 class Waiter {
@@ -24,12 +24,9 @@ public:
 
     std::string waiterName;
 
-    Table* waiterHeadTable;
-//public: Chef* _unnamed_Chef_;
-//public: Floor* _unnamed_Floor_;
-//public: Engine* _unnamed_Engine_;
+    AbstractTable* waiterHeadTable;
     public: HeadChef* headChef;
-        Waiter(std::string WaiterName, Table* WaiterTable, Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(WaiterTable), waiterFloor(floor) {
+        Waiter(std::string WaiterName,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterFloor(floor) {
             srand((unsigned) time(NULL));
             int random = 60 + (rand() % 2);
             this->waiterWaitTime = random;
@@ -37,7 +34,7 @@ public:
         virtual void performTask() = 0;
         void deliverOrder();
 
-        void visitTable(Table* table);
+        void visitTable(AbstractTable* table);
 
         void prepareDish();
 //
@@ -50,16 +47,17 @@ public:
 //Template Method: Concrete Class
 class generalWaiter : public Waiter{
 public:
-    generalWaiter(std::string basicString, Table *pTable, Floor *pFloor) : Waiter(basicString, pTable,
-                                                                                  pFloor) {}
-
+    generalWaiter(std::string basicString, Floor *pFloor) : Waiter(basicString, pFloor) {}
     void performTask();
-    void visitTable(Table table);
+    void visitTable(AbstractTable* table);
 
     void addToTab(std::string name, double amount);
 
     void payTab(std::string name, double amount);
-
+    void update(AbstractTable* table)
+    {
+        std::cout << "Waiter: " << this->waiterName << " notified of table: " << table->getTableID() << std::endl;
+    }
     Tab* getTab(std::string name);
     void decrementTimer(){
         if(this->waiterWaitTime <= 0){
@@ -73,7 +71,7 @@ public:
         }
     };
 //    void performTask(){}
-//    void setWaiterHeadTable(Table *waiterHeadTable) {
+//    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
 //    }
 //    void setWaiterName(const std::string &waiterName) {
