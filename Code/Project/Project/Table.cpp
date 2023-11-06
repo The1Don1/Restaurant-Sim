@@ -111,6 +111,7 @@ std::string Occupied::getState()
 {
     return "Occupied";
 }
+
 void TableGroup::addTable(AbstractTable *aTable)
 {
     tables.push_back(aTable);
