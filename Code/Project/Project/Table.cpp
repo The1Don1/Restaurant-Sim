@@ -4,8 +4,12 @@
 
 #include "Table.h"
 
-void AbstractTable::addTable(AbstractTable *table) {
+void AbstractTable::addTable(AbstractTable *table)
+{
 
+}
+AbstractTable* ConcreteTable::clone() {
+    throw "Not yet implemented";
 }
 TableIterator* Table::createIterator() {
     throw "Not yet implemented";
@@ -42,7 +46,7 @@ std::string TableState::getState() {
     throw "Not yet implemented";
 }
 
-void TableState::handleState(Table* tabke) {
+void TableState::handleState(Table* table) {
     throw "Not yet implemented";
 }
 
@@ -55,8 +59,12 @@ std::string Unoccupied::getState() {
 }
 
 
-void Occupied::acceptVisitor(Visitor visitor) {
+void Occupied::acceptVisitor(Visitor* visitor) {
     throw "Not yet implemented";
+}
+Customer* Table::getCustomer()
+{
+    return this->customer;
 }
 
 void Occupied::handleState() {
@@ -72,4 +80,9 @@ void Reserved::handleState() {
 
 std::string Reserved::getState() {
     throw "Not yet implemented";
+}
+
+generalWaiter* Table::getWaiter()
+{
+    return waiter;
 }
