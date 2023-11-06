@@ -3,27 +3,28 @@ void Waiter::visitTable(Table *table)
 {
 
     std::cout << "Visiting table " << table->getTableID() << std::endl;
+    // Visitor* visitor = new Visitor();
+    // table->acceptVisitor(*visitor);
+    // visitor->visitTable(table);
 }
 
 void Waiter::prepareDish(Dish* dish)
 {
-    // headChef->prepareDish(dish);
-    // Note, i need to indicate what dish to prepare and the only way to do that it to pass
-    // the Dish object as a parameter to this function.
     std::cout << "Preparing dish..." << std::endl;
 
-    headChef->getDishQueue().push(dish);
-    //headChef->PrepareDish();
+    //headChef->getDishQueue().push(dish);
+    headChef->PrepareDish(dish);
 }
 
 void Waiter::getOrders()
 {
-    waiterHeadTable->getOrders();
+    std::cout << waiterName << " is getting orders..." << std::endl;
 }
 
-void Waiter::sendOrders()
+void Waiter::sendOrders(Dish* dish)
 {
-    std::cout << "Sending order to table with table ID of " << waiterHeadTable->getTableID() << std::endl;
+    std::cout << "Sending order to headchef. Adding dish to dishQueue" << std::endl;
+    headChef->getDishQueue().push(dish);
 }
 
 void Waiter::deliverOrder()
@@ -34,6 +35,11 @@ void Waiter::deliverOrder()
 void generalWaiter::visitTable(Table occupiedTable)
 {
     std::cout << "Visiting table " << occupiedTable.getTableID() << std::endl;
+
+    // Visitor* visitor = new Visitor();
+    // occupiedTable.acceptVisitor(*visitor);
+    // visitor->visitTable(&occupiedTable);
+
 }
 
 void generalWaiter::addToTab(std::string customerName, double amount)
@@ -123,7 +129,7 @@ void MaitreD::allocateTable(int partySize)
 
     for (Table *table : waiterFloor->getFloorTables())
     {
-        int excessSeats = table->getCustomerNumber() - partySize;
+        int excessSeats = table->getnumberOfSeats() - partySize;
 
         // Check if the table can accommodate the party and is not occupied
         if (excessSeats >= 0 && table->getTableState() != occupied && excessSeats < minExcessSeats)
@@ -152,11 +158,11 @@ void MaitreD::allocateTable(int partySize)
 
         for (int i = 0; i <= waiterFloor->getFloorTables().size(); i++)
         {
-            int table1 = waiterFloor->getFloorTables()[i]->getCustomerNumber();
+            int table1 = waiterFloor->getFloorTables()[i]->getnumberOfSeats();
 
             for (int j = i + 1; j < waiterFloor->getFloorTables().size() - 1; j++)
             {
-                int table2 = waiterFloor->getFloorTables()[j]->getCustomerNumber();
+                int table2 = waiterFloor->getFloorTables()[j]->getnumberOfSeats();
 
                 if ((table1 + table2) >= partySize)
                 {
@@ -209,11 +215,21 @@ void MaitreD::splitTables(Waiter *waiter, int tableNumber)
         }
     }
 
+    int maxCustomers = 10;
+    for (Table* table : waiterFloor->getFloorTables())
+    {
+        if (table->getTableID() == tableNumber)
+        {
+            maxCustomers = table->getnumberOfSeats();
+            break;
+        }
+    }
+
     if (it != waiterFloor->getFloorTables().end())
     {
         // If the table is found, split it into two smaller tables
-        Table *table1 = new Table(tableNumber / 2);
-        Table *table2 = new Table(tableNumber / 2);
+        Table *table1 = new Table(maxCustomers/2);
+        Table *table2 = new Table(maxCustomers/2);
 
         // Add the new tables to the floor
         waiterFloor->getFloorTables().push_back(table1);

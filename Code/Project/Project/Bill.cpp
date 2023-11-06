@@ -22,8 +22,18 @@ void BillItem::paymentMethod() {
 }
 
 Bill* BillItem::getSubBill(std::string customerName) {
-    if (name == customerName)
-        return this;
+    // if (name == customerName)
+    //     return this;
+
+    // for (Customer* customer : getCustomers())
+    // {
+    //     if (customer->getName() == customerName)
+    //     {
+           
+    //     }
+    // }
+
+    return NULL;
 }
 
 
@@ -32,7 +42,9 @@ BillDecorator::BillDecorator(Bill* bill) {
 }
 
 double BillDecorator::getTotalCost() {
-    return bill->getTotalCost();
+    if (bill != NULL)
+        return bill->getTotalCost();
+    else return 0;
 }
 
 double SubBill::getTotalCost() {
@@ -45,7 +57,8 @@ double SubBill::getTotalCost() {
 }
 
 void SubBill::addItem(BillItem* item) {
-    items.push_back(item);
+    if (item != NULL)
+        items.push_back(item);
 }
 
 Bill* SubBill::getSubBill(std::string customerName) {
@@ -97,11 +110,12 @@ CustomTipDecorator::CustomTipDecorator(Bill *bill, double tip) : BillDecorator(b
 }
 
 double CustomTipDecorator::getTotalCost() {
-    return getBill()->getTotalCost() + _tipAmount;
+    return  _tipAmount;
 }
 
 
 void Bill::handleTip() {
+    //Billdecorator->getTotalCost() function returns the custom tip given
     totalAmount = totalAmount + this->billDecorator->getTotalCost();
 
 }

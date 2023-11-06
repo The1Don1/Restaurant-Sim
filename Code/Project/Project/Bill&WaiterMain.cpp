@@ -9,6 +9,7 @@ int main() {
 
     // Create a Table
     Table* table = new Table(01);
+    table->setState(new Unoccupied());
 
     // Create a generalWaiter
     generalWaiter* waiter = new generalWaiter("John", table, floor);
@@ -26,8 +27,8 @@ int main() {
 
     // Test MaitreD methods
     maitreD->performTask();
-    maitreD->allocateTable();
-    maitreD->checkReservation();
+    maitreD->allocateTable(10);
+    maitreD->checkReservation(table->getTableID());
     maitreD->mergeTables(1, 2);
     maitreD->splitTables(waiter, 1);
 
@@ -41,7 +42,7 @@ int main() {
     // Create a SubBill and add it to the BillItem
     SubBill* subBill;
     BillItem* item = new BillItem(50.0, "Drink", 50.0);
-    subBill->addItem(*item);
+    subBill->addItem(item);
 
     // Test SubBill methods
     subBill->paymentMethod();

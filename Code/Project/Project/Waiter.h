@@ -35,15 +35,15 @@ public:
             this->waiterWaitTime = random;
         }
         virtual void performTask() = 0;
+        //void deliverOrder(Table* table);
         void deliverOrder();
-
         void visitTable(Table* table);
 
         void prepareDish(Dish* dish);
 //
         void getOrders();
 
-        void sendOrders();
+        void sendOrders(Dish* dish);
 
 };
 
