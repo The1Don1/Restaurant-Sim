@@ -3,14 +3,14 @@
 //
 #include "TableIterator.h"
 
+ConcreteTableIterator::ConcreteTableIterator() {
+    // Constructor implementation
+}
+
 Table* ConcreteTableIterator::next() {
-    throw "Not yet implemented";
+    // Implementation of the next() function
 }
 
 bool ConcreteTableIterator::hasNext() {
-    throw "Not yet implemented";
+    // Implementation of the hasNext() function
 }
-
-ConcreteTableIterator::ConcreteTableIterator() {
-}
-
