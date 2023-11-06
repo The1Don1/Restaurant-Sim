@@ -46,6 +46,7 @@ protected:
     int numberOfSeats;
     int tableID;
 };
+int AbstractTable::tableCount = 0;
 
 class TableGroup: public AbstractTable
 {
