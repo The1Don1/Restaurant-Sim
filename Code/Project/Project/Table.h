@@ -21,7 +21,7 @@ class ConcreteTableIterator;
 //class AbstractTable;
 class AbstractTable {
 public:
-    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(tableCount++) {}
+    explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
     virtual void acceptVisitor(Visitor visitor) = 0;
     // virtual AbstractTable *operator+(TableGroup *tableGroup);
     // virtual AbstractTable *operator+(Table *table);
@@ -36,7 +36,7 @@ public:
     Bill *getBill(Customer *customer);
     void setWaiter(Waiter *waiter);
     void getOrders();
-    static int tableCount;
+    //static int tableCount;
     AbstractTable *next;
 protected:
     TableState *tableState;
@@ -46,7 +46,6 @@ protected:
     int numberOfSeats;
     int tableID;
 };
-int AbstractTable::tableCount = 0;
 
 class TableGroup: public AbstractTable
 {
