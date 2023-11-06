@@ -46,7 +46,7 @@ public:
 
     Bill* getBill();
 
-    Bill(double price) : totalAmount(price){}
+    Bill(double price);
 
     double calculateBill();
 

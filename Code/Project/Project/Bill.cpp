@@ -154,9 +154,11 @@ double Bill::getTotalCost() {
         
 }
 
-Bill::Bill(double price) : totalAmount(price), paymentStrategy(NULL), splitBill(false)
+Bill::Bill(double price)
 {
-    
+    this->totalAmount = price;
+    this->paymentStrategy = NULL;
+    this->splitBill = false;
 }
 
 /* ------------Changes--------------*/
