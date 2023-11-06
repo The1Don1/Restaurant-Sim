@@ -1,33 +1,61 @@
-
 //
 // Created by mathe on 2023/10/30.
 //
 
 #include "Table.h"
-
-void AbstractTable::addTable(AbstractTable *table)
+int AbstractTable::getnumberOfSeats()
 {
+    return numberOfSeats;
+}
 
-}
-AbstractTable* ConcreteTable::clone() {
-    throw "Not yet implemented";
-}
-TableIterator* Table::createIterator() {
-    throw "Not yet implemented";
-}
-void Table::accept(Visitor* visitor) {
-    throw "Not yet implemented";
-}
+int AbstractTable::getTableID()
+{
+    return tableID;
+};
+std::vector<Customer *> AbstractTable::getCustomers()
+{
+    return customers;
+};
+void AbstractTable::setState(TableState *tableState)
+{
+    delete this->tableState;
+    this->tableState = tableState;
+    handleState();
+};
+
+TableState* AbstractTable::getState()
+{
+    return tableState;
+};
+void AbstractTable::handleState()
+{
+    //tableState->handleState(this);
+};
+
+Bill* AbstractTable::getBill(Customer *customer)
+{
+    return bill;
+};
+void AbstractTable::setWaiter(Waiter *waiter)
+{
+    this->waiter = waiter;
+};
+
 
 AbstractTable *Table::clone() {
     return nullptr;
 }
-void Table::handleState() {
-    throw "Not yet implemented";
+std::vector<Customer *> Table::getCustomers()
+{
+    return customers;
 }
 
-
-void Table::changeTableState() {
+void Table::acceptVisitor(Visitor *visitor)
+{
+    visitor->visitTable(this);
+}
+void Table::handleState()
+{
     throw "Not yet implemented";
 }
 
@@ -39,6 +67,11 @@ Bill* Table::getBill(Customer* customer) {
     throw "Not yet implemented";
 }
 
+void Table::setWaiter(Waiter *waiter)
+{
+    throw "Not yet implemented";
+}
+
 void Table::getOrders() {
     throw "Not yet implemented";
 }
@@ -47,7 +80,7 @@ std::string TableState::getState() {
     throw "Not yet implemented";
 }
 
-void TableState::handleState(Table* table) {
+void TableState::handleState(Table* tabke) {
     throw "Not yet implemented";
 }
 
@@ -60,12 +93,8 @@ std::string Unoccupied::getState() {
 }
 
 
-void Occupied::acceptVisitor(Visitor* visitor) {
+void Occupied::acceptVisitor(Visitor visitor) {
     throw "Not yet implemented";
-}
-Customer* Table::getCustomer()
-{
-    return this->customer;
 }
 
 void Occupied::handleState() {
@@ -83,7 +112,17 @@ std::string Reserved::getState() {
     throw "Not yet implemented";
 }
 
-generalWaiter* Table::getWaiter()
+void TableGroup::addTable(AbstractTable *aTable)
 {
-    return waiter;
+    throw "Not yet implemented";
+}
+
+void TableGroup::acceptVisitor(Visitor *visitor)
+{
+    throw "Not yet implemented";
+}
+
+AbstractTable *TableGroup::clone()
+{
+    return this;
 }

@@ -5,8 +5,7 @@
 #include "Floor.h"
 //using namespace std;
 
-Table* Floor::constructTable()
-{
+Table* Floor::constructTable(){
     Table* t = new Table(4);
     floorTables.push_back(t);
     std::cout << "Floor construct table" << std::endl;
@@ -23,13 +22,12 @@ Table* Floor::destructTable(){
     return nullptr;
 }
 
-void Floor::Decrement()
-{
+void Floor::Decrement() {
     for(auto & floorWaiter : floorWaiters){
         floorWaiter->decrementTimer();
     }
     for(auto & floorTable : floorTables){
-        floorTable->decrementTimer();
+        // floorTable->decrementTimer();
     }
 }
 void Floor::printWaiters(){
@@ -52,4 +50,4 @@ void Floor::setManager(Manager* manager) {
 
 void Floor::getManagerComplaints() {
     throw "Not yet implemented";
-}
+ }
