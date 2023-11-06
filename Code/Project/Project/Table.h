@@ -9,40 +9,6 @@ class Bill;
 class Waiter;
 class Visitor;
 
-
-/*
-    TableGroup is a composite class that will store a vector of AbstractTables
-    It will be used to store the tables that are grouped together
-*/
-class TableGroup : public AbstractTable
-{
-private:
-    std::vector<AbstractTable *> tables;
-public:
-    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
-    ~TableGroup();
-    void addTable(AbstractTable *aTable);
-    void acceptVisitor(Visitor visitor);
-    AbstractTable *operator+(TableGroup *tableGroup);
-    AbstractTable *operator+(Table *table);
-    AbstractTable *clone();
-    std::vector<AbstractTable *> getTables();
-};
-
-/*
-    Table is a leaf class that will be a single table
-*/
-class Table : public AbstractTable
-{
-public:
-    Table(int numberOfSeats) : AbstractTable(numberOfSeats) {}
-    AbstractTable *operator+(Table *table);
-    AbstractTable *operator+(TableGroup *tableGroup);
-    void acceptVisitor(Visitor visitor);
-    AbstractTable *clone();
-    
-};
-
 /*
     TableState is a state class that will be used to determine if the table is occupied or not
 */
@@ -62,21 +28,8 @@ public:
 class Occupied : public TableState
 {
 public:
-    void handleState(AbstractTable *table)
-    {
-        if (table->getCustomers().size() == 0)
-        {
-            table->setState(new Unoccupied());
-        }
-        else if (table->getCustomers().size() > 0)
-        {
-            return;
-        }
-    }
-    std::string getState()
-    {
-        return "Occupied";
-    }
+    void handleState(AbstractTable *table);
+    std::string getState();
 };
 
 
@@ -115,5 +68,38 @@ protected:
     int tableID;
 };
 int AbstractTable::tableCount = 0;
+
+/*
+    TableGroup is a composite class that will store a vector of AbstractTables
+    It will be used to store the tables that are grouped together
+*/
+class TableGroup : public AbstractTable
+{
+private:
+    std::vector<AbstractTable *> tables;
+public:
+    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
+    ~TableGroup();
+    void addTable(AbstractTable *aTable);
+    void acceptVisitor(Visitor visitor);
+    AbstractTable *operator+(TableGroup *tableGroup);
+    AbstractTable *operator+(Table *table);
+    AbstractTable *clone();
+    std::vector<AbstractTable *> getTables();
+};
+
+/*
+    Table is a leaf class that will be a single table
+*/
+class Table : public AbstractTable
+{
+public:
+    Table(int numberOfSeats) : AbstractTable(numberOfSeats) {}
+    AbstractTable *operator+(Table *table);
+    AbstractTable *operator+(TableGroup *tableGroup);
+    void acceptVisitor(Visitor visitor);
+    AbstractTable *clone();
+    
+};
 
 #endif // PROJECT_TABLE_H
