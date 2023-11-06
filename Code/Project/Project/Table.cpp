@@ -35,10 +35,7 @@ void AbstractTable::setWaiter(Waiter *waiter)
     this->waiter = waiter;
 };
 
-TableIterator *Table::createIterator()
-{
-    throw "Not yet implemented";
-}
+
 AbstractTable *Table::clone() {
     return nullptr;
 }
@@ -51,15 +48,16 @@ void Table::handleState()
     throw "Not yet implemented";
 }
 
-void Table::changeTableState() {
-    throw "Not yet implemented";
-}
-
 void Table::setState(TableState* state) {
     throw "Not yet implemented";
 }
 
 Bill* Table::getBill(Customer* customer) {
+    throw "Not yet implemented";
+}
+
+void Table::setWaiter(Waiter *waiter)
+{
     throw "Not yet implemented";
 }
 
@@ -100,5 +98,15 @@ void Reserved::handleState() {
 }
 
 std::string Reserved::getState() {
+    throw "Not yet implemented";
+}
+
+void TableGroup::addTable(AbstractTable *aTable)
+{
+    throw "Not yet implemented";
+}
+
+void TableGroup::acceptVisitor(Visitor *visitor)
+{
     throw "Not yet implemented";
 }

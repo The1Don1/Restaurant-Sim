@@ -46,52 +46,38 @@ protected:
     int tableID;
 };
 
-class TableGroup: public AbstractTable
+class TableGroup : public AbstractTable
 {
 private:
-    std::vector<AbstractTable*> children;
+    std::vector<AbstractTable *> tables;
 public:
-    AbstractTable* abstractiTable;
-
-    void addTable(AbstractTable* aTable);
+    TableGroup(int numberOfSeats = 0) : AbstractTable(numberOfSeats) {};
+    //~TableGroup();
+    void addTable(AbstractTable *aTable);
+    void acceptVisitor(Visitor* visitor);
+    // AbstractTable *operator+(TableGroup *tableGroup);
+    // AbstractTable *operator+(Table *table);
+    AbstractTable *clone();
+    std::vector<AbstractTable *> getTables();
 };
 
-class Table : public AbstractTable{
-private:
-    int tableID;
-    Table* up;
-    Table* left;
-    Table* down;
-    Table* right;
-    TableState* tableState;
-    std::vector<Customer*> customers;
-    Bill* bill;
-    Customer* customer;
-    AbstractTable* abstractTable;
-    MaitreD* maD;
-    Floor* floor;
-    Waiter* waiter;
-    ConcreteTableIterator* concreteTableIterator;
-    public:
-            Table(int numberOfSeats) : AbstractTable(numberOfSeats){}
-            void addTable(AbstractTable* table){
-                std::cout << "";
-            }
-            int getnumberOfSeats(){
-                return 0;
-            };
-            void decrementTimer(){
-                std::cout << "";
-            };
-            TableIterator* createIterator();
-            AbstractTable* clone() ;
-            void acceptVisitor(Visitor* visitor);
-            void handleState();
-            void changeTableState();
-            void setState(TableState* state);
-            Bill* getBill(Customer* customer);
-            void getOrders();
-    };
+class Table : public AbstractTable
+{
+public:
+    Table(int numberOfSeats) : AbstractTable(numberOfSeats) {}
+    // AbstractTable *operator+(Table *table);
+    // AbstractTable *operator+(TableGroup *tableGroup);
+    void acceptVisitor(Visitor* visitor);
+    AbstractTable *clone();
+    std::vector<Customer *> getCustomers();
+    void setState(TableState *tableState);
+    TableState *getState();
+    void handleState();
+    Bill *getBill(Customer *customer);
+    void setWaiter(Waiter *waiter);
+    void getOrders();
+    
+};
 class TableState
 {
 public: Table* _unnamed_Table_;
