@@ -11,6 +11,8 @@
 //class Visitor;
 class generalWaiter;
 
+class Table;
+
 class Kitchen;
 
 /**
