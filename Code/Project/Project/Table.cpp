@@ -115,3 +115,8 @@ void TableGroup::acceptVisitor(Visitor *visitor)
 {
     throw "Not yet implemented";
 }
+
+AbstractTable *TableGroup::clone()
+{
+    return this;
+}
