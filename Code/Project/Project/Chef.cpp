@@ -43,6 +43,11 @@ HeadChef::HeadChef()
     this->currTable = NULL;
 }
 
+void HeadChef::AddDish(Dish* d)
+{
+    this->dishQueue.push(d);
+}
+
 void HeadChef::PrepareDish(Dish* dish)
 {
     if(this->dishQueue.size() > 0)
@@ -72,11 +77,6 @@ void HeadChef::addChef()
     this->freeChefs.push(new commisChef(this));
 }
 
-std::queue<Dish*> HeadChef::getDishQueue()
-{
-    return this->dishQueue;
-}
-
 void HeadChef::removeChef()
 {
     if(this->freeChefs.size() > 0)
@@ -92,6 +92,9 @@ void HeadChef::removeChef()
 void HeadChef::Notify(generalWaiter* waiter)
 {
     waiter->deliverOrder();
+    commisChef* chef = this->busyChefs.front();
+    this->busyChefs.pop();
+    this->freeChefs.push(chef);
 }
 
 void HeadChef::Attach(generalWaiter* waiter)
