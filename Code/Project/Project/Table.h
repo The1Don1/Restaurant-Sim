@@ -24,7 +24,7 @@ public:
     virtual std::string getState() = 0;
     virtual void handleState(AbstractTable *table) = 0;
 };
-int AbstractTable::tableCount = 0;
+
 
 class Unoccupied : public TableState
 {
