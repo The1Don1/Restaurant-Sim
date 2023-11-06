@@ -3,7 +3,7 @@
 //
 
 #include "Bill.h"
-BillItem::BillItem(double price, std::string item, double cost) : Bill(price) {
+BillItem::BillItem(std::string item, double cost){
     name = item;
     this->price = cost;
 
@@ -157,12 +157,12 @@ double Bill::getTotalCost() {
         
 }
 
-Bill::Bill(double price)
+/*Bill::Bill(double price)
 {
     this->totalAmount = price;
     this->paymentStrategy = NULL;
     this->splitBill = false;
-}
+}*/
 
 /* ------------Changes--------------*/
 /*

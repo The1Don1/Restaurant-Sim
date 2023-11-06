@@ -46,7 +46,7 @@ public:
 
     Bill* getBill();
 
-    Bill(double price);
+//    Bill(double price);
 
     double calculateBill();
 
@@ -74,7 +74,7 @@ private:
         std::string name;
         double price;
 public:
-        BillItem(double price, std::string item, double cost);
+        BillItem(std::string item, double cost);
         void paymentMethod();
     Bill* getSubBill(std::string customerName);
         double getTotalCost();
