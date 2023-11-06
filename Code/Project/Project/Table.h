@@ -34,6 +34,7 @@ public:
     void handleState();
     Bill *getBill(Customer *customer);
     void setWaiter(Waiter *waiter);
+    Waiter *getWaiter();
     void getOrders();
     //static int tableCount;
     AbstractTable *next;
@@ -75,6 +76,7 @@ public:
     void handleState();
     Bill *getBill(Customer *customer);
     void setWaiter(Waiter *waiter);
+    Waiter *getWaiter();
     void getOrders();
     
 };
