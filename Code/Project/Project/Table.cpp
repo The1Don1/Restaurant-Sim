@@ -50,6 +50,23 @@ std::vector<Customer *> Table::getCustomers()
     return customers;
 }
 
+//+ operator overload to add 2 tables and return a table group
+AbstractTable *Table::operator+(Table *table)
+{
+    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + table->getnumberOfSeats());
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(table);
+    return newTableGroup;
+}
+//+ operator overload to add a table to a table group
+AbstractTable *Table::operator+(TableGroup *tableGroup)
+{
+    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + tableGroup->getnumberOfSeats());
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(tableGroup);
+    return newTableGroup;
+}
+
 void Table::acceptVisitor(Visitor *visitor)
 {
     visitor->visitTable(this);
@@ -121,6 +138,24 @@ void TableGroup::addTable(AbstractTable *aTable)
 void TableGroup::acceptVisitor(Visitor *visitor)
 {
     visitor->visitTable(this);
+}
+
+//+ operator overload to add 2 table groups and return a table group
+AbstractTable* TableGroup::operator+(TableGroup *tableGroup)
+{
+    TableGroup *newTableGroup = new TableGroup();
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(tableGroup);
+    return newTableGroup;
+}
+
+//+ operator overload to add a table to the table group
+AbstractTable* TableGroup::operator+(Table *table)
+{
+    TableGroup *newTableGroup = new TableGroup();
+    newTableGroup->addTable(this);
+    newTableGroup->addTable(table);
+    return newTableGroup;
 }
 
 AbstractTable *TableGroup::clone()
