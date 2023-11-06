@@ -11,6 +11,8 @@
 //class Visitor;
 class generalWaiter;
 
+class Table;
+
 class Kitchen;
 
 class Chef
@@ -29,7 +31,6 @@ class Chef
         virtual void PrepareDish(Dish* dish) = 0;
         void SetNextChef(Chef* chef);
 };
-
 
 class ChefNotifier;
 
