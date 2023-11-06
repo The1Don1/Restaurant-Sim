@@ -13,9 +13,3 @@ bool ConcreteTableIterator::hasNext()
 {
     return currTable->next != nullptr;
 }
-
-ConcreteTableIterator::ConcreteTableIterator(AbstractTable* aTable) 
-{
-    this->currTable = aTable;
-}
-
