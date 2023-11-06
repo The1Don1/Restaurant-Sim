@@ -4,10 +4,6 @@
 
 #include "Table.h"
 
-void AbstractTable::addTable(AbstractTable *table) {
-
-}
-
 int AbstractTable::getTableID()
 {
     return tableID;
