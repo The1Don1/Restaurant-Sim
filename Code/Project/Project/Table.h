@@ -18,7 +18,7 @@ class MaitreD;
 class Visitor;
 class TableIterator;
 class ConcreteTableIterator;
-//class AbstractTable;
+class TableGroup;
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
