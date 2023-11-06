@@ -130,7 +130,7 @@ void Floor::getManagerComplaints() {
     newTableGroup->addTable(table1);
     newTableGroup->addTable(table2);
 
-    AbstractTable *curr = headTable;
+    curr = headTable;
     AbstractTable *prev = nullptr;
 
     while(curr != nullptr)
