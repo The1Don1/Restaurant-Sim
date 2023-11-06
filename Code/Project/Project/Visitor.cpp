@@ -1,3 +1,4 @@
+#include "Visitor.h"
 //
 // Created by mathe on 2023/10/31.
 //
@@ -7,3 +8,7 @@
 void Visitor::visitTable(Table *table) {
 
 }*/
+void Visitor::visitTable(AbstractTable *table)
+{
+    std::cout << "Table ID: " << table->getTableID() << std::endl;
+}

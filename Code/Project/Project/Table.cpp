@@ -29,7 +29,7 @@ TableState* AbstractTable::getState()
 };
 void AbstractTable::handleState()
 {
-    //tableState->handleState(this);
+    tableState->handleState(this);
 };
 
 Bill* AbstractTable::getBill(Customer *customer)
@@ -56,7 +56,7 @@ void Table::acceptVisitor(Visitor *visitor)
 }
 void Table::handleState()
 {
-    throw "Not yet implemented";
+    tableState->handleState(this);
 }
 
 void Table::setState(TableState* state) {
@@ -71,39 +71,44 @@ Bill* Table::getBill(Customer* customer) {
 
 void Table::setWaiter(Waiter *waiter)
 {
-    throw "Not yet implemented";
+    this->waiter = waiter;
 }
 
 void Table::getOrders() {
     throw "Not yet implemented";
 }
 
-std::string TableState::getState() {
-    throw "Not yet implemented";
+void Unoccupied::handleState(AbstractTable *table)
+{
+    if (table->getCustomers().size() == 0)
+    {
+        table->setState(new Unoccupied());
+    }
+    else if (table->getCustomers().size() > 0)
+    {
+        return;
+    }
 }
 
-void TableState::handleState(Table* tabke) {
-    throw "Not yet implemented";
+std::string Unoccupied::getState()
+{
+    return "Unoccupied";
 }
 
-void Unoccupied::handleState() {
-    throw "Not yet implemented";
+void Occupied::handleState(AbstractTable *table)
+{
+    if (table->getCustomers().size() == 0)
+    {
+        table->setState(new Unoccupied());
+    }
+    else if (table->getCustomers().size() > 0)
+    {
+        return;
+    }
 }
 
-std::string Unoccupied::getState() {
-    throw "Not yet implemented";
-}
-
-
-void Occupied::acceptVisitor(Visitor visitor) {
-    throw "Not yet implemented";
-}
-
-void Occupied::handleState() {
-    throw "Not yet implemented";
-}
-
-std::string Occupied::getState() {
+std::string Occupied::getState()
+{
     throw "Not yet implemented";
 }
 
@@ -111,12 +116,11 @@ void TableGroup::addTable(AbstractTable *aTable)
 {
     tables.push_back(aTable);
     numberOfSeats += aTable->getnumberOfSeats();
-
 }
 
 void TableGroup::acceptVisitor(Visitor *visitor)
 {
-    throw "Not yet implemented";
+    visitor->visitTable(this);
 }
 
 AbstractTable *TableGroup::clone()

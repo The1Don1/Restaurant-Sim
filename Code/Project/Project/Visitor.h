@@ -11,6 +11,6 @@ class Table;
 class Visitor
 {
 public:
-    virtual void visitTable(Table* table) ;
+    virtual void visitTable(AbstractTable* table) ;
 };
 #endif //PROJECT_VISITOR_H
