@@ -18,6 +18,10 @@ class Table;
 class Tab;
 class Customer;
 
+/**
+ * @brief Waiters are responsible for serving customers
+ * 
+ */
 class Waiter
 {
 private:

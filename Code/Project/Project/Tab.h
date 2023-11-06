@@ -7,6 +7,10 @@
 #include <iostream>
 #include "Floor.h"
 
+/**
+ * @brief The Tab class holds the running tab of a restaurant customer
+ * 
+ */
 class Tab {
 private:
     std::string name;

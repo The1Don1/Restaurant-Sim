@@ -5,6 +5,13 @@
 #include <iostream>
 #include "Customer.h"
 
+/**
+ * @brief Construct a new Customer:: Customer object
+ * 
+ * @param customerName 
+ * @param tableNum 
+ * @param table 
+ */
 Customer::Customer(std::string customerName, int tableNum, Table* table)
 {
     order = nullptr;
@@ -16,36 +23,42 @@ Customer::Customer(std::string customerName, int tableNum, Table* table)
     myTable = table;
 }
 
+
 /**
- * Customer destructor
- * deletes the object that calls the destructor
-*/
+ * @brief Destroy the Customer:: Customer object
+ * 
+ */
 Customer::~Customer()
 {
     delete this;
 }
 
 /**
- * method gets called when customer is ready to pay
- * need to choose method of payment (strategy design pattern)
-*/
+ * @brief Method gets called when customer is ready to pay
+ * need to choose method of payment (strategy design pattern) 
+ * @param aMethodOfPayment 
+ */
 void Customer::pay(PaymentStrategy* aMethodOfPayment)
 {
     aMethodOfPayment->paymentMethod();
 }
 
 /**
- * method sets customer's mood
-*/
+ * @brief Sets the customer mood
+ * 
+ * @param cstmrMood 
+ */
 void Customer::setMood(std::string cstmrMood)
 {
     customerMood = cstmrMood;
 }
 
 /**
- * method is called when the customer is ready to leave the restaurant
+ * @brief  Method is called when the customer is ready to leave the restaurant
  * acts as the constructor (conditional)
-*/
+ * 
+ * @param bill 
+ */
 void Customer::leaveRestaurant(Bill* bill)
 {
     this->readyToLeave = true;
@@ -69,10 +82,11 @@ void Customer::leaveRestaurant(Bill* bill)
 }
 
 /**
+ * @brief 
  * gets called when customer is not happy with her waiting period state of the food
  * sends the complaint to the manager
  * customer can still make a complaint even when the manager is not visiting the table
-*/
+ */
 void Customer::makeComplaint(Manager* manager)
 {
     std::cout << "Please enter you complaint:" << std::endl;
@@ -81,23 +95,42 @@ void Customer::makeComplaint(Manager* manager)
     manager->handleComplaint(customerComplaint);
 }
 
+
+/**
+ * @brief Returns bill associated with customer
+ * 
+ * @return Bill* 
+ */
 Bill* Customer::getBill()
 {
     return customerBill;
 }
 
-
+/**
+ * @brief Creates a tab for a customer
+ * 
+ * @return Tab* 
+ */
 Tab* Customer::createTab()
 {
     customerTab = new Tab(name);
     return customerTab;
 }
 
+/**
+ * @brief Sets a tab for a customer
+ * 
+ * @param tab 
+ */
 void Customer::setTab(Tab* tab)
 {
     customerTab = tab;
 }
 
+/**
+ * @brief Places an order
+ * 
+ */
 void Customer::placeOrder()
 {
     this->readyToOrder = true;
@@ -105,40 +138,71 @@ void Customer::placeOrder()
     customerBill = new Bill();
 }
 
+/**
+ * @brief Sets table number of customer
+ * 
+ * @param table 
+ */
 void Customer::setTableNum(int table)
 {
     this->tableNum = table;
 }
 
+/**
+ * @brief Returns the customers mood
+ * 
+ * @return std::string 
+ */
 std::string Customer::getMood()
 {
     return customerMood;
 }
 
+/**
+ * @brief Accepts visitor to table
+ * 
+ * @param visitor 
+ */
 void Customer::accept(Visitor* visitor)
 {
     visitor->visitTable(this->table);
 }
 
-void Customer::assignCustomerTable(Table* customerTable)
+/**
+ * @brief Assigns customer to table
+ * 
+ * @param customerTable 
+ */
+void Customer::assignCustomerTable(AbstractTable* customerTable)
 {
     myTable = customerTable;
 }
 
+/**
+ * @brief Returns table number in which customer is seated
+ * 
+ * @return int 
+ */
 int Customer::getTableNum()
 {
     return this->tableNum;
 }
 
+/**
+ * @brief Returns customer name
+ * 
+ * @return std::string 
+ */
 std::string Customer::getName()
 {
     return this->name;
 }
 
 /**
- * allows customer to add a tip to the Bill
+ * @brief allows customer to add a tip to the Bill
  * customer chooses how much to tip
-*/
+ * 
+ */
 void Customer::tip()
 {
     float tip = 0.0;
@@ -147,6 +211,11 @@ void Customer::tip()
     customerBill->addTip(tip);
 }
 
+/**
+ * @brief User input to complement waiter
+ * 
+ * @return std::string 
+ */
 std::string Customer::complimentWaiter()
 {
     std::string compliment;
@@ -156,9 +225,11 @@ std::string Customer::complimentWaiter()
 }
 
 /**
+ * @brief 
  * sets customer mood according to how long it took for
  * their dish to be prepared
-*/
+ * @param order 
+ */
 void Customer::checkOrder(Dish* order)
 {
     //get time from Engine
@@ -166,16 +237,31 @@ void Customer::checkOrder(Dish* order)
     throw "Not yet implemented";
 }
 
+/**
+ * @brief Sets the customer status
+ * 
+ * @param readyToPayStatus 
+ */
 void Customer::setReadyToOrderStatus(bool readyToOrderStatus)
 {
     this->readyToOrder = readyToOrderStatus;
 }
 
+/**
+ * @brief Sets the customer status
+ * 
+ * @param readyToPayStatus 
+ */
 void Customer::setReadyToLeaveStatus(bool readyToLeaveStatus)
 {
     this->readyToLeave = readyToLeaveStatus;
 }
 
+/**
+ * @brief Sets the customer status
+ * 
+ * @param readyToPayStatus 
+ */
 void Customer::setReadyToPayStatus(bool readyToPayStatus)
 {
     this->readyToPay = readyToPayStatus;

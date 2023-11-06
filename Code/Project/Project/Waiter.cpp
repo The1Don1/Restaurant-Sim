@@ -7,6 +7,7 @@
 
 /**
  * @brief Gets the orders of all the customers and sends each to the head chef
+ * use place order function of all customers at table
  * 
  */
 void Waiter::getOrders() 
@@ -96,7 +97,7 @@ void generalWaiter::visitTable(AbstractTable *table)
 }
 
 /**
- * @brief Allocate an avaailable table to 1 or more customers 
+ * @brief Allocate an available table to 1 or more customers 
  * 
  * @param customers 
  */
@@ -110,6 +111,12 @@ void MaitreD::allocateTable(std::vector<Customer*> customers) {
             curr->setState(new Occupied);
             curr->setWaiter(this);
             curr->setCustomers(customers);
+
+            for(auto customer : customers)
+            {
+                customer->assignCustomerTable(curr);
+                customer->setReadyToOrderStatus(true);
+            }
 
             break;
         }

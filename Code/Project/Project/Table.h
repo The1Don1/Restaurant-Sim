@@ -20,6 +20,10 @@ class TableIterator;
 class ConcreteTableIterator;
 class TableGroup;
 
+/**
+ * @brief Customers are seated and served at tables
+ * 
+ */
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
