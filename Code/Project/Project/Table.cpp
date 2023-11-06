@@ -1,165 +1,75 @@
+//
+// Created by mathe on 2023/10/30.
+//
+
 #include "Table.h"
 
-AbstractTable::~AbstractTable()
-{
-    delete tableState;
-    delete bill;
-    delete waiter;
-    for (auto customer : customers)
-    {
-        delete customer;
-    }
+void AbstractTable::addTable(AbstractTable *table) {
+
+}
+TableIterator* Table::createIterator() {
+    throw "Not yet implemented";
+}
+void Table::accept(Visitor* visitor) {
+    throw "Not yet implemented";
 }
 
-int AbstractTable::getnumberOfSeats()
-{
-    return numberOfSeats;
+AbstractTable *Table::clone() {
+    return nullptr;
+}
+void Table::handleState() {
+    throw "Not yet implemented";
 }
 
-int AbstractTable::getTableID()
-{
-    return tableID;
-};
 
-std::vector<Customer *> AbstractTable::getCustomers()
-{
-    return customers;
-};
-void AbstractTable::setState(TableState *tableState)
-{
-    delete this->tableState;
-    this->tableState = tableState;
-    handleState();
-};
-TableState* AbstractTable::getState()
-{
-    return tableState;
-};
-void AbstractTable::handleState()
-{
-    tableState->handleState(this);
-};
-
-Bill* AbstractTable::getBill(Customer *customer)
-{
-    return bill;
-};
-void AbstractTable::setWaiter(Waiter *waiter)
-{
-    this->waiter = waiter;
-};
-
-TableGroup::~TableGroup()
-{
-    for (auto table : tables)
-    {
-        delete table;
-    }
+void Table::changeTableState() {
+    throw "Not yet implemented";
 }
 
-//Add a table to the vector of tables
-void TableGroup::addTable(AbstractTable *aTable)
-{
-    tables.push_back(aTable);
-    numberOfSeats += aTable->getnumberOfSeats();
+void Table::setState(TableState* state) {
+    throw "Not yet implemented";
 }
 
-void TableGroup::acceptVisitor(Visitor visitor)
-{
+Bill* Table::getBill(Customer* customer) {
+    throw "Not yet implemented";
 }
 
-//+ operator overload to add 2 table groups and return a table group
-AbstractTable* TableGroup::operator+(TableGroup *tableGroup)
-{
-    TableGroup *newTableGroup = new TableGroup();
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(tableGroup);
-    return newTableGroup;
+void Table::getOrders() {
+    throw "Not yet implemented";
 }
 
-//+ operator overload to add a table to the table group
-AbstractTable* TableGroup::operator+(Table *table)
-{
-    TableGroup *newTableGroup = new TableGroup();
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(table);
-    return newTableGroup;
+std::string TableState::getState() {
+    throw "Not yet implemented";
 }
 
-AbstractTable* TableGroup::clone()
-{
-    TableGroup *tableGroup = new TableGroup();
-    for (auto table : tables)
-    {
-        tableGroup->addTable(table->clone());
-    }
-    return tableGroup;
+void TableState::handleState(Table* tabke) {
+    throw "Not yet implemented";
 }
 
-//Get tables vector
-std::vector<AbstractTable *> TableGroup::getTables()
-{
-    return tables;
+void Unoccupied::handleState() {
+    throw "Not yet implemented";
 }
 
-AbstractTable *Table::clone()
-{
-    Table *table = new Table(this->getnumberOfSeats());
-    return table;
+std::string Unoccupied::getState() {
+    throw "Not yet implemented";
 }
 
-//+ operator overload to add 2 tables and return a table group
-AbstractTable *Table::operator+(Table *table)
-{
-    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + table->getnumberOfSeats());
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(table);
-    return newTableGroup;
-}
-//+ operator overload to add a table to a table group
-AbstractTable *Table::operator+(TableGroup *tableGroup)
-{
-    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + tableGroup->getnumberOfSeats());
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(tableGroup);
-    return newTableGroup;
+
+void Occupied::acceptVisitor(Visitor visitor) {
+    throw "Not yet implemented";
 }
 
-void Table::acceptVisitor(Visitor visitor)
-{
-    visitor.visitTable(this);
+void Occupied::handleState() {
+    throw "Not yet implemented";
 }
 
-void Unoccupied::handleState(AbstractTable *table)
-{
-    if (table->getCustomers().size() == 0)
-    {
-        table->setState(new Unoccupied());
-    }
-    else if (table->getCustomers().size() > 0)
-    {
-        return;
-    }
+std::string Occupied::getState() {
+    throw "Not yet implemented";
+}
+void Reserved::handleState() {
+    throw "Not yet implemented";
 }
 
-std::string Unoccupied::getState()
-{
-    return "Unoccupied";
-}
-
-void Occupied::handleState(AbstractTable *table)
-{
-    if (table->getCustomers().size() == 0)
-    {
-        table->setState(new Unoccupied());
-    }
-    else if (table->getCustomers().size() > 0)
-    {
-        return;
-    }
-}
-
-std::string Occupied::getState()
-{
-    return "Occupied";
+std::string Reserved::getState() {
+    throw "Not yet implemented";
 }
