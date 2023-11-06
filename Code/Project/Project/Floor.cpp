@@ -5,20 +5,38 @@
 #include "Floor.h"
 //using namespace std;
 
-Table* Floor::constructTable(){
-    Table* t = new Table(4);
-    floorTables.push_back(t);
+AbstractTable* Floor::constructTable(){
+    srand((unsigned) time(NULL));
+    int random = rand() % floorWaiters.size();
+    std::cout << "Random waiter: " << random << std::endl;
+    generalWaiter* waiter = floorWaiters.at(random);
+    
+    AbstractTable* t = new Table(random + 1);
+    if(headTable == nullptr){
+        headTable = t;
+        headTable->setWaiter(waiter);
+    }
+    else{
+        AbstractTable* temp = headTable;
+        while(temp->next != nullptr){
+            temp = temp->next;
+        }
+        temp->next = t;
+        temp->setWaiter(waiter);
+    }
     std::cout << "Floor construct table" << std::endl;
+    std::cout << "AbstractTable ID: " << t->getTableID() << std::endl;
+    
     return t;
 }
 
-void Floor::constructWaiter(std::string name, Table* table){
-    generalWaiter* g = new generalWaiter(name, table, this);
+void Floor::constructWaiter(std::string name, HeadChef* hc){
+    generalWaiter* g = new generalWaiter(name, hc, this);
     std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
     floorWaiters.push_back(g);
 }
 
-Table* Floor::destructTable(){
+AbstractTable* Floor::destructTable(){
     return nullptr;
 }
 
@@ -26,11 +44,9 @@ void Floor::Decrement() {
     for(auto & floorWaiter : floorWaiters){
         floorWaiter->decrementTimer();
     }
-    for(auto & floorTable : floorTables){
-        // floorTable->decrementTimer();
-    }
 }
-void Floor::printWaiters(){
+void Floor::printWaiters()
+{
     for(auto & floorWaiter : floorWaiters){
         std::cout << floorWaiter->waiterName << " " << floorWaiter->waiterWaitTime << std::endl;
     }

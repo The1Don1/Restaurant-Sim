@@ -52,7 +52,7 @@ void Facade::createWaiter(){
 //    generalWaiter *t;
 //    srand((unsigned) time(NULL));
 //    int random = 100 + (rand() % 20);
-    floor->constructWaiter(name, floor->getHeadTable());
+    floor->constructWaiter(name, hc);
 
 }
 

@@ -11,26 +11,28 @@
 #include "Table.h"
 #include "Tab.h"
 #include "Manager.h"
+#include "Chef.h"
 
-class Table;
+class AbstractTable;
 class Manager;
 class generalWaiter;
 class Floor {
 private:
     std::vector<generalWaiter*> floorWaiters;
-    std::vector<Table*> floorTables;
+    AbstractTable* headTable;
     Manager* manager;
+    HeadChef* hc;
     int floorCapacity;
-
+    std::vector<Tab*> tabs;
 public:
-    Table* constructTable();
-    Table* destructTable();
+    AbstractTable* constructTable();
+    AbstractTable* destructTable();
     void Decrement();
     ~Floor()= default;
-    Table* getHeadTable(){
-        return this->floorTables.front();
+    AbstractTable* getHeadTable(){
+        return headTable;
     }
-    void constructWaiter(std::string name, Table* table);
+    void constructWaiter(std::string, HeadChef* hc);
     void printWaiters();
     Tab* getTab(std::string aName);
     Manager* getManager();

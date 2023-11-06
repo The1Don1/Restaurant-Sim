@@ -166,7 +166,8 @@ void HeadChef::removeChef()
  */
 void HeadChef::Notify(generalWaiter* waiter)
 {
-    waiter->deliverOrder();
+    waiter->deliverOrder(this->dishQueue.front());
+    this->dishQueue.pop();
     commisChef* chef = this->busyChefs.front();
     this->busyChefs.pop();
     this->freeChefs.push(chef);

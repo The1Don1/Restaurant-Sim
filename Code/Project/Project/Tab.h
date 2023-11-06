@@ -7,6 +7,10 @@
 #include <iostream>
 #include "Floor.h"
 
+/**
+ * @brief The Tab class holds the running tab of a restaurant customer
+ * 
+ */
 class Tab {
 private:
     std::string name;
@@ -16,7 +20,8 @@ public:
     Tab(std::string customerName);
     std::string getName();
     double getTab();
-    void addToTab();
+    void addToTab(double);
+    void subtractFromTab(double);
 };
 
 

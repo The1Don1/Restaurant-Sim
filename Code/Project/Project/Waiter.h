@@ -10,12 +10,18 @@
 #include "Floor.h"
 #include "Chef.h"
 #include "Visitor.h"
+#include <ctime>
 
 class Floor;
+class AbstractTable;
 class Table;
 class Tab;
 class Customer;
 
+/**
+ * @brief Waiters are responsible for serving customers
+ * 
+ */
 class Waiter
 {
 private:
@@ -24,27 +30,25 @@ private:
 public:
     Floor* waiterFloor;
     int waiterWaitTime;
-
+    HeadChef* headChef;
     std::string waiterName;
 
-    Table* waiterHeadTable;
+    AbstractTable* waiterHeadTable;
 //public: Chef* _unnamed_Chef_;
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
-public: HeadChef* headChef;
-    Waiter(std::string WaiterName, Table* waiterTable,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterHeadTable(waiterTable), waiterFloor(floor) {
+public: 
+    Waiter(std::string WaiterName,  HeadChef* hc, Floor* floor) : headChef(hc), waiterName(std::move(WaiterName)), waiterFloor(floor) {
         srand((unsigned) time(NULL));
         int random = 60 + (rand() % 2);
         this->waiterWaitTime = random;
     }
     virtual void performTask() = 0;
-    void deliverOrder();
-
-    void prepareDish();
+    void deliverOrder(Dish* dish);
 //
     void getOrders();
 
-    void sendOrders();
+    void sendOrder(Dish*);
 
 };
 
@@ -52,10 +56,10 @@ public: HeadChef* headChef;
 class generalWaiter : public Waiter
 {
 public:
-    generalWaiter(std::string basicString, Table* t, Floor *pFloor) : Waiter(basicString,t, pFloor) {}
+    generalWaiter(std::string basicString, HeadChef* hc, Floor *pFloor) : Waiter(basicString, hc, pFloor) {}
     void getAllocatedAtable(Table* table);
     void performTask();
-    virtual void visitTable(Table* table);
+    virtual void visitTable(AbstractTable* table);
     void addToTab(std::string name, double amount);
     void payTab(std::string name, double amount);
     Tab* getTab(std::string name);
@@ -74,7 +78,7 @@ public:
 
     void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
-//    void setWaiterHeadTable(Table *waiterHeadTable) {
+//    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
 //    }
 //    void setWaiterName(const std::string &waiterName) {
@@ -98,8 +102,7 @@ private:
 public:
     MaitreD();
     void performTask();
-    void allocateTable(Customer* customer);
-    void checkReservation();
+    void allocateTable(std::vector<Customer*>);
 //
     void mergeTables(int table1, int table2);
 //
