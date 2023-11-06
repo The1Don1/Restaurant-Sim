@@ -46,9 +46,7 @@ class Dish
         void change();
         void setDishStatus(DishStatus* state);
         std::string getCustomerName();
-        void setCustomerName(std::string customerName);
         int getCustomerTable();
-        void setCustomerTable(int customerTableID);
 };
 
 /**

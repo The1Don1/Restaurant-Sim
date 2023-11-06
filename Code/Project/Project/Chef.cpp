@@ -58,6 +58,7 @@ commisChef::commisChef(HeadChef* headChef)
 void commisChef::PrepareDish(Dish* dish)
 {
     this->dish = dish;
+    this->dish->setDishStatus(new Preparing());
 }
 
 /**
@@ -68,6 +69,9 @@ void commisChef::PrepareDish(Dish* dish)
  */
 void commisChef::Notify()
 {
+    delete this->dish->dishStatus;
+
+    this->dish->setDishStatus(new ReadyForPickUp());
     this->headChef->Notify(this->headChef->waiter);
 }
 

@@ -4,6 +4,11 @@
 #include "Dish.h"
 #include <random>
 
+/**
+ * @brief Default Constructor for Dish Class
+ * All attributes set to null, empty or 0
+ * 
+ */
 Dish::Dish()
 {
     this->customerName = "";
@@ -14,6 +19,14 @@ Dish::Dish()
     this->dessert = NULL;
 }
 
+/**
+ * @brief Constructor for Dish class that takes in arguments
+ * Corresponding attributes are initialized to passed in arguments
+ * remaining attributes are initialized by createDish function call
+ * 
+ * @param customerName 
+ * @param customerTable 
+ */
 Dish::Dish(std::string customerName, int customerTable)
 {
     this->customerName = customerName;
@@ -26,6 +39,12 @@ Dish::Dish(std::string customerName, int customerTable)
     this->createDish();
 }
 
+/**
+ * @brief Initializes Dish class's Menu objects
+ * randomly initializes the Menu attributes by using randomly generated numbers
+ * not all Menu objects may be initialized
+ * 
+ */
 void Dish::createDish()
 {
     std::random_device rd;
@@ -159,6 +178,11 @@ void Dish::dishState()
     throw "Not yet implemented";
 }
 
+/**
+ * @brief Returns the current state of the dish
+ * 
+ * @return DishStatus* 
+ */
 DishStatus* Dish::getDishStatus()
 {
     return this->dishStatus;
@@ -169,31 +193,43 @@ void Dish::change()
     throw "Not yet implemented";
 }
 
+/**
+ * @brief set the status of the dish
+ * sets the current status of the dish to the passed in parameter
+ * 
+ * @param state 
+ */
 void Dish::setDishStatus(DishStatus* state)
 {
     this->dishStatus = state;
 }
 
+/**
+ * @brief Returns the dish's customer name
+ * Returns the name of the customer who ordered the dish
+ * 
+ * @return std::string 
+ */
 std::string Dish::getCustomerName()
 {
     return this->customerName;
 }
 
-void Dish::setCustomerName(std::string customerName)
-{
-    this->customerName = customerName;
-}
-
+/**
+ * @brief Returns the customer's table number
+ * Returns the table number of the customer who ordered the dish
+ * 
+ * @return int 
+ */
 int Dish::getCustomerTable()
 {
     return this->customerTable;
 }
 
-void Dish::setCustomerTable(int customerTableID)
-{
-    this->customerTable = customerTableID;
-}
-
+/**
+ * @brief Default constructor for DishStatus base class
+ * 
+ */
 DishStatus::DishStatus()
 {}
 
@@ -202,48 +238,92 @@ void DishStatus::DishState()
     throw "Not yet implemented";
 }
 
+/**
+ * @brief Default construct for DishStatus Preparing class
+ * sets the status attribute accordingly
+ * 
+ */
 Preparing::Preparing()
 {
     this->status = "Preparing";
 }
 
+/**
+ * @brief Update the dish's current status
+ * Set the dish's status to the current DishStatus class
+ * 
+ */
 void Preparing::updateDishStatus()
 {
     this->setDishStatus(this);
 }
 
+/**
+ * @brief Returns the current status of the dish
+ * 
+ * @return std::string 
+ */
 std::string Preparing::getStatus()
 {
     return this->status;
 }
 
+/**
+ * @brief Default construct for DishStatus ReadyForPickUp class
+ * sets the status attribute accordingly
+ * 
+ */
 ReadyForPickUp::ReadyForPickUp()
 {
     this->status = "ReadyForPickUp";
 }
 
+/**
+ * @brief Update the dish's current status
+ * Set the dish's status to the current DishStatus class
+ * 
+ */
 void ReadyForPickUp::updateDishStatus()
 {
     this->setDishStatus(this);
 }
 
+/**
+ * @brief Returns the current status of the dish
+ * 
+ * @return std::string 
+ */
 std::string ReadyForPickUp::getStatus()
 {
     return this->status;
 }
 
+/**
+ * @brief Default construct for DishStatus StillQueued class
+ * sets the status attribute accordingly
+ * 
+ */
 StillQueued::StillQueued()
 {
     this->status = "StillQueued";
 }
 
+/**
+ * @brief Update the dish's current status
+ * Set the dish's status to the current DishStatus class
+ * 
+ */
 void StillQueued::updateDishStatus()
 {
     this->setDishStatus(this);
 }
 
+/**
+ * @brief Returns the current status of the dish
+ * 
+ * @return std::string 
+ */
 std::string StillQueued::getStatus()
-
 {
     return this->status;
 }
