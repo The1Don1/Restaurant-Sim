@@ -11,6 +11,7 @@
 #include "Table.h"
 #include "Tab.h"
 #include "Manager.h"
+#include "TableIterator.h"
 
 class Table;
 class Manager;
