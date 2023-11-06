@@ -56,7 +56,7 @@ public:
     Bill* getBill();
     Tab* createTab();
     void setTab(Tab* table);
-    void placeOrder();
+    Dish* placeOrder();
     void setTableNum(int table);
     int getTableNum();
     std::string getName();
