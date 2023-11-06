@@ -3,6 +3,13 @@
 //
 
 #include "Manager.h"
+
+//Doxigen comments
+/**
+ * @brief Manager visits the table and checks the customer's mood
+ * 
+ * @param table 
+*/
 void Manager::visitTable(Table* table) 
 {
     std::string customerMood = table->getCustomers()[0]->getMood();
@@ -21,11 +28,21 @@ void Manager::visitTable(Table* table)
     }
 }
 
+/**
+ * @brief Returns the complaints made by customers
+ * 
+ * @return std::vector<std::string> 
+*/
 std::vector<std::string> Manager::getComplaints() 
 {
     return this->complaints;
 }
 
+/**
+ * @brief Handles the complaint made by the customer
+ * 
+ * @param complaint 
+*/
 void Manager::handleComplaint(const std::string& complaint)
 {
     std::cout << "Restaurant Manager: Thank you for your feedback. We will address your complaint.\n";
