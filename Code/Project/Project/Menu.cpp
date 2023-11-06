@@ -2,21 +2,33 @@
 // Created by mathe on 2023/10/31.
 //
 #include "Menu.h"
+/**
+ * @brief Construct a new Menu:: Menu object
+*/
 std::string Menu::getDescription()
 {
     return this->description;
 }
 
+/**
+ * @brief Construct a new Menu:: Menu object
+*/
 double Menu::getPrice()
 {
     return this->price;
 }
 
+/**
+ * @brief Returns preparation time for the menu object
+*/
 int Menu::getTimeToPrepare()
 {
     return this->timeToPrepare;
 }
 
+/**
+ * @brief Sets the base menu item that the customer wants to add custom additions to
+*/
 MenuDecorator::MenuDecorator(Menu *baseItem)
 {
     this->menu = baseItem;
@@ -28,7 +40,7 @@ MenuDecorator::MenuDecorator()
 }
 ////
 /**
- * @brief Custom additions can be added to an original menu item by a customer
+ * @brief Constrcutor for coleslaw custom addition
  * 
  * @param baseItem 
  * @param description 
@@ -54,7 +66,14 @@ std::string Coleslaw::getDescription() {
 double Coleslaw::getPrice() {
     return 19.99 + menu->getPrice();
 }
-
+/**
+ * @brief Constrcutor for mushroom sauce custom addition
+ * 
+ * @param baseItem 
+ * @param description 
+ * @param price 
+ * @param timeToprepare 
+ */
 MushroomSauce::MushroomSauce(Menu *baseItem, std::string description, double price, int timeToprepare)
 {
     this->menu = baseItem;
@@ -75,7 +94,14 @@ double MushroomSauce::getPrice() {
     return 24.99 + menu->getPrice();
 }
 
-
+/**
+ * @brief Constrcutor for salad custom addition
+ * 
+ * @param baseItem 
+ * @param description 
+ * @param price 
+ * @param timeToprepare 
+ */
 Salad::Salad(Menu *baseItem, std::string description, double price, int timeToprepare)
 {
     this->menu = baseItem;
@@ -97,10 +123,9 @@ double Salad::getPrice() {
 }
 ////
 
-/*
-    Beverages:
+/**
+ * @brief Constrcutor for CokeZero beverage
 */
-///
 CokeZero::CokeZero()
 {
     this->description = "CokeZero";
@@ -108,6 +133,9 @@ CokeZero::CokeZero()
     this->timeToPrepare = 1;
 }
 
+/**
+ * @brief Constrcutor for Coke beverage
+*/
 Coke::Coke()
 {
     this->description = "Coke";
@@ -115,6 +143,9 @@ Coke::Coke()
     this->timeToPrepare = 1;
 }
 
+/**
+ * @brief Constrcutor for Sprite beverage
+*/
 Sprite::Sprite()
 {
     this->description = "Sprite";
@@ -122,6 +153,9 @@ Sprite::Sprite()
     this->timeToPrepare = 1;
 }
 
+/**
+ * @brief Constrcutor for bubblegum milkshake beverage
+*/
 BubblegumMilkshake::BubblegumMilkshake()
 {
     this->description = "Bubblegum milkshake";
@@ -129,6 +163,9 @@ BubblegumMilkshake::BubblegumMilkshake()
     this->timeToPrepare = 1;
 }
 
+/**
+ * @brief Constrcutor for Strawberry milkshake beverage
+*/
 StrawberryMilkshake::StrawberryMilkshake()
 {
     this->description = "Strawberry milkshake";
@@ -136,9 +173,8 @@ StrawberryMilkshake::StrawberryMilkshake()
     this->timeToPrepare = 1;
 }
 
-//////
-/*
-    Starters:
+/**
+ * @brief Constrcutor for onion rings starter
 */
 OnionRings::OnionRings()
 {
@@ -147,6 +183,9 @@ OnionRings::OnionRings()
     this->timeToPrepare = 5;
 }
 
+/**
+ * @brief Constrcutor for chicken wings starter
+*/
 ChickenWings::ChickenWings()
 {
     this->description = "Chicken wings";
@@ -154,6 +193,10 @@ ChickenWings::ChickenWings()
     this->timeToPrepare = 5;
 }
 
+
+/**
+ * @brief Constrcutor for chips starter
+*/
 Chips::Chips()
 {
     this->description = "Chips";
@@ -161,6 +204,9 @@ Chips::Chips()
     this->timeToPrepare = 5;
 }
 
+/**
+ * @brief Constrcutor for chicken nuggets starter
+*/
 ChickenNuggets::ChickenNuggets()
 {
     this->description = "Chicken nuggets";
@@ -169,10 +215,9 @@ ChickenNuggets::ChickenNuggets()
 }
 ////
 
-/*
-    Main dishes:
+/**
+ * @brief Constrcutor for cheese burger main dish
 */
-
 CheeseBurger::CheeseBurger()
 {
     this->description = "Cheese burger";
@@ -180,6 +225,9 @@ CheeseBurger::CheeseBurger()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for hot dog main dish
+*/
 HotDog::HotDog()
 {
     this->description = "Hot dog";
@@ -187,6 +235,9 @@ HotDog::HotDog()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for cheesesteak main dish
+*/
 CheeseSteak::CheeseSteak()
 {
     this->description = "CheeseSteak";
@@ -194,6 +245,9 @@ CheeseSteak::CheeseSteak()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for BBQ ribs main dish
+*/
 BBQRibs::BBQRibs()
 {
     this->description = "BBQ ribs";
@@ -201,6 +255,9 @@ BBQRibs::BBQRibs()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for chicken tenders main dish
+*/
 ChickenTenders::ChickenTenders()
 {
     this->description = "Chicken tenders";
@@ -208,6 +265,9 @@ ChickenTenders::ChickenTenders()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for mac and cheese main dish
+*/
 MacAndCheese::MacAndCheese()
 {
     this->description = "Mac and cheese";
@@ -215,6 +275,10 @@ MacAndCheese::MacAndCheese()
     this->timeToPrepare = 10;
 }
 
+
+/**
+ * @brief Constrcutor for BBQ steak main dish
+*/
 BBQSteak::BBQSteak()
 {
     this->description = "BBQ steak";
@@ -222,6 +286,9 @@ BBQSteak::BBQSteak()
     this->timeToPrepare = 10;
 }
 
+/**
+ * @brief Constrcutor for buffalo wings main dish
+*/
 BuffaloWings::BuffaloWings()
 {
     this->description = "Buffalo wings";
@@ -231,8 +298,8 @@ BuffaloWings::BuffaloWings()
 /////
 
 
-/*
-    Desserts:
+/**
+ * @brief Constrcutor for pancakes dessert
 */
 Pancakes::Pancakes()
 {
@@ -241,6 +308,9 @@ Pancakes::Pancakes()
     this->timeToPrepare = 3;
 }
 
+/**
+ * @brief Constrcutor for donuts dessert
+*/
 Donuts::Donuts()
 {
     this->description = "Donuts";
@@ -248,6 +318,9 @@ Donuts::Donuts()
     this->timeToPrepare = 3;
 }
 
+/**
+ * @brief Constrcutor for waffles dessert
+*/
 Waffles::Waffles()
 {
     this->description = "Waffles";
@@ -255,6 +328,9 @@ Waffles::Waffles()
     this->timeToPrepare = 3;
 }
 
+/**
+ * @brief Constrcutor for chocolate brownies dessert
+*/
 ChocolateBrownies::ChocolateBrownies()
 {
     this->description = "Chocolate brownies";

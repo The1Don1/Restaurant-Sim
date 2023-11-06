@@ -131,11 +131,12 @@ void Customer::setTab(Tab* tab)
  * @brief Places an order
  * 
  */
-void Customer::placeOrder()
+Dish* Customer::placeOrder()
 {
     this->readyToOrder = true;
     order = new Dish(name, tableNum);
     customerBill = new Bill();
+    return order;
 }
 
 /**

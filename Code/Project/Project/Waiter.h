@@ -15,6 +15,7 @@
 class Floor;
 class AbstractTable;
 class Table;
+class TableGroup;
 class Tab;
 class Customer;
 
@@ -34,9 +35,6 @@ public:
     std::string waiterName;
 
     AbstractTable* waiterHeadTable;
-//public: Chef* _unnamed_Chef_;
-//public: Floor* _unnamed_Floor_;
-//public: Engine* _unnamed_Engine_;
 public: 
     Waiter(std::string WaiterName,  HeadChef* hc, Floor* floor) : headChef(hc), waiterName(std::move(WaiterName)), waiterFloor(floor) {
         srand((unsigned) time(NULL));
@@ -46,13 +44,16 @@ public:
     virtual void performTask() = 0;
     void deliverOrder(Dish* dish);
 //
-    void getOrders();
+    void getOrder(Dish* dish);
 
     void sendOrder(Dish*);
 
 };
 
-//Template Method: Concrete Class
+/**
+ * @brief GeneralWaiter is responsible for serving customers
+ * 
+ */
 class generalWaiter : public Waiter
 {
 public:
@@ -77,24 +78,12 @@ public:
     };
 
     void receiveCompliment(const std::string& compliment);
-//    void performTask(){}
-//    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
-//        this->waiterHeadTable = waiterHeadTable;
-//    }
-//    void setWaiterName(const std::string &waiterName) {
-//        this->waiterName = waiterName;
-//    }
-//
-//    void setWaiterWaitTime(int waiterWaitTime) {
-//        this->waiterWaitTime = waiterWaitTime;
-//    }
-//    void setWaiterFloor(Floor *waiterFloor) {
-//        this->waiterFloor = waiterFloor;
-//    }
-//    Tab* getTab(std::string aName);
 };
 
-//Template Method: Concrete Class
+/**
+ * @brief MaitreD is responsible for allocating tables to customers
+ * 
+ */
 class MaitreD : public Waiter
 {
 private:
@@ -103,15 +92,7 @@ public:
     MaitreD();
     void performTask();
     void allocateTable(std::vector<Customer*>);
-//
     void mergeTables(int table1, int table2);
-//
-    void splitTables(Waiter* waiter, int tableNo);
-
-//    virtual Iterator* createIterator();
-
-//    virtual void accept(Visitor* aVisitor);
-
-//    virtual void addTable(AbstractTable* aTable);
+    void splitTables(TableGroup* tableGroup);
 };
 #endif //PROJECT_WAITER_H

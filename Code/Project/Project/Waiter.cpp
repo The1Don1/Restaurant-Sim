@@ -1,18 +1,12 @@
 #include "Waiter.h"
-// void generalWaiter::visitTable(Table *table)
-// {
-//     throw "Not yet implemented";
-// }
-
-
 /**
  * @brief Gets the orders of all the customers and sends each to the head chef
  * use place order function of all customers at table
  * 
  */
-void Waiter::getOrders() 
+void Waiter::getOrder(Dish* customerOrder) 
 {
-    
+    sendOrder(customerOrder);
 }
 
 /**
@@ -24,6 +18,7 @@ void Waiter::getOrders()
  */
 void Waiter::sendOrder(Dish* order) 
 {
+    std::cout << "Waiter: " << this->waiterName << " sending order to head chef \n";
     order->setDishStatus(new Preparing);
     headChef->AddDish(order);
 }
@@ -35,6 +30,7 @@ void Waiter::sendOrder(Dish* order)
  */
 void Waiter::deliverOrder(Dish* order) 
 {
+    std::cout << "Waiter: " << this->waiterName << " delivering order to customer: " << order->getCustomerName() << "\n";
     AbstractTable* curr = waiterHeadTable;
     while(curr != NULL){
         if(curr->getTableID() == order->getCustomerTable())
@@ -60,6 +56,7 @@ void Waiter::deliverOrder(Dish* order)
  */
 void generalWaiter::addToTab(std::string customerName, double amount) 
 {
+    std::cout << "Waiter: " << this->waiterName << " adding to " << customerName << "'s tab \n";
     Tab* customerTab = this->waiterFloor->getTab(customerName);
     customerTab->addToTab(amount);
 }
@@ -102,12 +99,28 @@ void generalWaiter::visitTable(AbstractTable *table)
  * @param customers 
  */
 void MaitreD::allocateTable(std::vector<Customer*> customers) {
+
     AbstractTable* curr = this->waiterHeadTable;
 
     while(curr != NULL)
     {
         if(curr->getState() == new Unoccupied)
         {
+            std::cout << "MaitreD: " << waiterName << " allocating table to customer(s): ";
+            //Loop throgh each customers names and write to console, if the last customer is reached 
+            //add a full stop after printing the name else print a comma
+            for(auto customer : customers)
+            {
+                std::cout << customer->getName();
+                if(customer != customers.back())
+                {
+                    std::cout << ", ";
+                }
+                else
+                {
+                    std::cout << ".\n";
+                }
+            }
             curr->setState(new Occupied);
             curr->setWaiter(this);
             curr->setCustomers(customers);
@@ -116,6 +129,7 @@ void MaitreD::allocateTable(std::vector<Customer*> customers) {
             {
                 customer->assignCustomerTable(curr);
                 customer->setReadyToOrderStatus(true);
+                getOrder(customer->placeOrder());
             }
 
             break;
@@ -125,18 +139,37 @@ void MaitreD::allocateTable(std::vector<Customer*> customers) {
     }
 }
 
+/**
+ * @brief Merge 2 tables together
+ * 
+ * @param table1 
+ * @param table2 
+ */
 void MaitreD::mergeTables(int table1, int table2) {
-    throw "Not yet implemented";
+    this->waiterFloor->mergeTables(table1, table2);
 }
 
-void MaitreD::splitTables(Waiter* waiter, int tableNumber) {
-    throw "Not yet implemented";
+/**
+ * @brief Split a table into 2
+ * 
+ * @param table 
+ */
+void MaitreD::splitTables(TableGroup* table) {
+    this->waiterFloor->splitTables(table);
 }
 
+/**
+ * @brief Constructor for the MaitreD class
+ * 
+ */
 void MaitreD::performTask() {
     std::cout << "Waiter: " << waiterName << " performing task\n";
 }
 
+/**
+ * @brief Constructor for the MaitreD class
+ * 
+ */
 void generalWaiter::receiveCompliment(const std::string& compliment)
 {
     std::cout << "Waiter: Thank you for your kind words! I'm glad you enjoyed your dining experience.\n";

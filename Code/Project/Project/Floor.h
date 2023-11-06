@@ -16,6 +16,11 @@
 class AbstractTable;
 class Manager;
 class generalWaiter;
+
+/**
+ * @brief Floor is responsible for managing the tables and waiters
+ * 
+ */
 class Floor {
 private:
     std::vector<generalWaiter*> floorWaiters;
@@ -38,6 +43,8 @@ public:
     Manager* getManager();
     void setManager(Manager* aManager);
     void getManagerComplaints();
+    void mergeTables(int table1, int table2);
+    void splitTables(TableGroup* table);
 };
 
 
