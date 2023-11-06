@@ -37,11 +37,11 @@ public:
 
         void visitTable(AbstractTable* table);
 
-        void prepareDish();
+        void prepareDish(Dish *dish);
 //
         void getOrders();
 
-        void sendOrders();
+        void sendOrders(Dish *dish);
 
 };
 
@@ -56,17 +56,7 @@ public:
 
     void payTab(std::string name, double amount);
     Tab* getTab(std::string name);
-    void decrementTimer(){
-        if(this->waiterWaitTime <= 0){
-            std::cout << this->waiterName << " time out resetting" << std::endl;
-            srand((unsigned) time(NULL));
-            int random =60 + (rand() % 2);
-            this->waiterWaitTime = random;
-        }else{
-            this->waiterWaitTime-=1;
-
-        }
-    };
+    void decrementTimer();
 //    void performTask(){}
 //    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
@@ -90,8 +80,8 @@ private:
     std::queue<Customer*> waitingList;
 public:
     void performTask();
-    void allocateTable();
-    void checkReservation();
+    void allocateTable(int partySize);
+    void checkReservation(int tableNo);
 //
     void mergeTables(int table1, int table2);
 //
