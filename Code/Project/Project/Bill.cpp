@@ -70,7 +70,7 @@ Bill* SubBill::getSubBill(std::string customerName) {
         {
             for (auto customer : item->getCustomers())
             {
-                if (customer->getName() == customerName)
+                if (customer->dish->getCustomerName() == customerName)
                 {
                     return item;
                 }
@@ -114,6 +114,10 @@ double CustomTipDecorator::getTotalCost() {
     return  _tipAmount;
 }
 
+void Bill::addTip(double amount)
+{
+    this->totalAmount += amount;
+}
 
 void Bill::handleTip() {
     //Billdecorator->getTotalCost() function returns the custom tip given

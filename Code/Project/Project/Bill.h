@@ -38,6 +38,8 @@ private:
 public:
     virtual void paymentMethod() = 0;
 
+    void addTip(double amount);
+
     void handleTip();
 
     Bill* getBill();
