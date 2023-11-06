@@ -15,6 +15,10 @@ class AbstractTable;
 class Manager;
 class TableIterator;
 class ConcreteTableIterator;
+class generalWaiter;
+class Waiter;
+class Tab;
+
 class Floor {
     private:
         std::vector<generalWaiter*> floorWaiters;
