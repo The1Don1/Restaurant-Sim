@@ -20,6 +20,10 @@ class TableIterator;
 class ConcreteTableIterator;
 class TableGroup;
 
+/**
+ * @brief Customers are seated and served at tables
+ * 
+ */
 class AbstractTable {
 public:
     explicit AbstractTable(int numberOfSeats) : numberOfSeats(numberOfSeats), tableID(5) {};
@@ -38,6 +42,7 @@ public:
     void setWaiter(Waiter *waiter);
     Waiter *getWaiter();
     void getOrders();
+    void setCustomers(std::vector<Customer*> newCustomers);
     //static int tableCount;
     AbstractTable *next;
 protected:
@@ -67,6 +72,7 @@ public:
 class Table : public AbstractTable
 {
 public:
+    Table();
     Table(int numberOfSeats) : AbstractTable(numberOfSeats) {}
     AbstractTable *operator+(Table *table);
     AbstractTable *operator+(TableGroup *tableGroup);

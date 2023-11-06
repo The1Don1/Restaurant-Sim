@@ -30,8 +30,8 @@ AbstractTable* Floor::constructTable(){
     return t;
 }
 
-void Floor::constructWaiter(std::string name){
-    generalWaiter* g = new generalWaiter(name, this);
+void Floor::constructWaiter(std::string name, HeadChef* hc){
+    generalWaiter* g = new generalWaiter(name, hc, this);
     std::cout << g->waiterName << " " << g->waiterWaitTime << std::endl;
     floorWaiters.push_back(g);
 }
@@ -45,7 +45,6 @@ void Floor::Decrement() {
         floorWaiter->decrementTimer();
     }
 }
-
 void Floor::printWaiters()
 {
     for(auto & floorWaiter : floorWaiters){

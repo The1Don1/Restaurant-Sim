@@ -18,6 +18,7 @@ private:
     Facade* instance;
     Engine* mediator;
     Floor* floor;
+    HeadChef* hc;
 
 public:
     /**

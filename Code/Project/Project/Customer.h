@@ -20,6 +20,11 @@ class AbstractBill;
 class SubBill;
 class Visitor;
 class PaymentStrategy;
+
+/**
+ * @brief Represents a restaurant customer
+ * 
+ */
 class Customer
 {
 private:
@@ -31,7 +36,7 @@ private:
     std::string name;
     AbstractBill* bill;
     int tableNum;
-    Table* myTable;
+    AbstractTable* myTable;
     Bill* customerBill;
     std::string customerComplaint;
     Tab* customerTab;
@@ -54,8 +59,9 @@ public:
     void placeOrder();
     void setTableNum(int table);
     int getTableNum();
+    std::string getName();
     void accept(Visitor* visitor);
-    void assignCustomerTable(Table* customerTable);
+    void assignCustomerTable(AbstractTable* customerTable);
     std::string complimentWaiter();
     void setReadyToOrderStatus(bool readyToOrderStatus);
     void setReadyToLeaveStatus(bool readyToLeaveStatus);
