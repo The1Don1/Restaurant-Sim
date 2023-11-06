@@ -180,38 +180,3 @@ std::vector<AbstractTable *> TableGroup::getTables()
 {
     return tables;
 }
-
-//+ operator overload to add 2 table groups and return a table group
-AbstractTable* TableGroup::operator+(TableGroup *tableGroup)
-{
-    TableGroup *newTableGroup = new TableGroup();
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(tableGroup);
-    return newTableGroup;
-}
-
-//+ operator overload to add a table to the table group
-AbstractTable* TableGroup::operator+(Table *table)
-{
-    TableGroup *newTableGroup = new TableGroup();
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(table);
-    return newTableGroup;
-}
-
-//+ operator overload to add 2 tables and return a table group
-AbstractTable *Table::operator+(Table *table)
-{
-    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + table->getnumberOfSeats());
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(table);
-    return newTableGroup;
-}
-//+ operator overload to add a table to a table group
-AbstractTable *Table::operator+(TableGroup *tableGroup )
-{
-    TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + tableGroup->getnumberOfSeats());
-    newTableGroup->addTable(this);
-    newTableGroup->addTable(tableGroup);
-    return newTableGroup;
-}
