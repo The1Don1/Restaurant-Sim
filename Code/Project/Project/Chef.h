@@ -11,10 +11,12 @@
 //class Visitor;
 class generalWaiter;
 
-class Table;
-
 class Kitchen;
 
+/**
+ * @brief Chef base class
+ * Chef classes are commisChef and HeadChef
+ */
 class Chef
 {
     protected:
@@ -32,10 +34,18 @@ class Chef
         void SetNextChef(Chef* chef);
 };
 
+
 class ChefNotifier;
 
 class commisChef;
 
+/**
+ * @brief HeadChef class
+ * HeadChef delegates making of dishes to commisChef class
+ * HeadChef can also add and remove commisChefs as necessary
+ * commisChefs given dishes are moved from a freeChef to a busyChefs queue
+ * once a dish is complete commisChef is moved back to freeChefs
+ */
 class HeadChef: public Chef
 {
     private:
@@ -58,7 +68,12 @@ class HeadChef: public Chef
         void Detach();
 };
 
-class commisChef: public HeadChef
+/**
+ * @brief commisChef class
+ * commisChef is responsible for making dishes given to them by their HeadChef
+ * once a given a dish a commisChef 
+ */
+class commisChef: public Chef
 {
     private:
         Dish* dish;
