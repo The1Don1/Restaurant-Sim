@@ -23,7 +23,7 @@ class Chef
     public:
         Kitchen* kitchen;
         Chef* chef;
-        generalWaiter* waiter;
+        Waiter* waiter;
         void VisitTable(Table* table);
         std::string GetRole();
         virtual void PrepareDish(Dish* dish) = 0;
