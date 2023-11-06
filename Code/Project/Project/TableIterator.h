@@ -5,6 +5,7 @@
 #ifndef PROJECT_TABLEITERATOR_H
 #define PROJECT_TABLEITERATOR_H
 #include "Table.h"
+class AbstractTable;
 class Table;
 class TableIterator{
 public:
