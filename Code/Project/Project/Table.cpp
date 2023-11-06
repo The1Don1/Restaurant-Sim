@@ -45,7 +45,12 @@ void AbstractTable::setWaiter(Waiter *waiter)
 AbstractTable *Table::clone() {
     return nullptr;
 }
-void Table::acceptVisitor(Visitor* visitor)
+std::vector<Customer *> Table::getCustomers()
+{
+    return customers;
+}
+
+void Table::acceptVisitor(Visitor *visitor)
 {
     visitor->visitTable(this);
 }
