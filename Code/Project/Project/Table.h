@@ -105,12 +105,4 @@ public: void handleState();
 
 public: std::string getState();
 };
-class Reserved: public TableState
-{
-
-public: void handleState();
-
-public: std::string getState();
-};
-
 #endif //PROJECT_TABLE_H

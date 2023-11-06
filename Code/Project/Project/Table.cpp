@@ -106,13 +106,6 @@ void Occupied::handleState() {
 std::string Occupied::getState() {
     throw "Not yet implemented";
 }
-void Reserved::handleState() {
-    throw "Not yet implemented";
-}
-
-std::string Reserved::getState() {
-    throw "Not yet implemented";
-}
 
 void TableGroup::addTable(AbstractTable *aTable)
 {
