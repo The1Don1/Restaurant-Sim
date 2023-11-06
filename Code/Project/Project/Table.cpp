@@ -22,6 +22,7 @@ void AbstractTable::setState(TableState *tableState)
     this->tableState = tableState;
     handleState();
 };
+
 TableState* AbstractTable::getState()
 {
     return tableState;
