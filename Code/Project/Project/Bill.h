@@ -36,7 +36,7 @@ private:
     SubBill* subBill;
 
 public:
-    virtual void paymentMethod() = 0;
+    virtual void paymentMethod();
 
     void addTip(double amount);
 
@@ -54,7 +54,7 @@ public:
 
 //    virtual void addItem(Bill aItem) = 0;
 
-    virtual Bill* getSubBill(std::string customerName) = 0;
+    virtual Bill* getSubBill(std::string customerName);
 
     std::vector<Customer*> getCustomers()
     {
