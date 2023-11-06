@@ -18,13 +18,14 @@ int main()
    Manager* manager = new Manager();
    MaitreD* maitreD = new MaitreD();
    generalWaiter* gWaiter;
+   HeadChef* headChef = new HeadChef();
 
    //create tables (prototype)
     Table* table = new Table(1);
     for(int i=0; i<20; i++)
     {
         table->clone(); //assuming clone() calls constructTable()
-        gWaiter = new generalWaiter("Don't know what basic string is for", floor);
+        gWaiter = new generalWaiter("Don't know what basic string is for", headChef, floor);
     }
 
     //starting with just one customer

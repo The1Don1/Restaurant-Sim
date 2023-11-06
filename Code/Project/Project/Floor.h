@@ -11,6 +11,7 @@
 #include "Table.h"
 #include "Tab.h"
 #include "Manager.h"
+#include "Chef.h"
 
 class AbstractTable;
 class Manager;
@@ -20,6 +21,7 @@ private:
     std::vector<generalWaiter*> floorWaiters;
     AbstractTable* headTable;
     Manager* manager;
+    HeadChef* hc;
     int floorCapacity;
     std::vector<Tab*> tabs;
 public:
@@ -30,7 +32,7 @@ public:
     AbstractTable* getHeadTable(){
         return headTable;
     }
-    void constructWaiter(std::string);
+    void constructWaiter(std::string, HeadChef* hc);
     void printWaiters();
     Tab* getTab(std::string aName);
     Manager* getManager();
