@@ -33,7 +33,7 @@ public:
 //public: Chef* _unnamed_Chef_;
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
-public: HeadChef* headChef;
+public: 
     Waiter(std::string WaiterName,  HeadChef* hc, Floor* floor) : headChef(hc), waiterName(std::move(WaiterName)), waiterFloor(floor) {
         srand((unsigned) time(NULL));
         int random = 60 + (rand() % 2);
