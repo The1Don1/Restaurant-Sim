@@ -73,20 +73,20 @@ public:
         }
     };
 //    void performTask(){}
-//    void setWaiterHeadTable(Table *waiterHeadTable) {
-//        this->waiterHeadTable = waiterHeadTable;
-//    }
-//    void setWaiterName(const std::string &waiterName) {
-//        this->waiterName = waiterName;
-//    }
-//
-//    void setWaiterWaitTime(int waiterWaitTime) {
-//        this->waiterWaitTime = waiterWaitTime;
-//    }
-//    void setWaiterFloor(Floor *waiterFloor) {
-//        this->waiterFloor = waiterFloor;
-//    }
-//    Tab* getTab(std::string aName);
+   void setWaiterHeadTable(Table *waiterHeadTable) {
+       this->waiterHeadTable = waiterHeadTable;
+   }
+   void setWaiterName(const std::string &waiterName) {
+       this->waiterName = waiterName;
+   }
+
+   void setWaiterWaitTime(int waiterWaitTime) {
+       this->waiterWaitTime = waiterWaitTime;
+   }
+   void setWaiterFloor(Floor *waiterFloor) {
+       this->waiterFloor = waiterFloor;
+   }
+   Tab* getTab(std::string aName);
 };
 
 //Template Method: Concrete Class
@@ -111,33 +111,3 @@ public:
 #endif //PROJECT_WAITER_H
 
 
-/* -----------------------------------Tash Implementation-------------------------------------------------------------- */ 
-/*
-#ifndef WAITER_H
-#define WAITER_H
-
-#include <iostream>
-using namespace std;
-
-class Table;
-
-class Waiter
-{
-    private:
-        int waitTime;
-        string waiterName;
-        Table *headTable;
-
-    public:
-        Waiter(string name, Table* headTable);
-        void reduceTimer();
-        void deliverOrder();
-        void visitTable(Table* table);
-        void getOrders();
-        void setOrders();
-        void prepareDish();
-
-};
-
-#endif 
-*/
