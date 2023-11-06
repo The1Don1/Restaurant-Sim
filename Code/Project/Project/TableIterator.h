@@ -27,7 +27,8 @@ class ConcreteTableIterator : public TableIterator{
 public:
     AbstractTable* next();
     bool hasNext();
-    ConcreteTableIterator(AbstractTable* aTable) : TableIterator(){
+    ConcreteTableIterator(AbstractTable* aTable) : TableIterator()
+    {
         this->currTable = aTable;
         head = aTable;
     }
