@@ -78,34 +78,34 @@ class Beverage: public Menu
 
 class CokeZero: public Beverage
 {
-    public:
-        CokeZero();
+public:
+    CokeZero();
 };
 
 class Coke: public Beverage
 {
-    public:
-        Coke();
+public:
+    Coke();
 };
 
 class Sprite: public Beverage
 {
-    public:
-        Sprite();
+public:
+    Sprite();
 };
 
 class StrawberryMilkshake: public Beverage
 {
-    public:
-        StrawberryMilkshake();
+public:
+    StrawberryMilkshake();
 };
 
 
 class BubblegumMilkshake: public Beverage
 {
-    public:
-        BubblegumMilkshake();
-}; 
+public:
+    BubblegumMilkshake();
+};
 
 ////////
 class Starter: public Menu
@@ -224,7 +224,7 @@ class Dessert: public Menu
 class Pancakes: public Dessert
 {
 
-public: 
+public:
     Pancakes();
 };
 
@@ -232,7 +232,7 @@ public:
 class Donuts: public Dessert
 {
 
-public: 
+public:
     Donuts();
 };
 
@@ -250,4 +250,3 @@ public:
 };
 
 #endif //PROJECT_MENU_H
-

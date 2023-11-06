@@ -1,6 +1,9 @@
 # The Spice Girls
 <h1 align="center"> COS 214 Restaurant Simulator </h1>
 
+[![Compilation status](https://github.com/The1Don1/Restaurant-Sim/actions/workflows/makefile.yml/badge.svg)](https://github.com/The1Don1/Restaurant-Sim/actions/workflows/makefile.yml)
+[![.clang-format status](https://github.com/The1Don1/Restaurant-Sim/actions/workflows/CodeLinter.yml/badge.svg)](https://github.com/The1Don1/Restaurant-Sim/actions/workflows/CodeLinter.yml)
+
 # Glossary
 
 - [Members](#Members)
