@@ -134,6 +134,9 @@ void Bill::handleTip() {
 
 }
 
+Bill::Bill()
+{}
+
 Bill* Bill::getBill() {
     return this;
  
