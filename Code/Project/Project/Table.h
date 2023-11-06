@@ -99,4 +99,5 @@ public:
     void handleState(AbstractTable *table);
     std::string getState();
 };
+
 #endif //PROJECT_TABLE_H
