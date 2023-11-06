@@ -3,6 +3,11 @@
 //
 
 #include "Table.h"
+int AbstractTable::getnumberOfSeats()
+{
+    return numberOfSeats;
+}
+
 int AbstractTable::getTableID()
 {
     return tableID;
@@ -39,9 +44,9 @@ void AbstractTable::setWaiter(Waiter *waiter)
 AbstractTable *Table::clone() {
     return nullptr;
 }
-void Table::acceptVisitor(Visitor *visitor)
+void Table::acceptVisitor(Visitor* visitor)
 {
-    throw "Not yet implemented";
+    visitor->visitTable(this);
 }
 void Table::handleState()
 {
