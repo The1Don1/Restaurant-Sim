@@ -33,7 +33,7 @@ public:
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
 public: HeadChef* headChef;
-    Waiter(std::string WaiterName,  Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterFloor(floor) {
+    Waiter(std::string WaiterName, Floor* floor) : waiterWaitTime(100), waiterName(std::move(WaiterName)), waiterFloor(floor) {
         srand((unsigned) time(NULL));
         int random = 60 + (rand() % 2);
         this->waiterWaitTime = random;
@@ -54,7 +54,7 @@ class generalWaiter : public Waiter
 {
 public:
     generalWaiter(std::string basicString, Floor *pFloor) : Waiter(basicString, pFloor) {}
-    void getAllocatedAtable(Table* table);
+    void getAllocatedAtable(AbstractTable* table);
     void performTask();
     virtual void visitTable(AbstractTable* table);
     void addToTab(std::string name, double amount);
