@@ -102,7 +102,7 @@ void MaitreD::checkReservation(int tableNo)
 {
     std::cout << "Checking reservation..." << std::endl;
 
-    Occupied* occupied;
+    Occupied* occupied = new Occupied();
 
     for (Table *table : waiterFloor->getFloorTables())
     {
