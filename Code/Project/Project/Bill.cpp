@@ -25,14 +25,12 @@ void BillItem::paymentMethod() {
 }
 
 Bill* BillItem::getSubBill(std::string customerName) {
-    // if (name == customerName)
-    //     return this;
-
+   
     // for (Customer* customer : getCustomers())
     // {
     //     if (customer->getName() == customerName)
     //     {
-           
+    //         return customer->getBill();
     //     }
     // }
 

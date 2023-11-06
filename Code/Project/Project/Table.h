@@ -40,6 +40,8 @@ public:
     void getOrders();
     //static int tableCount;
     AbstractTable *next;
+    
+
 protected:
     TableState *tableState;
     std::vector<Customer *> customers;

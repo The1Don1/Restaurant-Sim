@@ -102,24 +102,24 @@ void MaitreD::checkReservation(int tableNo)
 {
     std::cout << "Checking reservation..." << std::endl;
 
-    Reserved *reserved = new Reserved();
+    Occupied* occupied = new Occupied();
 
     for (Table *table : waiterFloor->getFloorTables())
     {
         if (table->getTableID() == tableNo)
         {
-            if (table->getTableState() == reserved)
+            if (table->getState() == occupied)
             {
-                std::cout << "Table " << tableNo << " has been reserved." << std::endl;
+                std::cout << "Table " << tableNo << " is currently occupied." << std::endl;
             }
             else
             {
-                std::cout << "Table " << tableNo << " has not been reserved yet." << std::endl;
+                std::cout << "Table " << tableNo << " is available." << std::endl;
             }
         }
     }
 
-    delete reserved;
+    delete occupied;
 }
 
 void MaitreD::allocateTable(int partySize)
@@ -136,7 +136,7 @@ void MaitreD::allocateTable(int partySize)
         int excessSeats = table->getnumberOfSeats() - partySize;
 
         // Check if the table can accommodate the party and is not occupied
-        if (excessSeats >= 0 && table->getTableState() != occupied && excessSeats < minExcessSeats)
+        if (excessSeats >= 0 && table->getState() != occupied && excessSeats < minExcessSeats)
         {
             bestFitTable = table;
             minExcessSeats = excessSeats;
