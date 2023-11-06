@@ -2,11 +2,13 @@
 // Created by mathe on 2023/10/30.
 //
 //Mediator: ConcreteMediator
+
 #ifndef PROJECT_ENGINE_H
 #define PROJECT_ENGINE_H
 #include "Floor.h"
 class Floor;
-class Mediator {
+class Mediator
+{
 private:
     Floor* floor;
 public:
@@ -15,6 +17,7 @@ public:
     }
     void notify();
 };
+
 class Engine : public Mediator{
 private:
     Floor* engineFloor;
