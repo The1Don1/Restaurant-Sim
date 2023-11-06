@@ -1,8 +1,8 @@
 #include "Waiter.h"
-void generalWaiter::visitTable(Table *table)
-{
-    throw "Not yet implemented";
-}
+// void generalWaiter::visitTable(Table *table)
+// {
+//     throw "Not yet implemented";
+// }
 
 void Waiter::prepareDish() {
     throw "Not yet implemented";
@@ -34,6 +34,10 @@ Tab* generalWaiter::getTab(std::string customerName) {
 
 void generalWaiter::performTask() {
     throw "Not yet implemented";
+}
+
+void generalWaiter::visitTable(AbstractTable *table)
+{
 }
 
 void MaitreD::checkReservation() {

@@ -12,6 +12,7 @@
 #include "Visitor.h"
 
 class Floor;
+class AbstractTable;
 class Table;
 class Tab;
 class Customer;
@@ -27,7 +28,7 @@ public:
 
     std::string waiterName;
 
-    Table* waiterHeadTable;
+    AbstractTable* waiterHeadTable;
 //public: Chef* _unnamed_Chef_;
 //public: Floor* _unnamed_Floor_;
 //public: Engine* _unnamed_Engine_;
@@ -55,7 +56,7 @@ public:
     generalWaiter(std::string basicString, Floor *pFloor) : Waiter(basicString, pFloor) {}
     void getAllocatedAtable(Table* table);
     void performTask();
-    virtual void visitTable(Table* table);
+    virtual void visitTable(AbstractTable* table);
     void addToTab(std::string name, double amount);
     void payTab(std::string name, double amount);
     Tab* getTab(std::string name);
@@ -74,7 +75,7 @@ public:
 
     void receiveCompliment(const std::string& compliment);
 //    void performTask(){}
-//    void setWaiterHeadTable(Table *waiterHeadTable) {
+//    void setWaiterHeadTable(AbstractTable *waiterHeadTable) {
 //        this->waiterHeadTable = waiterHeadTable;
 //    }
 //    void setWaiterName(const std::string &waiterName) {
