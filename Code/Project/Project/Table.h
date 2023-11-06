@@ -5,15 +5,15 @@
 #include "Floor.h"
 #include "TableIterator.h"
 
-class Bill;
-class Waiter;
-class Visitor;
-class TableGroup;
-class Table;
-class AbstractTable;
 class TableState;
-class Unoccupied;
-class Occupied;
+class Bill;
+class Floor;
+class Waiter;
+class MaitreD;
+class Visitor;
+class TableIterator;
+class ConcreteTableIterator;
+//class AbstractTable;
 
 /*
     TableState is a state class that will be used to determine if the table is occupied or not
