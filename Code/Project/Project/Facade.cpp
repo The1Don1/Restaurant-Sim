@@ -23,17 +23,17 @@ void Facade::displayMenu() {
 
         switch(choice){
             case 1:
-                createWaiter();
-                break;
+                    createWaiter();
+                    break;
             case 2:
-                continue;
+                    continue;
 //                floor->printWaiters();
 //                system("cls");
 //                break;
             case 3:
-                std::cout << "Goodbye!\n" << std::endl;
-                std::terminate(); //end all threads
-                break;
+                    std::cout << "Goodbye!\n" << std::endl;
+                    std::terminate(); //end all threads
+                    break;
 
             default:
                 std::cout << "Invalid choice. Please try again.\n";
@@ -54,6 +54,10 @@ void Facade::createWaiter(){
 //    int random = 100 + (rand() % 20);
     floor->constructWaiter(name, floor->getHeadTable());
 
+}
+
+Facade* Facade::instance() {
+    throw "Not yet implemented";
 }
 
 Facade::Facade() {

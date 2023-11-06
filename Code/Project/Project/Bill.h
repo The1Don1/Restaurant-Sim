@@ -13,17 +13,13 @@ class BillDecorator;
 class SubBill;
 class Table;
 class PaymentStrategy;
-
-class AbstractBill
-{
+class AbstractBill{
 public:
     BillDecorator* billDecorator{};
     virtual double getTotalCost() = 0;
 
 };
-
-class Bill : public AbstractBill
-{
+class Bill : public AbstractBill{
 private:
     Customer* mood;
 
@@ -40,14 +36,12 @@ private:
     SubBill* subBill;
 
 public:
-    virtual void paymentMethod();
+    virtual void paymentMethod() = 0;
 
     void handleTip();
 
     void getBill();
 
-    void addTip(float tip);
-    Bill();
     Bill(double price) : totalAmount(price){}
 
     double calculateBill();
@@ -58,19 +52,19 @@ public:
 
 //    virtual void addItem(Bill aItem) = 0;
 
-    virtual void getSubBill(std::string customerName);
+    virtual void getSubBill(std::string customerName) = 0;
 };
 
 class BillItem: public Bill{
 private:
-    std::string name;
-    double price;
+        std::string name;
+        double price;
 public:
-    BillItem(double price, std::string item, double cost);
-    void paymentMethod();
+        BillItem(double price, std::string item, double cost);
+        void paymentMethod();
     void getSubBill(std::string customerName);
-    double getTotalCost();
-    void addItem(SubBill item);
+        double getTotalCost();
+        void addItem(SubBill item);
 };
 
 class SubBill: public Bill{
@@ -86,11 +80,11 @@ public:
 };
 class BillDecorator: public AbstractBill{
 private:
-    Bill* bill;
+        Bill* bill;
 public:
-    AbstractBill* abstractBill;
-    BillDecorator(Bill* bill);
-    double getTotalCost();
+        AbstractBill* abstractBill;
+        BillDecorator(Bill* bill);
+        double getTotalCost();
 
 };
 
@@ -98,7 +92,7 @@ class CustomTipDecorator: public BillDecorator
 {
 private: double _tipAmount;
 
-public: CustomTipDecorator(Bill *bill, double tip);
+public: CustomTipDecorator(Bill *bill, Bill *bill2, double tip);
 
 public: double getTotalCost();
 };
