@@ -173,7 +173,7 @@ AbstractTable *Table::operator+(Table *table)
     return newTableGroup;
 }
 //+ operator overload to add a table to a table group
-AbstractTable *Table::operator+(TableGroup *tableGroup)
+AbstractTable *Table::operator+(TableGroup *tableGroup )
 {
     TableGroup *newTableGroup = new TableGroup(this->getnumberOfSeats() + tableGroup->getnumberOfSeats());
     newTableGroup->addTable(this);
