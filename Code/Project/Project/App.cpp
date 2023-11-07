@@ -13,7 +13,7 @@ public:
         explicit App(int timerSeconds);
 
         void startSimulation(){
-            std::thread timerThread(&App::timerFunction, this);
+//            std::thread timerThread(&App::timerFunction, this);
             f->displayMenu();
         }
         void setFacade(Facade* f){
@@ -22,14 +22,14 @@ public:
 private:
     Facade* f;
         int timerSeconds;
-            void timerFunction() {
+            /*void timerFunction() {
                 while (timerSeconds > 0) {
                     std::this_thread::sleep_for(std::chrono::seconds(1)); // Sleep for 1 second
                     timerSeconds--;
                     f->Decrement();
                 }
                 std::cout << "Timer has reached 0 seconds." << std::endl;
-        }
+        }*/
 };
 
 App::App(int timerSeconds) : timerSeconds(timerSeconds), f(nullptr){}
