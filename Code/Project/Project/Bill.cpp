@@ -3,174 +3,106 @@
 //
 
 #include "Bill.h"
-BillItem::BillItem(std::string item, double cost){
-    name = item;
-    this->price = cost;
-
+BillItem::BillItem(double price, std::string item, double cost) : Bill(price) {
 }
 
 double BillItem::getTotalCost() {
-    return price;
+    throw "Not yet implemented";
 }
 
 void BillItem::addItem(SubBill item) {
-    return;
+    throw "Not yet implemented";
 }
 
 void BillItem::paymentMethod() {
-    if(getPaymentStrategy() != NULL)
-        getPaymentStrategy()->paymentMethod();
-    else
-        std::cout << "Payment strategy not set.\n";
+
 }
 
-Bill* BillItem::getSubBill(std::string customerName) {
-   
-    // for (Customer* customer : getCustomers())
-    // {
-    //     if (customer->getName() == customerName)
-    //     {
-    //         return customer->getBill();
-    //     }
-    // }
+void BillItem::getSubBill(std::string customerName) {
 
-    return NULL;
 }
 
 
 BillDecorator::BillDecorator(Bill* bill) {
-    this->bill = bill;
 }
 
 double BillDecorator::getTotalCost() {
-    if (bill != NULL)
-        return bill->getTotalCost();
-    else return 0;
+    throw "Not yet implemented";
 }
 
 double SubBill::getTotalCost() {
-
-    double total = 0.0;
-    for (auto item : items) {
-        total += item->getTotalCost();
-    }
-    return total;
+    throw "Not yet implemented";
 }
 
-void SubBill::addItem(BillItem* item) {
-    if (item != NULL)
-        items.push_back(item);
+void SubBill::addItem(SubBill item) {
+    throw "Not yet implemented";
 }
 
-Bill* SubBill::getSubBill(std::string customerName) {
-
-    for (auto item : items)
-    {
-        if (!item->getCustomers().empty())
-        {
-            for (auto customer : item->getCustomers())
-            {
-                if (customer->dish->getCustomerName() == customerName)
-                {
-                    return item;
-                }
-            }
-        }
-    }
-
-    return NULL;
-}
-
-void SubBill::paymentMethod()
-{
-    bill->paymentMethod();
+void SubBill::getSubBill(std::string customerName) {
+    throw "Not yet implemented";
 }
 
 void PaymentStrategy::paymentMethod() {
-    std::cout << "Processing payment..." << std::endl;
+    throw "Not yet implemented";
 }
 
 void Cash::paymentMethod() {
-    std::cout << "Payment made by cash." << std::endl;
+    throw "Not yet implemented";
 }
 
 void Cash::getPaymentMethod() {
-    std::cout << "Cash." << std::endl;
+    throw "Not yet implemented";
 }
 void Card::paymentMethod() {
-    std::cout << "Payment made by card." << std::endl;
+    throw "Not yet implemented";
 }
 
 void Card::getPaymentMethod() {
-    std::cout << "Card" << std::endl;
+    throw "Not yet implemented";
 }
 
 
 CustomTipDecorator::CustomTipDecorator(Bill *bill, double tip) : BillDecorator(bill) {
-    _tipAmount = tip;
 }
 
 double CustomTipDecorator::getTotalCost() {
-    return  _tipAmount;
+    throw "Not yet implemented";
 }
 
-void Bill::addTip(double amount)
-{
-    this->totalAmount += amount;
-}
 
 void Bill::handleTip() {
-    //Billdecorator->getTotalCost() function returns the custom tip given
-    //totalAmount = totalAmount + this->billDecorator->getTotalCost();
-
-    if (splitBill)
-    {
-        totalAmount = totalAmount + (totalAmount * 0.15);
-    }
-    else
-    {
-        totalAmount = totalAmount + (totalAmount * 0.20);
-    }
 
 }
 
-Bill::Bill()
-{}
+void Bill::addTip(float tip)
+{
+    totalAmount += tip;
+}
 
-Bill* Bill::getBill() {
-    return this;
- 
+void Bill::getBill() {
+
 }
 
 double Bill::calculateBill() {
-    totalAmount = totalAmount + subBill->getTotalCost();
-    return totalAmount;
+    return 0;
 }
 
 void Bill::setPaymentMethod(PaymentStrategy *method) {
-    paymentStrategy = method;
 
 }
 
 double Bill::getTotalCost() {
-    return totalAmount;
-        
+    return 0;
 }
 
-/*Bill::Bill(double price)
-{
-    this->totalAmount = price;
-    this->paymentStrategy = NULL;
-    this->splitBill = false;
-}*/
+void Bill::paymentMethod() {
 
-/* ------------Changes--------------*/
-/*
-1. Changed the return type of getSubBill from void to Bill*
-2. Added a getter for customers and items
-*/
+}
 
-/*---------Notes------------*/
-/*
+Bill::Bill() {
 
-*/
+}
+
+void Bill::getSubBill(std::string customerName) {
+
+}

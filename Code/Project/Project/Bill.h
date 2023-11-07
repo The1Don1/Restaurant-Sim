@@ -13,13 +13,17 @@ class BillDecorator;
 class SubBill;
 class Table;
 class PaymentStrategy;
-class AbstractBill{
+
+class AbstractBill
+{
 public:
     BillDecorator* billDecorator{};
     virtual double getTotalCost() = 0;
 
 };
-class Bill : public AbstractBill{
+
+class Bill : public AbstractBill
+{
 private:
     Customer* mood;
 
@@ -36,17 +40,15 @@ private:
     SubBill* subBill;
 
 public:
-    Bill();
-
     virtual void paymentMethod();
-
-    void addTip(double amount);
 
     void handleTip();
 
-    Bill* getBill();
+    void getBill();
 
-//    Bill(double price);
+    void addTip(float tip);
+    Bill();
+    Bill(double price) : totalAmount(price){}
 
     double calculateBill();
 
@@ -56,53 +58,39 @@ public:
 
 //    virtual void addItem(Bill aItem) = 0;
 
-    virtual Bill* getSubBill(std::string customerName);
-
-    std::vector<Customer*> getCustomers()
-    {
-        return customers;
-    }
-
-    PaymentStrategy* getPaymentStrategy()
-    {
-        return paymentStrategy;
-    }
+    virtual void getSubBill(std::string customerName);
 };
 
 class BillItem: public Bill{
 private:
-        std::string name;
-        double price;
+    std::string name;
+    double price;
 public:
-        BillItem(std::string item, double cost);
-        void paymentMethod();
-    Bill* getSubBill(std::string customerName);
-        double getTotalCost();
-        void addItem(SubBill item);
+    BillItem(double price, std::string item, double cost);
+    void paymentMethod();
+    void getSubBill(std::string customerName);
+    double getTotalCost();
+    void addItem(SubBill item);
 };
 
 class SubBill: public Bill{
 private:
-    std::vector<BillItem*> items;
+    std::vector<Bill> items;
 public:
     void paymentMethod();
     Bill* bill;
     double getTotalCost();
-    void addItem(BillItem* item);
-    Bill* getSubBill(std::string customerName);
+    void addItem(SubBill item);
+    void getSubBill(std::string customerName);
 
 };
 class BillDecorator: public AbstractBill{
 private:
-        Bill* bill;
+    Bill* bill;
 public:
-        AbstractBill* abstractBill;
-        BillDecorator(Bill* bill);
-        double getTotalCost();
-        Bill* getBill()
-        {
-            return bill;
-        }
+    AbstractBill* abstractBill;
+    BillDecorator(Bill* bill);
+    double getTotalCost();
 
 };
 
