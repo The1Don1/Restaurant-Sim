@@ -78,6 +78,7 @@ public:
     };
 
     void receiveCompliment(const std::string& compliment);
+
 };
 
 /**
@@ -92,6 +93,8 @@ public:
     MaitreD();
     void performTask();
     void allocateTable(std::vector<Customer*>);
+
+
     void mergeTables(int table1, int table2);
     void splitTables(TableGroup* tableGroup);
 };
