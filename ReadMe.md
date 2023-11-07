@@ -36,6 +36,10 @@
 # compilation
 ```
 Open a linux terminal into build folder
+rm CMakeCache.txt
+Open a linux terminal into the source folder
+cmake -S Code/Project/Project -B Code/Project/build
+Open a linux terminal into the build folder
 make
 ./Project
 make clean - once complete
