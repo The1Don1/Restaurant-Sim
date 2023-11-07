@@ -6,6 +6,10 @@
 #define PROJECT_MENU_H
 #include "iostream"
 #include "Dish.h"
+
+/**
+ * @brief Menu base class
+*/
 class Menu{
 protected:
     std::string description;
@@ -16,6 +20,9 @@ public:
     double getPrice();
     int getTimeToPrepare();
 };
+/**
+ * @brief MenuDecorator class
+*/
 class MenuDecorator: public Menu
 {
 protected: Menu* item;
@@ -66,14 +73,14 @@ public:
     Salad(Menu* baseItem, std::string description, double price, int timeToprepare);
     int getTimeToPrepare();
 };
-///////////
+/**
+ * @brief Beverages base class
+ * Beverages are coke zero, coke, sprite, strawberry milkshakes and bubblegum milkshakes
+ * Beverages will all take 1 second to prepare
+ */
 class Beverage: public Menu
 {
-    /**
-     * @brief Beverages base class
-     * Beverages are coke zero, coke, sprite, strawberry milkshakes and bubblegum milkshakes
-     * Beverages will all take 1 second to prepare
-     */
+    
 };
 
 class CokeZero: public Beverage
@@ -107,14 +114,14 @@ public:
     BubblegumMilkshake();
 };
 
-////////
+/**
+ * @brief Starters base class
+ * Starters are onion rings, chicken wings and chicken nuggets
+ * Starters will all take 5 seconds to prepare
+ */
 class Starter: public Menu
 {
-    /**
-     * @brief Starters base class
-     * Starters are onion rings, chicken wings and chicken nuggets
-     * Starters will all take 5 seconds to prepare
-     */
+    
 };
 
 class OnionRings: public Starter
@@ -145,14 +152,14 @@ public:
     ChickenNuggets();
 };
 
-///////
+/**
+ * @brief Main dishes base class
+ * Main dishes are cheeseburgers, hot dogs, mac and cheese, bbq ribs, chicken tenders, cheesesteak, bbq steak and buffalo wings
+ * Main dishes will all take 10 seconds to prepare
+ */
 class MainDish: public Menu
 {
-    /**
-     * @brief Main dishes base class
-     * Main dishes are cheeseburgers, hot dogs, mac and cheese, bbq ribs, chicken tenders, cheesesteak, bbq steak and buffalo wings
-     * Main dishes will all take 10 seconds to prepare
-     */
+    
 };
 
 class CheeseBurger: public MainDish
@@ -211,14 +218,14 @@ public:
     BuffaloWings();
 };
 
-/////
+/**
+ * @brief Desserts base class
+ * Desserts are waffle, chocolate brownies, donuts and pancakes
+ * Desserts will all take 3 seconds to prepare
+ */
 class Dessert: public Menu
 {
-    /**
-     * @brief Desserts base class
-     * Desserts are waffle, chocolate brownies, donuts and pancakes
-     * Desserts will all take 3 seconds to prepare
-     */
+    
 };
 
 class Pancakes: public Dessert
