@@ -3,23 +3,15 @@
 //
 
 #include "Bill.h"
-BillItem::BillItem(double price, std::string item, double cost) : Bill(price) {
+BillItem::BillItem(std::string item, double cost)
+{
+    this->name = item;
+    this->price = cost;
 }
 
-double BillItem::getTotalCost() {
-    throw "Not yet implemented";
-}
-
-void BillItem::addItem(SubBill item) {
-    throw "Not yet implemented";
-}
-
-void BillItem::paymentMethod() {
-
-}
-
-void BillItem::getSubBill(std::string customerName) {
-
+double BillItem::getTotalCost()
+{
+    return this->price;
 }
 
 
