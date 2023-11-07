@@ -5,6 +5,7 @@
 #include "Engine.h"
 #include <thread>
 #include <iostream>
+#include <pthread.h>
 
 using namespace std;
 class App{
