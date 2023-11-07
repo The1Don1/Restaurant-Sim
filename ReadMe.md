@@ -36,6 +36,7 @@
 # compilation
 ```
 Open a linux terminal into build folder
+clone github into a folder named 'workspaces'
 rm CMakeCache.txt
 Open a linux terminal into the source folder
 cmake -S Code/Project/Project -B Code/Project/build
