@@ -33,10 +33,10 @@ void Manager::visitTable(Table* table)
  * 
  * @return std::vector<std::string> 
 */
-std::vector<std::string> Manager::getComplaints() 
+/*std::vector<std::string> Manager::getComplaints() 
 {
     return this->complaints;
-}
+}*/
 
 /**
  * @brief Handles the complaint made by the customer
@@ -47,4 +47,5 @@ void Manager::handleComplaint(const std::string& complaint)
 {
     std::cout << "Restaurant Manager: Thank you for your feedback. We will address your complaint.\n";
     std::cout << "Complaint details: " << complaint << "\n";
+    this->complaints.push_back(complaint);
 }

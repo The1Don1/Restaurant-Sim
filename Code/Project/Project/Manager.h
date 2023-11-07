@@ -17,7 +17,7 @@ class Manager
     public:
         Manager(){};
         virtual void visitTable(Table* table);
-        std::vector<std::string> getComplaints();
+//        std::vector<std::string> getComplaints();
         void handleComplaint(const std::string& complaint);
 
 };
